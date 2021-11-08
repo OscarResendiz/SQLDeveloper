@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TextComparator" targetNamespace="http://tempuri.org/TextComparator.xsd" xmlns:mstns="http://tempuri.org/TextComparator.xsd" xmlns="http://tempuri.org/TextComparator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TextComparator2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TextComparator2" msprop:Generator_UserDSName="TextComparator2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TTexto1" msprop:Generator_TableClassName="TTexto1DataTable" msprop:Generator_TableVarName="tableTTexto1" msprop:Generator_RowChangedName="TTexto1RowChanged" msprop:Generator_TablePropName="TTexto1" msprop:Generator_RowDeletingName="TTexto1RowDeleting" msprop:Generator_RowChangingName="TTexto1RowChanging" msprop:Generator_RowEvHandlerName="TTexto1RowChangeEventHandler" msprop:Generator_RowDeletedName="TTexto1RowDeleted" msprop:Generator_RowClassName="TTexto1Row" msprop:Generator_UserTableName="TTexto1" msprop:Generator_RowEvArgName="TTexto1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NLinea" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnNLinea" msprop:Generator_ColumnPropNameInRow="NLinea" msprop:Generator_ColumnPropNameInTable="NLineaColumn" msprop:Generator_UserColumnName="NLinea" type="xs:int" />
+              <xs:element name="Cadena" msprop:Generator_ColumnVarNameInTable="columnCadena" msprop:Generator_ColumnPropNameInRow="Cadena" msprop:Generator_ColumnPropNameInTable="CadenaColumn" msprop:Generator_UserColumnName="Cadena" type="xs:string" minOccurs="0" />
+              <xs:element name="Procesado" msprop:Generator_ColumnVarNameInTable="columnProcesado" msprop:Generator_ColumnPropNameInRow="Procesado" msprop:Generator_ColumnPropNameInTable="ProcesadoColumn" msprop:Generator_UserColumnName="Procesado" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TTexto2" msprop:Generator_TableClassName="TTexto2DataTable" msprop:Generator_TableVarName="tableTTexto2" msprop:Generator_RowChangedName="TTexto2RowChanged" msprop:Generator_TablePropName="TTexto2" msprop:Generator_RowDeletingName="TTexto2RowDeleting" msprop:Generator_RowChangingName="TTexto2RowChanging" msprop:Generator_RowEvHandlerName="TTexto2RowChangeEventHandler" msprop:Generator_RowDeletedName="TTexto2RowDeleted" msprop:Generator_RowClassName="TTexto2Row" msprop:Generator_UserTableName="TTexto2" msprop:Generator_RowEvArgName="TTexto2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NLinea" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnNLinea" msprop:Generator_ColumnPropNameInRow="NLinea" msprop:Generator_ColumnPropNameInTable="NLineaColumn" msprop:Generator_UserColumnName="NLinea" type="xs:int" />
+              <xs:element name="Cadena" msprop:Generator_ColumnVarNameInTable="columnCadena" msprop:Generator_ColumnPropNameInRow="Cadena" msprop:Generator_ColumnPropNameInTable="CadenaColumn" msprop:Generator_UserColumnName="Cadena" type="xs:string" minOccurs="0" />
+              <xs:element name="Procesado" msprop:Generator_ColumnVarNameInTable="columnProcesado" msprop:Generator_ColumnPropNameInRow="Procesado" msprop:Generator_ColumnPropNameInTable="ProcesadoColumn" msprop:Generator_UserColumnName="Procesado" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comparativa" msprop:Generator_TableClassName="ComparativaDataTable" msprop:Generator_TableVarName="tableComparativa" msprop:Generator_RowChangedName="ComparativaRowChanged" msprop:Generator_TablePropName="Comparativa" msprop:Generator_RowDeletingName="ComparativaRowDeleting" msprop:Generator_RowChangingName="ComparativaRowChanging" msprop:Generator_RowEvHandlerName="ComparativaRowChangeEventHandler" msprop:Generator_RowDeletedName="ComparativaRowDeleted" msprop:Generator_RowClassName="ComparativaRow" msprop:Generator_UserTableName="Comparativa" msprop:Generator_RowEvArgName="ComparativaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NLinea1" msprop:Generator_ColumnVarNameInTable="columnNLinea1" msprop:Generator_ColumnPropNameInRow="NLinea1" msprop:Generator_ColumnPropNameInTable="NLinea1Column" msprop:Generator_UserColumnName="NLinea1" type="xs:int" minOccurs="0" />
+              <xs:element name="NLinea2" msprop:Generator_ColumnVarNameInTable="columnNLinea2" msprop:Generator_ColumnPropNameInRow="NLinea2" msprop:Generator_ColumnPropNameInTable="NLinea2Column" msprop:Generator_UserColumnName="NLinea2" type="xs:int" minOccurs="0" />
+              <xs:element name="Iguales" msprop:Generator_ColumnVarNameInTable="columnIguales" msprop:Generator_ColumnPropNameInRow="Iguales" msprop:Generator_ColumnPropNameInTable="IgualesColumn" msprop:Generator_UserColumnName="Iguales" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IDRegistro" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnIDRegistro" msprop:Generator_ColumnPropNameInRow="IDRegistro" msprop:Generator_ColumnPropNameInTable="IDRegistroColumn" msprop:Generator_UserColumnName="IDRegistro" type="xs:int" minOccurs="0" />
+              <xs:element name="Eliminar" msprop:Generator_ColumnVarNameInTable="columnEliminar" msprop:Generator_ColumnPropNameInRow="Eliminar" msprop:Generator_ColumnPropNameInTable="EliminarColumn" msprop:Generator_UserColumnName="Eliminar" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Texto1" msprop:Generator_ColumnVarNameInTable="columnTexto1" msprop:Generator_ColumnPropNameInRow="Texto1" msprop:Generator_ColumnPropNameInTable="Texto1Column" msprop:Generator_UserColumnName="Texto1" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto2" msprop:Generator_ColumnVarNameInTable="columnTexto2" msprop:Generator_ColumnPropNameInRow="Texto2" msprop:Generator_ColumnPropNameInTable="Texto2Column" msprop:Generator_UserColumnName="Texto2" type="xs:string" minOccurs="0" />
+              <xs:element name="Orden" msprop:Generator_ColumnVarNameInTable="columnOrden" msprop:Generator_ColumnPropNameInRow="Orden" msprop:Generator_ColumnPropNameInTable="OrdenColumn" msprop:Generator_UserColumnName="Orden" type="xs:int" default="-1" minOccurs="0" />
+              <xs:element name="Faltante" msprop:Generator_ColumnVarNameInTable="columnFaltante" msprop:Generator_ColumnPropNameInRow="Faltante" msprop:Generator_ColumnPropNameInTable="FaltanteColumn" msprop:Generator_UserColumnName="Faltante" type="xs:boolean" default="false" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Parecidos" msprop:Generator_TableClassName="ParecidosDataTable" msprop:Generator_TableVarName="tableParecidos" msprop:Generator_TablePropName="Parecidos" msprop:Generator_RowDeletingName="ParecidosRowDeleting" msprop:Generator_RowChangingName="ParecidosRowChanging" msprop:Generator_RowEvHandlerName="ParecidosRowChangeEventHandler" msprop:Generator_RowDeletedName="ParecidosRowDeleted" msprop:Generator_UserTableName="Parecidos" msprop:Generator_RowChangedName="ParecidosRowChanged" msprop:Generator_RowEvArgName="ParecidosRowChangeEvent" msprop:Generator_RowClassName="ParecidosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NLinea1" msprop:Generator_ColumnVarNameInTable="columnNLinea1" msprop:Generator_ColumnPropNameInRow="NLinea1" msprop:Generator_ColumnPropNameInTable="NLinea1Column" msprop:Generator_UserColumnName="NLinea1" type="xs:int" minOccurs="0" />
+              <xs:element name="NLinea2" msprop:Generator_ColumnVarNameInTable="columnNLinea2" msprop:Generator_ColumnPropNameInRow="NLinea2" msprop:Generator_ColumnPropNameInTable="NLinea2Column" msprop:Generator_UserColumnName="NLinea2" type="xs:int" minOccurs="0" />
+              <xs:element name="Parecido" msprop:Generator_ColumnVarNameInTable="columnParecido" msprop:Generator_ColumnPropNameInRow="Parecido" msprop:Generator_ColumnPropNameInTable="ParecidoColumn" msprop:Generator_UserColumnName="Parecido" type="xs:int" minOccurs="0" />
+              <xs:element name="Texto1" msprop:Generator_ColumnVarNameInTable="columnTexto1" msprop:Generator_ColumnPropNameInRow="Texto1" msprop:Generator_ColumnPropNameInTable="Texto1Column" msprop:Generator_UserColumnName="Texto1" type="xs:string" minOccurs="0" />
+              <xs:element name="Texto2" msprop:Generator_ColumnVarNameInTable="columnTexto2" msprop:Generator_ColumnPropNameInRow="Texto2" msprop:Generator_ColumnPropNameInTable="Texto2Column" msprop:Generator_UserColumnName="Texto2" type="xs:string" minOccurs="0" />
+              <xs:element name="Eliminar" msprop:Generator_ColumnVarNameInTable="columnEliminar" msprop:Generator_ColumnPropNameInRow="Eliminar" msprop:Generator_ColumnPropNameInTable="EliminarColumn" msprop:Generator_UserColumnName="Eliminar" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Correcto" msprop:Generator_ColumnVarNameInTable="columnCorrecto" msprop:Generator_ColumnPropNameInRow="Correcto" msprop:Generator_ColumnPropNameInTable="CorrectoColumn" msprop:Generator_UserColumnName="Correcto" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="IDRegistro" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnIDRegistro" msprop:Generator_ColumnPropNameInRow="IDRegistro" msprop:Generator_ColumnPropNameInTable="IDRegistroColumn" msprop:Generator_UserColumnName="IDRegistro" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TTexto1" />
+      <xs:field xpath="mstns:NLinea" />
+    </xs:unique>
+    <xs:unique name="TTexto2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TTexto2" />
+      <xs:field xpath="mstns:NLinea" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

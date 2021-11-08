@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Bloques>
+    <Nombre>comentarios</Nombre>
+    <InicioMatch>/*</InicioMatch>
+    <FinMatch>*/</FinMatch>
+    <TextoRemplazo>/*..*/</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>begin</Nombre>
+    <InicioMatch>begin </InicioMatch>
+    <FinMatch>end </FinMatch>
+    <TextoRemplazo>Begin...End</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>true</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>case</Nombre>
+    <InicioMatch>case </InicioMatch>
+    <FinMatch>break </FinMatch>
+    <TextoRemplazo>Case..Break</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>true</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>case2</Nombre>
+    <InicioMatch>case </InicioMatch>
+    <FinMatch>end </FinMatch>
+    <TextoRemplazo>Case..End</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>true</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>llaves</Nombre>
+    <InicioMatch>{</InicioMatch>
+    <FinMatch>}</FinMatch>
+    <TextoRemplazo>{..}</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>true</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>Parentesis</Nombre>
+    <InicioMatch>(</InicioMatch>
+    <FinMatch>)</FinMatch>
+    <TextoRemplazo>(..)</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>50</MinimumLength>
+    <ApliaTabulador>true</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>corchetes</Nombre>
+    <InicioMatch>[</InicioMatch>
+    <FinMatch>]</FinMatch>
+    <TextoRemplazo>[..]</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>Region1</Nombre>
+    <InicioMatch>#region </InicioMatch>
+    <FinMatch>#endregion </FinMatch>
+    <TextoRemplazo />
+    <UseTextLine>true</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>Region2</Nombre>
+    <InicioMatch>--#region </InicioMatch>
+    <FinMatch>--#endregion </FinMatch>
+    <TextoRemplazo />
+    <UseTextLine>true</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>Transaccion1</Nombre>
+    <InicioMatch>BEGIN TRANSACTION </InicioMatch>
+    <FinMatch>COMMIT TRANSACTION </FinMatch>
+    <TextoRemplazo />
+    <UseTextLine>true</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>NOCOUNT</Nombre>
+    <InicioMatch>SET NOCOUNT ON</InicioMatch>
+    <FinMatch>SET NOCOUNT OFF</FinMatch>
+    <TextoRemplazo>NOCOUNT</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>create</Nombre>
+    <InicioMatch>create procedure</InicioMatch>
+    <FinMatch>go</FinMatch>
+    <TextoRemplazo>NOCOUNT</TextoRemplazo>
+    <UseTextLine>true</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>Transacciones</Nombre>
+    <InicioMatch>BEGIN TRAN</InicioMatch>
+    <FinMatch>COMMIT TRAN</FinMatch>
+    <TextoRemplazo>Transaccion</TextoRemplazo>
+    <UseTextLine>false</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+  <Bloques>
+    <Nombre>regionArduino</Nombre>
+    <InicioMatch>//region</InicioMatch>
+    <FinMatch>//endregion</FinMatch>
+    <TextoRemplazo />
+    <UseTextLine>true</UseTextLine>
+    <MinimumLength>0</MinimumLength>
+    <ApliaTabulador>false</ApliaTabulador>
+  </Bloques>
+</NewDataSet>

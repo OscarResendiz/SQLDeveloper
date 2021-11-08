@@ -1,0 +1,249 @@
+<?xml version = "1.0"?>
+<SyntaxDefinition name = "CLARO" extensions = ".sql">
+	<Environment>
+		<Default      color="#000000" bgcolor="#FFFFFF"/>
+		<VRuler       color = "Blue"/>
+		<Selection    bgcolor = "#4D4D4D"/>
+		<LineNumbers  color = "Teal" bgcolor = "SystemColors.Window"/>
+		<InvalidLines color = "Red"/>
+		<EOLMarkers   color = "White"/>
+		<SpaceMarkers color = "#E0E0E5"/>
+		<TabMarkers   color = "#E0E0E5"/>
+		<CaretMarker  color = "Yellow"/>
+		<FoldLine     color = "#808080" bgcolor="Black"/>
+		<FoldMarker   color = "#808080" bgcolor="White"/>
+	</Environment>
+	<Properties>
+		<Property name="LineComment" value="--"/>
+	</Properties>
+	<Digits name = "Digits" bold = "true" italic = "false" color="#800040"/>
+	<RuleSets>
+		<RuleSet ignorecase = "true">
+			<Delimiters>=!&gt;&lt;+-/*%&amp;|^~.}{,;][?:()</Delimiters>
+			<Span name ="LineComment" bold ="false" italic ="true" color ="#CE0000" stopateol ="true">
+				<Begin>--</Begin>
+			</Span>
+			<Span name ="BlockComment" bold ="false" italic ="true" color ="#FF0000" stopateol ="false">
+				<Begin>/*</Begin>
+				<End>*/</End>
+			</Span>
+			<Span name ="String" bold ="true" italic ="false" color ="#804040" stopateol ="false">
+				<Begin>&quot;</Begin>
+				<End>&quot;</End>
+			</Span>
+			<Span name ="Character" bold ="true" italic ="false" color ="#0080FF" stopateol ="false">
+				<Begin>&apos;</Begin>
+				<End>&apos;</End>
+			</Span>
+			<Span name ="LineCommentC" bold ="false" italic ="true" color ="#C40000" stopateol ="true">
+				<Begin>//</Begin>
+			</Span>
+			<KeyWords name ="JoinKeywords" bold="true" italic = "false" color="#8080FF">
+				<Key word = "INNER" />
+				<Key word = "JOIN" />
+				<Key word = "LEFT" />
+				<Key word = "RIGHT" />
+				<Key word = "OUTER" />
+				<Key word = "UNION" />
+				<Key word = "ON" />
+				<Key word = "NOCOUNT" />
+				<Key word = "OFF" />
+				<Key word = "FULL" />
+				<Key word = "ALL" />
+			</KeyWords>
+			<KeyWords name ="AliasKeywords" bold="true" italic = "false" color="#0000FF">
+				<Key word = "AS" />
+			</KeyWords>
+			<KeyWords name ="ComparisonKeywords" bold="true" italic = "false" color="#008080">
+				<Key word = "AND" />
+				<Key word = "OR" />
+				<Key word = "LIKE" />
+				<Key word = "IN" />
+				<Key word = "EXISTS" />
+				<Key word = "BETWEEN" />
+			</KeyWords>
+			<KeyWords name ="DestructiveKeywords" bold="true" italic = "false" color="Red">
+				<Key word = "DROP" />
+				<Key word = "DELETE" />
+				<Key word = "TRUNCATE" />
+			</KeyWords>
+			<KeyWords name ="SpecializedKeywords" bold="true" italic = "false" color="#08D625">
+				<Key word = "TOP" />
+				<Key word = "DISTINCT" />
+				<Key word = "LIMIT" />
+				<Key word = "OPENDATASOURCE" />
+				<Key word = "GO" />
+				<Key word = "USE" />
+			</KeyWords>
+			<KeyWords name ="TransactionKeyWords" bold="true" italic = "false" color="#DA800A">
+				<Key word = "COMMIMT" />
+				<Key word = "ROLLBACK" />
+				<Key word = "TRANSACTION" />
+				<Key word = "TRAN" />
+			</KeyWords>
+			<KeyWords name ="DebugKeyWords" bold="true" italic = "false" color="#FF9900">
+				<Key word = "TRY" />
+				<Key word = "CATCH" />
+				<Key word = "RAISERROR" />
+				<Key word = "finally" />
+			</KeyWords>
+			<KeyWords name ="CursorKeywords" bold="true" italic = "false" color="#00869E">
+				<Key word = "CURSOR" />
+				<Key word = "FOR" />
+				<Key word = "OPEN" />
+				<Key word = "FETCH" />
+				<Key word = "NEXT" />
+				<Key word = "CLOSE" />
+				<Key word = "DEALLOCATE" />
+				<Key word = "FOREACH" />
+			</KeyWords>
+			<KeyWords name ="SqlKeywords" bold="true" italic = "false" color="#8080FF">
+				<Key word = "NOT" />
+				<Key word = "SET" />
+				<Key word = "DESC" />
+				<Key word = "ASC" />
+				<Key word = "EXEC" />
+				<Key word = "WITH" />
+				<Key word = "EXECUTE" />
+				<Key word = "identity" />
+				<Key word = "NOLOCK" />
+				<Key word = "OUTPUT" />
+				<Key word = "constraint" />
+			</KeyWords>
+			<KeyWords name ="SqlActionWords" bold="true" italic = "false" color="#0080FF">
+				<Key word = "INSERT" />
+				<Key word = "SELECT" />
+				<Key word = "UPDATE" />
+				<Key word = "FROM" />
+				<Key word = "WHERE" />
+				<Key word = "HAVING" />
+				<Key word = "GROUP" />
+				<Key word = "BY" />
+				<Key word = "ORDER" />
+				<Key word = "CREATE" />
+				<Key word = "ALTER" />
+				<Key word = "ADD" />
+				<Key word = "NULL" />
+				<Key word = "INTO" />
+				<Key word = "VALUES" />
+				<Key word = "IS" />
+			</KeyWords>
+			<KeyWords name ="SqlTypes" bold="true" italic = "false" color="#004080">
+				<Key word = "VARCHAR" />
+				<Key word = "NVARCHAR" />
+				<Key word = "CHAR" />
+				<Key word = "NCHAR" />
+				<Key word = "INT" />
+				<Key word = "TEXT" />
+				<Key word = "NTEXT" />
+				<Key word = "DOUBLE" />
+				<Key word = "MONEY" />
+				<Key word = "BIT" />
+				<Key word = "DATETIME" />
+				<Key word = "DECIMAL" />
+				<Key word = "FLOAT" />
+				<Key word = "DATE" />
+				<Key word = "DEFAULT" />
+				<Key word = "real" />
+				<Key word = "TinyInt" />
+				<Key word = "BIGINT" />
+			</KeyWords>
+			<KeyWords name ="SqlObjects" bold="true" italic = "true" color="#FF8000">
+				<Key word = "TABLE" />
+				<Key word = "PROC" />
+				<Key word = "PROCEDURE" />
+				<Key word = "FUNCTION" />
+				<Key word = "VIEW" />
+				<Key word = "TRIGGER" />
+				<Key word = "INDEX" />
+				<Key word = "DATABASE" />
+				<Key word = "TYPE" />
+				<Key word = "column" />
+			</KeyWords>
+			<KeyWords name ="FlowControlKeyWords" bold="true" italic = "true" color="#408080">
+				<Key word = "IF" />
+				<Key word = "ELSE" />
+				<Key word = "CASE" />
+				<Key word = "WHEN" />
+				<Key word = "THEN" />
+				<Key word = "WHILE" />
+				<Key word = "WAITFOR" />
+				<Key word = "DELAY" />
+				<Key word = "RETURN" />
+				<Key word = "SWITCH" />
+				<Key word = "BREAK" />
+			</KeyWords>
+			<KeyWords name ="TSql" bold="true" italic = "false" color="#339900">
+				<Key word = "DECLARE" />
+				<Key word = "BEGIN" />
+				<Key word = "END" />
+				<Key word = "#REGION" />
+				<Key word = "#ENDREGION" />
+			</KeyWords>
+			<KeyWords name ="Punctuation" bold="false" italic = "false" color="#FFFFFF">
+				<Key word = "(" />
+				<Key word = ")" />
+			</KeyWords>
+			<KeyWords name ="Operators" bold="false" italic = "false" color="#FFFFFF">
+				<Key word = "&lt;" />
+				<Key word = "&gt;" />
+				<Key word = "=" />
+			</KeyWords>
+			<KeyWords name ="Functions" bold="true" italic = "false" color="#FF8040">
+				<Key word = "SUBSTRING" />
+				<Key word = "UPPER" />
+				<Key word = "LOWER" />
+				<Key word = "REVERSE" />
+				<Key word = "REPLACE" />
+				<Key word = "LTRIM" />
+				<Key word = "RTRIM" />
+				<Key word = "CAST" />
+				<Key word = "CONVERT" />
+				<Key word = "ISNULL" />
+				<Key word = "DATEDIFF" />
+				<Key word = "GETDATE" />
+				<Key word = "FLOOR" />
+				<Key word = "openquery" />
+				<Key word = "dateadd" />
+				<Key word = "POWER" />
+				<Key word = "ISDATE" />
+				<Key word = "ROUND" />
+				<Key word = "STRING_SPLIT" />
+				<Key word = "CHARINDEX" />
+				<Key word = "len" />
+			</KeyWords>
+			<KeyWords name ="GroupByFunctions" bold="true" italic = "false" color="#AE1737">
+				<Key word = "SUM" />
+				<Key word = "COUNT" />
+				<Key word = "MAX" />
+				<Key word = "MIN" />
+				<Key word = "AVG" />
+			</KeyWords>
+			<KeyWords name ="SignosEspeciales" bold="true" italic = "true" color="#FF0000">
+				<Key word = "->" />
+			</KeyWords>
+			<KeyWords name ="Constantes" bold="false" italic = "false" color="#FF8040">
+				<Key word = "month" />
+				<Key word = "YEAR" />
+				<Key word = "DAY" />
+				<Key word = "CURRENT_TIMESTAMP" />
+			</KeyWords>
+			<KeyWords name ="SystemVariables" bold="false" italic = "false" color="#808080">
+				<Key word = "@@TRANCOUNT" />
+				<Key word = "@@Error" />
+			</KeyWords>
+			<KeyWords name ="C#" bold="false" italic = "false" color="#004080">
+				<Key word = "private" />
+				<Key word = "void" />
+				<Key word = "bool" />
+				<Key word = "this" />
+				<Key word = "short" />
+				<Key word = "public" />
+				<Key word = "class" />
+				<Key word = "protected" />
+				<Key word = "override" />
+			</KeyWords>
+		</RuleSet>
+	</RuleSets>
+</SyntaxDefinition>
+   

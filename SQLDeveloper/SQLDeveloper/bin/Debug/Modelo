@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<ModeloDatos xmlns="http://tempuri.org/ModeloDatos.xsd">
+  <Capa>
+    <ID_Capa>5</ID_Capa>
+    <Nombre>Principal</Nombre>
+    <Visible>true</Visible>
+    <ID_CapaSuperior>0</ID_CapaSuperior>
+    <ID_CapaInferior>0</ID_CapaInferior>
+  </Capa>
+</ModeloDatos>

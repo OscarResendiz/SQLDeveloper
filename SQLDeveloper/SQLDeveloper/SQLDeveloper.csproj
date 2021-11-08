@@ -1,0 +1,1752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A94BE1F9-9755-4929-8475-7F6CCB6040E2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQLDeveloper</RootNamespace>
+    <AssemblyName>SQLDeveloper</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SQLDeveloper.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SQLDeveloper.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MagicLibrary">
+      <HintPath>..\..\LiberiasExternas\MagicLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\IKIGAI\WMS\Administrador\Dlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.1.1\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\IKIGAI\WMS\Administrador\Dlls\office.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBProvider.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfig.Designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formprueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formprueba.Designer.cs">
+      <DependentUpon>Formprueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globales.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorArchivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorArchivo.Designer.cs">
+      <DependentUpon>CAnalizadorArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorCarpetas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorCarpetas.Designer.cs">
+      <DependentUpon>CAnalizadorCarpetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CBucadorCadenas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CBucadorCadenas.Designer.cs">
+      <DependentUpon>CBucadorCadenas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorDependencias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorDependencias.Designer.cs">
+      <DependentUpon>CAnalizadorDependencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CFileTextAnalizer.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CLineaArchivoCadena.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\CMotorConexion.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\IAnalizer.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Analizadores\IFileAnalizer.cs" />
+    <Compile Include="Modulos\AppsAnalizer\AppCodeFileManager.cs" />
+    <Compile Include="Modulos\AppsAnalizer\CDcoumentDriver.cs" />
+    <Compile Include="Forms\FormAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAcercaDe.Designer.cs">
+      <DependentUpon>FormAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormAppsAnalizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormAppsAnalizer.Designer.cs">
+      <DependentUpon>FormAppsAnalizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormBuscadorObjetos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormBuscadorObjetos.Designer.cs">
+      <DependentUpon>FormBuscadorObjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\CProcesoAvance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\CProcesoAvance.Designer.cs">
+      <DependentUpon>CProcesoAvance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormDesmarcarProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormDesmarcarProgress.Designer.cs">
+      <DependentUpon>FormDesmarcarProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormEliminarCadenas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormEliminarCadenas.Designer.cs">
+      <DependentUpon>FormEliminarCadenas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormPropiedades.Designer.cs">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormPropiedadesScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Formularios\FormPropiedadesScript.Designer.cs">
+      <DependentUpon>FormPropiedadesScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoArchivo.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoArchivoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoArchivos.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoBase.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoCarpeta.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoCodigoEditable.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoCodigoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoDependencia.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoGroupCodigoEditable.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoConexion.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoDependencias.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoDocumento.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoFolder.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoHistorial.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoLineaArchivo.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoLineasArchivo.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoObjetoCarpeta.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoObjetosDB.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoProyecto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoScript.cs" />
+    <Compile Include="Modulos\AppsAnalizer\Nodos\CNodoServidor.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\AppModel.cs">
+      <DependentUpon>AppModel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\AppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppModel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CArchivo.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CArchivoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CCarpeta.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CCodigoEditable.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CCodigoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CConexion.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CDocumento.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CExtencion.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CHistoryModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CHistoryModel.Designer.cs">
+      <DependentUpon>CHistoryModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CLineaArchivo.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CObjetoBase.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CObjetoCarpeta.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CObjetoObjeto.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CConfiguracion.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CScript.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\CServidor.cs" />
+    <Compile Include="Modulos\AppsAnalizer\ObjetosModelo\ISalvable.cs" />
+    <Compile Include="Modulos\BuscadorDependencias\CBuscadorDependencias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorDependencias\CBuscadorDependencias.Designer.cs">
+      <DependentUpon>CBuscadorDependencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\BuscadorDependencias\CObjetoProcesado.cs" />
+    <Compile Include="Modulos\BuscadorDependencias\FormExcluidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorDependencias\FormExcluidos.Designer.cs">
+      <DependentUpon>FormExcluidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\CBuscadorSeguidor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\CBuscadorSeguidor.Designer.cs">
+      <DependentUpon>CBuscadorSeguidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\FormBuscadorSeguidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\FormBuscadorSeguidor.Designer.cs">
+      <DependentUpon>FormBuscadorSeguidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\FormResultadoReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorSeguidor\FormResultadoReporte.Designer.cs">
+      <DependentUpon>FormResultadoReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\BuscadorDependencias\FormBuscadorDependencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\BuscadorDependencias\FormBuscadorDependencias.Designer.cs">
+      <DependentUpon>FormBuscadorDependencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Buscador\CBuscadorAvanzado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Buscador\CBuscadorAvanzado.Designer.cs">
+      <DependentUpon>CBuscadorAvanzado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Buscador\CFiltro.cs" />
+    <Compile Include="Modulos\Buscador\CNodoBusqueda.cs" />
+    <Compile Include="Modulos\Buscador\CObjetoBusquedaAvanzado.cs" />
+    <Compile Include="Modulos\BuscadorDependencias\CObjetoBusquedaDependencia.cs" />
+    <Compile Include="Modulos\Buscador\FormBuscadorAvanzado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormBuscadorAvanzado.Designer.cs">
+      <DependentUpon>FormBuscadorAvanzado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormBuscadorObjetos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormBuscadorObjetos.Designer.cs">
+      <DependentUpon>FormBuscadorObjetos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormFiltro.Designer.cs">
+      <DependentUpon>FormFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormSelectObjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Buscador\FormSelectObjet.Designer.cs">
+      <DependentUpon>FormSelectObjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\CCOnfigComparator.cs" />
+    <Compile Include="Modulos\Comparador\CDebugerExcel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Comparador\CDebugerExcel.Designer.cs">
+      <DependentUpon>CDebugerExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\CDiferencia.cs" />
+    <Compile Include="Modulos\Comparador\CLinea.cs" />
+    <Compile Include="Modulos\Comparador\CLineComparer.cs" />
+    <Compile Include="Modulos\Comparador\CLineComparerLex.cs" />
+    <Compile Include="Modulos\Comparador\CompareViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Comparador\CompareViewer.Designer.cs">
+      <DependentUpon>CompareViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\CRangoDiferencia.cs" />
+    <Compile Include="Modulos\Comparador\FormEsperar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Comparador\FormEsperar.Designer.cs">
+      <DependentUpon>FormEsperar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\FormSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Comparador\FormSelector.Designer.cs">
+      <DependentUpon>FormSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\TextComparator.cs">
+      <DependentUpon>TextComparator.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Comparador\TextComparator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextComparator.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CNodoBase.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoCampo.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoCampos.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoCheck.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoChecks.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoEvento.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoFk.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoFolder.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoForeignkeysContainer.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoIndex.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoIndexContainer.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoMomento.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoTabla.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoTrigger.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoTriggers.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoUniques.cs" />
+    <Compile Include="Modulos\CreadorTabla\CNodoUnq.cs" />
+    <Compile Include="Modulos\CreadorTabla\CPrimaryKeyNode.cs" />
+    <Compile Include="Modulos\CreadorTabla\CVisorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorBase.Designer.cs">
+      <DependentUpon>CVisorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCampo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCampo.Designer.cs">
+      <DependentUpon>CVisorCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCampos.Designer.cs">
+      <DependentUpon>CVisorCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorCheck.Designer.cs">
+      <DependentUpon>CVisorCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorChecks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorChecks.Designer.cs">
+      <DependentUpon>CVisorChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorFk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorFk.Designer.cs">
+      <DependentUpon>CVisorFk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorFKS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorFKS.Designer.cs">
+      <DependentUpon>CVisorFKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorIdexs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorIdexs.Designer.cs">
+      <DependentUpon>CVisorIdexs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorIndex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorIndex.Designer.cs">
+      <DependentUpon>CVisorIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorPK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorPK.Designer.cs">
+      <DependentUpon>CVisorPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorUnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorUnico.Designer.cs">
+      <DependentUpon>CVisorUnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorUnicos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\CVisorUnicos.Designer.cs">
+      <DependentUpon>CVisorUnicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormAddForeignKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormAddForeignKey.Designer.cs">
+      <DependentUpon>FormAddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormAgregarCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormAgregarCampo.Designer.cs">
+      <DependentUpon>FormAgregarCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormBuscadorTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormBuscadorTablas.Designer.cs">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormChecks.Designer.cs">
+      <DependentUpon>FormChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormImportarCampos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormImportarCampos.Designer.cs">
+      <DependentUpon>FormImportarCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNuevaTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNuevaTabla.Designer.cs">
+      <DependentUpon>FormNuevaTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditarColumna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditarColumna.Designer.cs">
+      <DependentUpon>FormEditarColumna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditorCondicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditorCondicion.Designer.cs">
+      <DependentUpon>FormEditorCondicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditorRegla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormEditorRegla.Designer.cs">
+      <DependentUpon>FormEditorRegla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNewCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNewCheck.Designer.cs">
+      <DependentUpon>FormNewCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNewIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormNewIndex.Designer.cs">
+      <DependentUpon>FormNewIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\Definicion\AccionReferencial.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\CampoIndex.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\CamposTabla.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\CamposUnique.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\CampoVista.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Checks.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\DetallePK.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Disparador.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\ForeignKey.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Funcion.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Identidad.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Indexs.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Momento.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\ParametroFuncion.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\ParametroSP.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\PrimaryKey.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Refeneces.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\StoreProcedure.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\TipoDato.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Trigger.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Uniques.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Vista.cs" />
+    <Compile Include="Modulos\CreadorTabla\Definicion\Tabla.cs" />
+    <Compile Include="Modulos\CreadorTabla\FormQuitarCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormQuitarCampo.Designer.cs">
+      <DependentUpon>FormQuitarCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormUniqueProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormUniqueProperty.Designer.cs">
+      <DependentUpon>FormUniqueProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormUniques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\FormUniques.Designer.cs">
+      <DependentUpon>FormUniques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\Propiedades\CPropiedadesBase.cs" />
+    <Compile Include="Modulos\CreadorTabla\Propiedades\CpropiedadesCampo.cs" />
+    <Compile Include="Modulos\CreadorTabla\Propiedades\FormPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CreadorTabla\Propiedades\FormPropiedades.Designer.cs">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormPropiedades.Designer.cs">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormPropiedadesSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormPropiedadesSP.Designer.cs">
+      <DependentUpon>FormPropiedadesSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\ObjetosModelo\CConexion.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\ObjetosModelo\CDataClass.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoBase.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoClase.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoClases.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoConexion.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoConexiones.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoFolder.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoGrupo.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoProyecto.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\Nodos\CNodoSP.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\ObjetosModelo\Cservidor.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\ObjetosModelo\CStoreProcedures.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormLybraryGenrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormLybraryGenrator.Designer.cs">
+      <DependentUpon>FormLybraryGenrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormSeleccionarSPs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\FormSeleccionarSPs.Designer.cs">
+      <DependentUpon>FormSeleccionarSPs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\Generadores\GeneradorCSharp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\Generadores\GeneradorCSharp.Designer.cs">
+      <DependentUpon>GeneradorCSharp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\Generadores\IGenradorCodigo.cs" />
+    <Compile Include="Modulos\CSharpLibaryGenerator\ModeloNet.cs">
+      <DependentUpon>ModeloNet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\CSharpLibaryGenerator\ModeloNet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloNet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\DBComparador\ComparadorDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\DBComparador\ComparadorDB.Designer.cs">
+      <DependentUpon>ComparadorDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\DBComparador\Cprogreso.cs" />
+    <Compile Include="Modulos\DBComparador\EnumVer.cs" />
+    <Compile Include="Modulos\Editores\IComentarioDriver.cs" />
+    <Compile Include="Modulos\Editores\TextEdit\CBuscador.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEdit\CBuscador.Designer.cs">
+      <DependentUpon>CBuscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEdit\CResaltar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEdit\CResaltar.Designer.cs">
+      <DependentUpon>CResaltar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEdit\FormBuscador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEdit\FormBuscador.Designer.cs">
+      <DependentUpon>FormBuscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Editores\TextEditorSearcher.cs" />
+    <Compile Include="Modulos\Editores\TextEdit\TextRange.cs" />
+    <Compile Include="Modulos\Herramientas\GestorBloques\FormConfigBloques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorBloques\FormConfigBloques.Designer.cs">
+      <DependentUpon>FormConfigBloques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorBloques\FormDetalleBloque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorBloques\FormDetalleBloque.Designer.cs">
+      <DependentUpon>FormDetalleBloque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\CComponetColor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\CComponetColor.Designer.cs">
+      <DependentUpon>CComponetColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\CControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\CControlBase.Designer.cs">
+      <DependentUpon>CControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoDigits.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoKeyWords.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoProperty.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoEnvironment.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CFileName.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoBase.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoProperties.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoRuleSet.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\CNodoSpan.cs" />
+    <Compile Include="Modulos\Herramientas\GestorColors\DelimitersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\DelimitersControl.Designer.cs">
+      <DependentUpon>DelimitersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\DigitsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\DigitsControl.Designer.cs">
+      <DependentUpon>DigitsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\EnvironmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\EnvironmentControl.Designer.cs">
+      <DependentUpon>EnvironmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormGestorColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormGestorColor.Designer.cs">
+      <DependentUpon>FormGestorColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormNuevoColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormNuevoColor.Designer.cs">
+      <DependentUpon>FormNuevoColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormPalabra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\FormPalabra.Designer.cs">
+      <DependentUpon>FormPalabra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\KeyWordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\KeyWordControl.Designer.cs">
+      <DependentUpon>KeyWordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\PropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\PropertyControl.Designer.cs">
+      <DependentUpon>PropertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\RuleSetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\RuleSetControl.Designer.cs">
+      <DependentUpon>RuleSetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\SpanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Herramientas\GestorColors\SpanControl.Designer.cs">
+      <DependentUpon>SpanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Editores\CEditorComentarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Editores\CEditorComentarios.Designer.cs">
+      <DependentUpon>CEditorComentarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\CProjetFile.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoDocument.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\ImageManager.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelCarpeta.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelCodigoEditable.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelCodigoObjeto.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelConexion.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelDocument.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelObjeto.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelScript.cs" />
+    <Compile Include="Modulos\ProyectAdmin\ObjetosModelo\CModelServidor.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoBase.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoCarpeta.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoCodigoEditable.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoCodigoObjeto.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoConexion.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoFolder.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoConexiones.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoObjeto.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoProyecto.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoGrupo.cs" />
+    <Compile Include="Modulos\ProyectAdmin\Nodos\CNodoScript.cs" />
+    <Compile Include="Modulos\ProyectAdmin\CodeFileManager.cs" />
+    <Compile Include="Modulos\ProyectAdmin\CodeScriptManager.cs" />
+    <Compile Include="Modulos\ProyectAdmin\CProjectManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\CProjectManager.Designer.cs">
+      <DependentUpon>CProjectManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormComentario.Designer.cs">
+      <DependentUpon>FormComentario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormMultiAgregado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormMultiAgregado.Designer.cs">
+      <DependentUpon>FormMultiAgregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNombre.Designer.cs">
+      <DependentUpon>FormNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormProyect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormProyect.Designer.cs">
+      <DependentUpon>FormProyect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormSelComparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\FormSelComparacion.Designer.cs">
+      <DependentUpon>FormSelComparacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\ModeloBasico.cs">
+      <DependentUpon>ModeloBasico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ProyectAdmin\ModeloBasico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBasico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Dependencias\CDependenciaManager.cs" />
+    <Compile Include="Modulos\Visores\Dependencias\CNodoDependencia.cs" />
+    <Compile Include="Modulos\Visores\Dependencias\FormDependencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Dependencias\FormDependencias.Designer.cs">
+      <DependentUpon>FormDependencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Propiedades\CPropiedadesBase.cs" />
+    <Compile Include="Modulos\Visores\Propiedades\CpropiedadesCampo.cs" />
+    <Compile Include="Modulos\Visores\Propiedades\FormPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Propiedades\FormPropiedades.Designer.cs">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Relaciones\CNodoRelacion.cs" />
+    <Compile Include="Modulos\Visores\Relaciones\FormRelaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Relaciones\FormRelaciones.Designer.cs">
+      <DependentUpon>FormRelaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CNodoBase.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoCampo.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoCampos.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoCheck.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoChecks.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoEvento.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoFk.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoFolder.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoForeignkeysContainer.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoIndex.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoIndexContainer.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoMomento.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoTabla.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoTrigger.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoTriggers.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoUniques.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CNodoUnq.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CPrimaryKeyNode.cs" />
+    <Compile Include="Modulos\Visores\Tabla\CVisorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorBase.Designer.cs">
+      <DependentUpon>CVisorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCampo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCampo.Designer.cs">
+      <DependentUpon>CVisorCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCampos.Designer.cs">
+      <DependentUpon>CVisorCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorCheck.Designer.cs">
+      <DependentUpon>CVisorCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorChecks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorChecks.Designer.cs">
+      <DependentUpon>CVisorChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorFk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorFk.Designer.cs">
+      <DependentUpon>CVisorFk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorFKS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorFKS.Designer.cs">
+      <DependentUpon>CVisorFKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorIndex.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorIndex.Designer.cs">
+      <DependentUpon>CVisorIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorPK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorPK.Designer.cs">
+      <DependentUpon>CVisorPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorUnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorUnico.Designer.cs">
+      <DependentUpon>CVisorUnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorUnicos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorUnicos.Designer.cs">
+      <DependentUpon>CVisorUnicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormAddForeignKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormAddForeignKey.Designer.cs">
+      <DependentUpon>FormAddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormAgregarCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormAgregarCampo.Designer.cs">
+      <DependentUpon>FormAgregarCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormBuscadorTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormBuscadorTablas.Designer.cs">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormChecks.Designer.cs">
+      <DependentUpon>FormChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormDatosAvanzados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormDatosAvanzados.Designer.cs">
+      <DependentUpon>FormDatosAvanzados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditarColumna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditarColumna.Designer.cs">
+      <DependentUpon>FormEditarColumna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditorCondicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditorCondicion.Designer.cs">
+      <DependentUpon>FormEditorCondicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditorRegla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormEditorRegla.Designer.cs">
+      <DependentUpon>FormEditorRegla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormNewCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormNewCheck.Designer.cs">
+      <DependentUpon>FormNewCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormUniqueProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormUniqueProperty.Designer.cs">
+      <DependentUpon>FormUniqueProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormUniques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormUniques.Designer.cs">
+      <DependentUpon>FormUniques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormForeignKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormForeignKeys.Designer.cs">
+      <DependentUpon>FormForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormIndexs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormIndexs.Designer.cs">
+      <DependentUpon>FormIndexs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormNewIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormNewIndex.Designer.cs">
+      <DependentUpon>FormNewIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormQuitarCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormQuitarCampo.Designer.cs">
+      <DependentUpon>FormQuitarCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\FormTabla.Designer.cs">
+      <DependentUpon>FormTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorIdexs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Tabla\CVisorIdexs.Designer.cs">
+      <DependentUpon>CVisorIdexs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Trrigers\CNodoEvento.cs" />
+    <Compile Include="Modulos\Visores\Trrigers\CNodoMomento.cs" />
+    <Compile Include="Modulos\Visores\Trrigers\CNodoTrigger.cs" />
+    <Compile Include="Modulos\Visores\Trrigers\FormTrigger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Trrigers\FormTrigger.Designer.cs">
+      <DependentUpon>FormTrigger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Trrigers\NodoTabla.cs" />
+    <Compile Include="Modulos\Visores\Variables\CDefinicionCampo.cs" />
+    <Compile Include="Modulos\Visores\Variables\CDefinicionTabla.cs" />
+    <Compile Include="Modulos\Visores\Variables\CDefinicionVariable.cs" />
+    <Compile Include="Modulos\Visores\Variables\FormVariables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Variables\FormVariables.Designer.cs">
+      <DependentUpon>FormVariables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Variables\PropiedadesTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Variables\PropiedadesTabla.Designer.cs">
+      <DependentUpon>PropiedadesTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Variables\PropiedadesVariable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Variables\PropiedadesVariable.Designer.cs">
+      <DependentUpon>PropiedadesVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Visores\Vista\FormVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Visores\Vista\FormVista.Designer.cs">
+      <DependentUpon>FormVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorArchivo.resx">
+      <DependentUpon>CAnalizadorArchivo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorCarpetas.resx">
+      <DependentUpon>CAnalizadorCarpetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Analizadores\CAnalizadorDependencias.resx">
+      <DependentUpon>CAnalizadorDependencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Analizadores\CBucadorCadenas.resx">
+      <DependentUpon>CBucadorCadenas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAcercaDe.resx">
+      <DependentUpon>FormAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormAppsAnalizer.resx">
+      <DependentUpon>FormAppsAnalizer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormBuscadorObjetos.resx">
+      <DependentUpon>FormBuscadorObjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\CProcesoAvance.resx">
+      <DependentUpon>CProcesoAvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormDesmarcarProgress.resx">
+      <DependentUpon>FormDesmarcarProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormEliminarCadenas.resx">
+      <DependentUpon>FormEliminarCadenas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormPropiedades.resx">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\Formularios\FormPropiedadesScript.resx">
+      <DependentUpon>FormPropiedadesScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\AppsAnalizer\ObjetosModelo\CHistoryModel.resx">
+      <DependentUpon>CHistoryModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorDependencias\CBuscadorDependencias.resx">
+      <DependentUpon>CBuscadorDependencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorDependencias\FormExcluidos.resx">
+      <DependentUpon>FormExcluidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorSeguidor\CBuscadorSeguidor.resx">
+      <DependentUpon>CBuscadorSeguidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorSeguidor\FormBuscadorSeguidor.resx">
+      <DependentUpon>FormBuscadorSeguidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorSeguidor\FormResultadoReporte.resx">
+      <DependentUpon>FormResultadoReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\BuscadorDependencias\FormBuscadorDependencias.resx">
+      <DependentUpon>FormBuscadorDependencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Buscador\CBuscadorAvanzado.resx">
+      <DependentUpon>CBuscadorAvanzado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Buscador\FormBuscadorAvanzado.resx">
+      <DependentUpon>FormBuscadorAvanzado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Buscador\FormBuscadorObjetos.resx">
+      <DependentUpon>FormBuscadorObjetos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Buscador\FormFiltro.resx">
+      <DependentUpon>FormFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Buscador\FormSelectObjet.resx">
+      <DependentUpon>FormSelectObjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Comparador\CompareViewer.resx">
+      <DependentUpon>CompareViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Comparador\FormEsperar.resx">
+      <DependentUpon>FormEsperar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Comparador\FormSelector.resx">
+      <DependentUpon>FormSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Comparador\TextComparator.resx">
+      <DependentUpon>TextComparator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorBase.resx">
+      <DependentUpon>CVisorBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorCampo.resx">
+      <DependentUpon>CVisorCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorCampos.resx">
+      <DependentUpon>CVisorCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorCheck.resx">
+      <DependentUpon>CVisorCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorChecks.resx">
+      <DependentUpon>CVisorChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorFk.resx">
+      <DependentUpon>CVisorFk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorFKS.resx">
+      <DependentUpon>CVisorFKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorIdexs.resx">
+      <DependentUpon>CVisorIdexs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorIndex.resx">
+      <DependentUpon>CVisorIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorPK.resx">
+      <DependentUpon>CVisorPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorUnico.resx">
+      <DependentUpon>CVisorUnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\CVisorUnicos.resx">
+      <DependentUpon>CVisorUnicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormAddForeignKey.resx">
+      <DependentUpon>FormAddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormAgregarCampo.resx">
+      <DependentUpon>FormAgregarCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormBuscadorTablas.resx">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormChecks.resx">
+      <DependentUpon>FormChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormImportarCampos.resx">
+      <DependentUpon>FormImportarCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormNuevaTabla.resx">
+      <DependentUpon>FormNuevaTabla.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormEditarColumna.resx">
+      <DependentUpon>FormEditarColumna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormEditorCondicion.resx">
+      <DependentUpon>FormEditorCondicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormEditorRegla.resx">
+      <DependentUpon>FormEditorRegla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormNewCheck.resx">
+      <DependentUpon>FormNewCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormNewIndex.resx">
+      <DependentUpon>FormNewIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormQuitarCampo.resx">
+      <DependentUpon>FormQuitarCampo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormUniqueProperty.resx">
+      <DependentUpon>FormUniqueProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\FormUniques.resx">
+      <DependentUpon>FormUniques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CreadorTabla\Propiedades\FormPropiedades.resx">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CSharpLibaryGenerator\FormLybraryGenrator.resx">
+      <DependentUpon>FormLybraryGenrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CSharpLibaryGenerator\FormPropiedades.resx">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CSharpLibaryGenerator\FormPropiedadesSP.resx">
+      <DependentUpon>FormPropiedadesSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CSharpLibaryGenerator\FormSeleccionarSPs.resx">
+      <DependentUpon>FormSeleccionarSPs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\CSharpLibaryGenerator\Generadores\GeneradorCSharp.resx">
+      <DependentUpon>GeneradorCSharp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\DBComparador\ComparadorDB.resx">
+      <DependentUpon>ComparadorDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Editores\TextEdit\CBuscador.resx">
+      <DependentUpon>CBuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Editores\TextEdit\CResaltar.resx">
+      <DependentUpon>CResaltar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Editores\TextEdit\FormBuscador.resx">
+      <DependentUpon>FormBuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorBloques\FormConfigBloques.resx">
+      <DependentUpon>FormConfigBloques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorBloques\FormDetalleBloque.resx">
+      <DependentUpon>FormDetalleBloque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\CComponetColor.resx">
+      <DependentUpon>CComponetColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\DelimitersControl.resx">
+      <DependentUpon>DelimitersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\DigitsControl.resx">
+      <DependentUpon>DigitsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\EnvironmentControl.resx">
+      <DependentUpon>EnvironmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\FormGestorColor.resx">
+      <DependentUpon>FormGestorColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\FormNuevoColor.resx">
+      <DependentUpon>FormNuevoColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\FormPalabra.resx">
+      <DependentUpon>FormPalabra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\KeyWordControl.resx">
+      <DependentUpon>KeyWordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\PropertyControl.resx">
+      <DependentUpon>PropertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\RuleSetControl.resx">
+      <DependentUpon>RuleSetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Herramientas\GestorColors\SpanControl.resx">
+      <DependentUpon>SpanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Editores\CEditorComentarios.resx">
+      <DependentUpon>CEditorComentarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ProyectAdmin\CProjectManager.resx">
+      <DependentUpon>CProjectManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormComentario.resx">
+      <DependentUpon>FormComentario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ProyectAdmin\FormMultiAgregado.resx">
+      <DependentUpon>FormMultiAgregado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNombre.resx">
+      <DependentUpon>FormNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ProyectAdmin\FormProyect.resx">
+      <DependentUpon>FormProyect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ProyectAdmin\FormSelComparacion.resx">
+      <DependentUpon>FormSelComparacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ProyectAdmin\ModeloBasico.resx">
+      <DependentUpon>ModeloBasico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Dependencias\FormDependencias.resx">
+      <DependentUpon>FormDependencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Propiedades\FormPropiedades.resx">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Relaciones\FormRelaciones.resx">
+      <DependentUpon>FormRelaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorBase.resx">
+      <DependentUpon>CVisorBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorCampo.resx">
+      <DependentUpon>CVisorCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorCampos.resx">
+      <DependentUpon>CVisorCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorCheck.resx">
+      <DependentUpon>CVisorCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorChecks.resx">
+      <DependentUpon>CVisorChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorFk.resx">
+      <DependentUpon>CVisorFk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorFKS.resx">
+      <DependentUpon>CVisorFKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorIndex.resx">
+      <DependentUpon>CVisorIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorPK.resx">
+      <DependentUpon>CVisorPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorUnico.resx">
+      <DependentUpon>CVisorUnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorUnicos.resx">
+      <DependentUpon>CVisorUnicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormAddForeignKey.resx">
+      <DependentUpon>FormAddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormAgregarCampo.resx">
+      <DependentUpon>FormAgregarCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormBuscadorTablas.resx">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormChecks.resx">
+      <DependentUpon>FormChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormDatosAvanzados.resx">
+      <DependentUpon>FormDatosAvanzados.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormEditarColumna.resx">
+      <DependentUpon>FormEditarColumna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormEditorCondicion.resx">
+      <DependentUpon>FormEditorCondicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormEditorRegla.resx">
+      <DependentUpon>FormEditorRegla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormNewCheck.resx">
+      <DependentUpon>FormNewCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormUniqueProperty.resx">
+      <DependentUpon>FormUniqueProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormUniques.resx">
+      <DependentUpon>FormUniques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormForeignKeys.resx">
+      <DependentUpon>FormForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormIndexs.resx">
+      <DependentUpon>FormIndexs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormNewIndex.resx">
+      <DependentUpon>FormNewIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormQuitarCampo.resx">
+      <DependentUpon>FormQuitarCampo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\FormTabla.resx">
+      <DependentUpon>FormTabla.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Tabla\CVisorIdexs.resx">
+      <DependentUpon>CVisorIdexs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Trrigers\FormTrigger.resx">
+      <DependentUpon>FormTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Variables\FormVariables.resx">
+      <DependentUpon>FormVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Variables\PropiedadesTabla.resx">
+      <DependentUpon>PropiedadesTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Variables\PropiedadesVariable.resx">
+      <DependentUpon>PropiedadesVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Visores\Vista\FormVista.resx">
+      <DependentUpon>FormVista.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Modulos\AppsAnalizer\ObjetosModelo\AppModel.xsc">
+      <DependentUpon>AppModel.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\AppsAnalizer\ObjetosModelo\AppModel.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppModel.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\AppsAnalizer\ObjetosModelo\AppModel.xss">
+      <DependentUpon>AppModel.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Comparador\TextComparator.xsc">
+      <DependentUpon>TextComparator.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\Comparador\TextComparator.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TextComparator.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\Comparador\TextComparator.xss">
+      <DependentUpon>TextComparator.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\CSharpLibaryGenerator\ModeloNet.xsc">
+      <DependentUpon>ModeloNet.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\CSharpLibaryGenerator\ModeloNet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModeloNet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\CSharpLibaryGenerator\ModeloNet.xss">
+      <DependentUpon>ModeloNet.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\ProyectAdmin\ModeloBasico.xsc">
+      <DependentUpon>ModeloBasico.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\ProyectAdmin\ModeloBasico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModeloBasico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\ProyectAdmin\ModeloBasico.xss">
+      <DependentUpon>ModeloBasico.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SQLDeveloper.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnalizadorLexico\AnalizadorLexico.csproj">
+      <Project>{c12aabae-4850-414e-a903-efa0da9a5665}</Project>
+      <Name>AnalizadorLexico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CConecionesManager\ManagerConnect.csproj">
+      <Project>{2b08d98a-3804-4c79-9a06-c903eb6017f9}</Project>
+      <Name>ManagerConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Compiler\Compiler.csproj">
+      <Project>{12f74cbc-e016-47d9-91fb-2c73e118bb45}</Project>
+      <Name>Compiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EditorManager\EditorManager.csproj">
+      <Project>{63463f3f-b8e0-4abe-86ae-dea4d080a8ec}</Project>
+      <Name>EditorManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportadorExcel\ExportadorExcel.csproj">
+      <Project>{36f387ea-f5e7-43b6-a645-c74110247b73}</Project>
+      <Name>ExportadorExcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileManager\FileManager.csproj">
+      <Project>{ab169514-c2f8-4e27-b74d-8103c169f43b}</Project>
+      <Name>FileManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GridControl\GridControl.csproj">
+      <Project>{f5f29c55-8ff0-4c14-aa74-6b9f801a4b18}</Project>
+      <Name>GridControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCodeTextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inteliences\Inteliences.csproj">
+      <Project>{6931bcc1-f51d-4fc6-90bf-29fd713695e7}</Project>
+      <Name>Inteliences</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelador\Modelador.csproj">
+      <Project>{35c1a7ac-665d-4c15-8ce6-0b9c02b63f5d}</Project>
+      <Name>Modelador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MotorDB\MotorDB.csproj">
+      <Project>{ffb7b78c-45e4-40e4-9ab9-60e3a9176986}</Project>
+      <Name>MotorDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SintaxColor\SintaxColor.csproj">
+      <Project>{48CBCC42-DFDE-4598-9992-1C082BBA1052}</Project>
+      <Name>SintaxColor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextEditor\TextEditor.csproj">
+      <Project>{55c75890-76b6-42df-9bae-f2c6920829fd}</Project>
+      <Name>TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaitControl\WaitControl.csproj">
+      <Project>{1fd9b694-c99f-430c-a41f-83adc746d402}</Project>
+      <Name>WaitControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurador\" />
+    <Folder Include="Modulos\Visores\Codigo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaves.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaves1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaves11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GARB00F.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comentario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bascula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCarpeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteCarpeta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copiar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-process-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copiar1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\molde2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abrir32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SP.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\propiedades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calabera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

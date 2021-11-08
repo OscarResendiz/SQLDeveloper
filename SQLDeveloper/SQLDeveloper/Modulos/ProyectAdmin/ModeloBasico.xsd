@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModeloBasico" targetNamespace="http://tempuri.org/ModeloBasico.xsd" xmlns:mstns="http://tempuri.org/ModeloBasico.xsd" xmlns="http://tempuri.org/ModeloBasico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ModeloBasico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ModeloBasico" msprop:Generator_UserDSName="ModeloBasico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Servidor" msprop:Generator_TableClassName="ServidorDataTable" msprop:Generator_TableVarName="tableServidor" msprop:Generator_TablePropName="Servidor" msprop:Generator_RowDeletingName="ServidorRowDeleting" msprop:Generator_RowChangingName="ServidorRowChanging" msprop:Generator_RowEvHandlerName="ServidorRowChangeEventHandler" msprop:Generator_RowDeletedName="ServidorRowDeleted" msprop:Generator_UserTableName="Servidor" msprop:Generator_RowChangedName="ServidorRowChanged" msprop:Generator_RowEvArgName="ServidorRowChangeEvent" msprop:Generator_RowClassName="ServidorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Servidor" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Servidor" msprop:Generator_ColumnPropNameInRow="ID_Servidor" msprop:Generator_ColumnPropNameInTable="ID_ServidorColumn" msprop:Generator_UserColumnName="ID_Servidor" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Conexion" msprop:Generator_TableClassName="ConexionDataTable" msprop:Generator_TableVarName="tableConexion" msprop:Generator_TablePropName="Conexion" msprop:Generator_RowDeletingName="ConexionRowDeleting" msprop:Generator_RowChangingName="ConexionRowChanging" msprop:Generator_RowEvHandlerName="ConexionRowChangeEventHandler" msprop:Generator_RowDeletedName="ConexionRowDeleted" msprop:Generator_UserTableName="Conexion" msprop:Generator_RowChangedName="ConexionRowChanged" msprop:Generator_RowEvArgName="ConexionRowChangeEvent" msprop:Generator_RowClassName="ConexionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Conexion" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Servidor" msprop:Generator_ColumnVarNameInTable="columnID_Servidor" msprop:Generator_ColumnPropNameInRow="ID_Servidor" msprop:Generator_ColumnPropNameInTable="ID_ServidorColumn" msprop:Generator_UserColumnName="ID_Servidor" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ConecctionString" msprop:Generator_ColumnVarNameInTable="columnConecctionString" msprop:Generator_ColumnPropNameInRow="ConecctionString" msprop:Generator_ColumnPropNameInTable="ConecctionStringColumn" msprop:Generator_UserColumnName="ConecctionString" type="xs:string" minOccurs="0" />
+              <xs:element name="MotorDB" msprop:Generator_ColumnVarNameInTable="columnMotorDB" msprop:Generator_ColumnPropNameInRow="MotorDB" msprop:Generator_ColumnPropNameInTable="MotorDBColumn" msprop:Generator_UserColumnName="MotorDB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Objeto" msprop:Generator_TableClassName="ObjetoDataTable" msprop:Generator_TableVarName="tableObjeto" msprop:Generator_TablePropName="Objeto" msprop:Generator_RowDeletingName="ObjetoRowDeleting" msprop:Generator_RowChangingName="ObjetoRowChanging" msprop:Generator_RowEvHandlerName="ObjetoRowChangeEventHandler" msprop:Generator_RowDeletedName="ObjetoRowDeleted" msprop:Generator_UserTableName="Objeto" msprop:Generator_RowChangedName="ObjetoRowChanged" msprop:Generator_RowEvArgName="ObjetoRowChangeEvent" msprop:Generator_RowClassName="ObjetoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Conexion" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Objeto" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Objeto" msprop:Generator_ColumnPropNameInRow="ID_Objeto" msprop:Generator_ColumnPropNameInTable="ID_ObjetoColumn" msprop:Generator_UserColumnName="ID_Objeto" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoObjeto" msprop:Generator_ColumnVarNameInTable="columnTipoObjeto" msprop:Generator_ColumnPropNameInRow="TipoObjeto" msprop:Generator_ColumnPropNameInTable="TipoObjetoColumn" msprop:Generator_UserColumnName="TipoObjeto" type="xs:string" minOccurs="0" />
+              <xs:element name="Eliminado" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="Eliminado" msprop:Generator_ColumnVarNameInTable="columnEliminado" msprop:Generator_ColumnPropNameInTable="EliminadoColumn" msprop:Generator_UserColumnName="Eliminado" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_UserColumnName="Comentarios" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Carpeta" msprop:Generator_ColumnVarNameInTable="columnID_Carpeta" msprop:Generator_ColumnPropNameInRow="ID_Carpeta" msprop:Generator_ColumnPropNameInTable="ID_CarpetaColumn" msprop:Generator_UserColumnName="ID_Carpeta" type="xs:int" minOccurs="0" />
+              <xs:element name="Resaltado" msprop:Generator_ColumnVarNameInTable="columnResaltado" msprop:Generator_ColumnPropNameInRow="Resaltado" msprop:Generator_ColumnPropNameInTable="ResaltadoColumn" msprop:Generator_UserColumnName="Resaltado" type="xs:boolean" default="false" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CodigoObjeto" msprop:Generator_TableClassName="CodigoObjetoDataTable" msprop:Generator_TableVarName="tableCodigoObjeto" msprop:Generator_TablePropName="CodigoObjeto" msprop:Generator_RowDeletingName="CodigoObjetoRowDeleting" msprop:Generator_RowChangingName="CodigoObjetoRowChanging" msprop:Generator_RowEvHandlerName="CodigoObjetoRowChangeEventHandler" msprop:Generator_RowDeletedName="CodigoObjetoRowDeleted" msprop:Generator_UserTableName="CodigoObjeto" msprop:Generator_RowChangedName="CodigoObjetoRowChanged" msprop:Generator_RowEvArgName="CodigoObjetoRowChangeEvent" msprop:Generator_RowClassName="CodigoObjetoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Objeto" msprop:Generator_ColumnVarNameInTable="columnID_Objeto" msprop:Generator_ColumnPropNameInRow="ID_Objeto" msprop:Generator_ColumnPropNameInTable="ID_ObjetoColumn" msprop:Generator_UserColumnName="ID_Objeto" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Codigo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Codigo" msprop:Generator_ColumnPropNameInRow="ID_Codigo" msprop:Generator_ColumnPropNameInTable="ID_CodigoColumn" msprop:Generator_UserColumnName="ID_Codigo" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Visto" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="Visto" msprop:Generator_ColumnVarNameInTable="columnVisto" msprop:Generator_ColumnPropNameInTable="VistoColumn" msprop:Generator_UserColumnName="Visto" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Cometarios" msprop:Generator_ColumnVarNameInTable="columnCometarios" msprop:Generator_ColumnPropNameInRow="Cometarios" msprop:Generator_ColumnPropNameInTable="CometariosColumn" msprop:Generator_UserColumnName="Cometarios" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CodigoEditable" msprop:Generator_TableClassName="CodigoEditableDataTable" msprop:Generator_TableVarName="tableCodigoEditable" msprop:Generator_TablePropName="CodigoEditable" msprop:Generator_RowDeletingName="CodigoEditableRowDeleting" msprop:Generator_RowChangingName="CodigoEditableRowChanging" msprop:Generator_RowEvHandlerName="CodigoEditableRowChangeEventHandler" msprop:Generator_RowDeletedName="CodigoEditableRowDeleted" msprop:Generator_UserTableName="CodigoEditable" msprop:Generator_RowChangedName="CodigoEditableRowChanged" msprop:Generator_RowEvArgName="CodigoEditableRowChangeEvent" msprop:Generator_RowClassName="CodigoEditableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Objeto" msprop:Generator_ColumnVarNameInTable="columnID_Objeto" msprop:Generator_ColumnPropNameInRow="ID_Objeto" msprop:Generator_ColumnPropNameInTable="ID_ObjetoColumn" msprop:Generator_UserColumnName="ID_Objeto" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" />
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_UserColumnName="Comentarios" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Carpeta" msprop:Generator_TableClassName="CarpetaDataTable" msprop:Generator_TableVarName="tableCarpeta" msprop:Generator_RowChangedName="CarpetaRowChanged" msprop:Generator_TablePropName="Carpeta" msprop:Generator_RowDeletingName="CarpetaRowDeleting" msprop:Generator_RowChangingName="CarpetaRowChanging" msprop:Generator_RowEvHandlerName="CarpetaRowChangeEventHandler" msprop:Generator_RowDeletedName="CarpetaRowDeleted" msprop:Generator_RowClassName="CarpetaRow" msprop:Generator_UserTableName="Carpeta" msprop:Generator_RowEvArgName="CarpetaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Carpeta" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Carpeta" msprop:Generator_ColumnPropNameInRow="ID_Carpeta" msprop:Generator_ColumnPropNameInTable="ID_CarpetaColumn" msprop:Generator_UserColumnName="ID_Carpeta" type="xs:int" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Conexion" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_CarpetaPadre" msprop:Generator_ColumnVarNameInTable="columnID_CarpetaPadre" msprop:Generator_ColumnPropNameInRow="ID_CarpetaPadre" msprop:Generator_ColumnPropNameInTable="ID_CarpetaPadreColumn" msprop:Generator_UserColumnName="ID_CarpetaPadre" type="xs:int" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_UserColumnName="Comentarios" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Proyecto" msprop:Generator_TableClassName="ProyectoDataTable" msprop:Generator_TableVarName="tableProyecto" msprop:Generator_RowChangedName="ProyectoRowChanged" msprop:Generator_TablePropName="Proyecto" msprop:Generator_RowDeletingName="ProyectoRowDeleting" msprop:Generator_RowChangingName="ProyectoRowChanging" msprop:Generator_RowEvHandlerName="ProyectoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProyectoRowDeleted" msprop:Generator_RowClassName="ProyectoRow" msprop:Generator_UserTableName="Proyecto" msprop:Generator_RowEvArgName="ProyectoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Clave" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnClave" msprop:Generator_ColumnPropNameInRow="Clave" msprop:Generator_ColumnPropNameInTable="ClaveColumn" msprop:Generator_UserColumnName="Clave" type="xs:string" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Script" msprop:Generator_TableClassName="ScriptDataTable" msprop:Generator_TableVarName="tableScript" msprop:Generator_TablePropName="Script" msprop:Generator_RowDeletingName="ScriptRowDeleting" msprop:Generator_RowChangingName="ScriptRowChanging" msprop:Generator_RowEvHandlerName="ScriptRowChangeEventHandler" msprop:Generator_RowDeletedName="ScriptRowDeleted" msprop:Generator_UserTableName="Script" msprop:Generator_RowChangedName="ScriptRowChanged" msprop:Generator_RowEvArgName="ScriptRowChangeEvent" msprop:Generator_RowClassName="ScriptRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Script" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Script" msprop:Generator_ColumnPropNameInRow="ID_Script" msprop:Generator_ColumnPropNameInTable="ID_ScriptColumn" msprop:Generator_UserColumnName="ID_Script" type="xs:int" />
+              <xs:element name="ID_Conexion" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Carpeta" msprop:Generator_ColumnVarNameInTable="columnID_Carpeta" msprop:Generator_ColumnPropNameInRow="ID_Carpeta" msprop:Generator_ColumnPropNameInTable="ID_CarpetaColumn" msprop:Generator_UserColumnName="ID_Carpeta" type="xs:int" minOccurs="0" />
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_UserColumnName="Comentarios" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Document" msprop:Generator_TableClassName="DocumentDataTable" msprop:Generator_TableVarName="tableDocument" msprop:Generator_TablePropName="Document" msprop:Generator_RowDeletingName="DocumentRowDeleting" msprop:Generator_RowChangingName="DocumentRowChanging" msprop:Generator_RowEvHandlerName="DocumentRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentRowDeleted" msprop:Generator_UserTableName="Document" msprop:Generator_RowChangedName="DocumentRowChanged" msprop:Generator_RowEvArgName="DocumentRowChangeEvent" msprop:Generator_RowClassName="DocumentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Document" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Document" msprop:Generator_ColumnPropNameInRow="ID_Document" msprop:Generator_ColumnPropNameInTable="ID_DocumentColumn" msprop:Generator_UserColumnName="ID_Document" type="xs:int" />
+              <xs:element name="ID_Conexion" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Carpeta" msprop:Generator_ColumnVarNameInTable="columnID_Carpeta" msprop:Generator_ColumnPropNameInRow="ID_Carpeta" msprop:Generator_ColumnPropNameInTable="ID_CarpetaColumn" msprop:Generator_UserColumnName="ID_Carpeta" type="xs:int" minOccurs="0" />
+              <xs:element name="Texto" msprop:Generator_ColumnVarNameInTable="columnTexto" msprop:Generator_ColumnPropNameInRow="Texto" msprop:Generator_ColumnPropNameInTable="TextoColumn" msprop:Generator_UserColumnName="Texto" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ObjetoCarpeta" msprop:Generator_TableClassName="ObjetoCarpetaDataTable" msprop:Generator_TableVarName="tableObjetoCarpeta" msprop:Generator_RowChangedName="ObjetoCarpetaRowChanged" msprop:Generator_TablePropName="ObjetoCarpeta" msprop:Generator_RowDeletingName="ObjetoCarpetaRowDeleting" msprop:Generator_RowChangingName="ObjetoCarpetaRowChanging" msprop:Generator_RowEvHandlerName="ObjetoCarpetaRowChangeEventHandler" msprop:Generator_RowDeletedName="ObjetoCarpetaRowDeleted" msprop:Generator_RowClassName="ObjetoCarpetaRow" msprop:Generator_UserTableName="ObjetoCarpeta" msprop:Generator_RowEvArgName="ObjetoCarpetaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Carpeta" msprop:Generator_ColumnVarNameInTable="columnID_Carpeta" msprop:Generator_ColumnPropNameInRow="ID_Carpeta" msprop:Generator_ColumnPropNameInTable="ID_CarpetaColumn" msprop:Generator_UserColumnName="ID_Carpeta" type="xs:int" />
+              <xs:element name="ID_Objeto" msprop:Generator_ColumnVarNameInTable="columnID_Objeto" msprop:Generator_ColumnPropNameInRow="ID_Objeto" msprop:Generator_ColumnPropNameInTable="ID_ObjetoColumn" msprop:Generator_UserColumnName="ID_Objeto" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Servidor" />
+      <xs:field xpath="mstns:ID_Servidor" />
+    </xs:unique>
+    <xs:unique name="Conexion_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Conexion" />
+      <xs:field xpath="mstns:ID_Conexion" />
+    </xs:unique>
+    <xs:unique name="Objeto_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Objeto" />
+      <xs:field xpath="mstns:ID_Objeto" />
+    </xs:unique>
+    <xs:unique name="CodigoObjeto_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:CodigoObjeto" />
+      <xs:field xpath="mstns:ID_Codigo" />
+    </xs:unique>
+    <xs:unique name="CodigoEditable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CodigoEditable" />
+      <xs:field xpath="mstns:ID_Objeto" />
+      <xs:field xpath="mstns:Nombre" />
+    </xs:unique>
+    <xs:unique name="Carpeta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Carpeta" />
+      <xs:field xpath="mstns:ID_Carpeta" />
+    </xs:unique>
+    <xs:unique name="Script_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Script" />
+      <xs:field xpath="mstns:ID_Script" />
+    </xs:unique>
+    <xs:unique name="Document_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Document" />
+      <xs:field xpath="mstns:ID_Document" />
+    </xs:unique>
+    <xs:unique name="ObjetoCarpeta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ObjetoCarpeta" />
+      <xs:field xpath="mstns:ID_Carpeta" />
+      <xs:field xpath="mstns:ID_Objeto" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Servidor_Conexion" msdata:parent="Servidor" msdata:child="Conexion" msdata:parentkey="ID_Servidor" msdata:childkey="ID_Servidor" msprop:Generator_UserChildTable="Conexion" msprop:Generator_ChildPropName="GetConexionRows" msprop:Generator_UserRelationName="Servidor_Conexion" msprop:Generator_ParentPropName="ServidorRow" msprop:Generator_RelationVarName="relationServidor_Conexion" msprop:Generator_UserParentTable="Servidor" />
+      <msdata:Relationship name="Conexion_Objeto" msdata:parent="Conexion" msdata:child="Objeto" msdata:parentkey="ID_Conexion" msdata:childkey="ID_Conexion" msprop:Generator_UserChildTable="Objeto" msprop:Generator_ChildPropName="GetObjetoRows" msprop:Generator_UserRelationName="Conexion_Objeto" msprop:Generator_ParentPropName="ConexionRow" msprop:Generator_RelationVarName="relationConexion_Objeto" msprop:Generator_UserParentTable="Conexion" />
+      <msdata:Relationship name="Objeto_CodigoObjeto" msdata:parent="Objeto" msdata:child="CodigoObjeto" msdata:parentkey="ID_Objeto" msdata:childkey="ID_Objeto" msprop:Generator_UserChildTable="CodigoObjeto" msprop:Generator_ChildPropName="GetCodigoObjetoRows" msprop:Generator_UserRelationName="Objeto_CodigoObjeto" msprop:Generator_ParentPropName="ObjetoRow" msprop:Generator_RelationVarName="relationObjeto_CodigoObjeto" msprop:Generator_UserParentTable="Objeto" />
+      <msdata:Relationship name="Objeto_CodigoEditable" msdata:parent="Objeto" msdata:child="CodigoEditable" msdata:parentkey="ID_Objeto" msdata:childkey="ID_Objeto" msprop:Generator_UserChildTable="CodigoEditable" msprop:Generator_ChildPropName="GetCodigoEditableRows" msprop:Generator_UserRelationName="Objeto_CodigoEditable" msprop:Generator_ParentPropName="ObjetoRow" msprop:Generator_RelationVarName="relationObjeto_CodigoEditable" msprop:Generator_UserParentTable="Objeto" />
+      <msdata:Relationship name="Conexion_Carpeta" msdata:parent="Conexion" msdata:child="Carpeta" msdata:parentkey="ID_Conexion" msdata:childkey="ID_Conexion" msprop:Generator_UserChildTable="Carpeta" msprop:Generator_ChildPropName="GetCarpetaRows" msprop:Generator_UserRelationName="Conexion_Carpeta" msprop:Generator_RelationVarName="relationConexion_Carpeta" msprop:Generator_UserParentTable="Conexion" msprop:Generator_ParentPropName="ConexionRow" />
+      <msdata:Relationship name="Carpeta_Carpeta" msdata:parent="Carpeta" msdata:child="Carpeta" msdata:parentkey="ID_Carpeta" msdata:childkey="ID_CarpetaPadre" msprop:Generator_UserChildTable="Carpeta" msprop:Generator_ChildPropName="GetCarpetaRows" msprop:Generator_UserRelationName="Carpeta_Carpeta" msprop:Generator_ParentPropName="CarpetaRowParent" msprop:Generator_RelationVarName="relationCarpeta_Carpeta" msprop:Generator_UserParentTable="Carpeta" />
+      <msdata:Relationship name="Conexion_Script" msdata:parent="Conexion" msdata:child="Script" msdata:parentkey="ID_Conexion" msdata:childkey="ID_Conexion" msprop:Generator_UserChildTable="Script" msprop:Generator_ChildPropName="GetScriptRows" msprop:Generator_UserRelationName="Conexion_Script" msprop:Generator_ParentPropName="ConexionRow" msprop:Generator_RelationVarName="relationConexion_Script" msprop:Generator_UserParentTable="Conexion" />
+      <msdata:Relationship name="Carpeta_Script" msdata:parent="Carpeta" msdata:child="Script" msdata:parentkey="ID_Carpeta" msdata:childkey="ID_Carpeta" msprop:Generator_UserChildTable="Script" msprop:Generator_ChildPropName="GetScriptRows" msprop:Generator_UserRelationName="Carpeta_Script" msprop:Generator_ParentPropName="CarpetaRow" msprop:Generator_RelationVarName="relationCarpeta_Script" msprop:Generator_UserParentTable="Carpeta" />
+      <msdata:Relationship name="Conexion_Document" msdata:parent="Conexion" msdata:child="Document" msdata:parentkey="ID_Conexion" msdata:childkey="ID_Conexion" msprop:Generator_UserChildTable="Document" msprop:Generator_ChildPropName="GetDocumentRows" msprop:Generator_UserRelationName="Conexion_Document" msprop:Generator_ParentPropName="ConexionRow" msprop:Generator_RelationVarName="relationConexion_Document" msprop:Generator_UserParentTable="Conexion" />
+      <msdata:Relationship name="Carpeta_Document" msdata:parent="Carpeta" msdata:child="Document" msdata:parentkey="ID_Carpeta" msdata:childkey="ID_Carpeta" msprop:Generator_UserChildTable="Document" msprop:Generator_ChildPropName="GetDocumentRows" msprop:Generator_UserRelationName="Carpeta_Document" msprop:Generator_ParentPropName="CarpetaRow" msprop:Generator_RelationVarName="relationCarpeta_Document" msprop:Generator_UserParentTable="Carpeta" />
+      <msdata:Relationship name="Carpeta_ObjetoCarpeta" msdata:parent="Carpeta" msdata:child="ObjetoCarpeta" msdata:parentkey="ID_Carpeta" msdata:childkey="ID_Carpeta" msprop:Generator_UserChildTable="ObjetoCarpeta" msprop:Generator_ChildPropName="GetObjetoCarpetaRows" msprop:Generator_UserRelationName="Carpeta_ObjetoCarpeta" msprop:Generator_RelationVarName="relationCarpeta_ObjetoCarpeta" msprop:Generator_UserParentTable="Carpeta" msprop:Generator_ParentPropName="CarpetaRow" />
+      <msdata:Relationship name="Objeto_ObjetoCarpeta" msdata:parent="Objeto" msdata:child="ObjetoCarpeta" msdata:parentkey="ID_Objeto" msdata:childkey="ID_Objeto" msprop:Generator_UserChildTable="ObjetoCarpeta" msprop:Generator_ChildPropName="GetObjetoCarpetaRows" msprop:Generator_UserRelationName="Objeto_ObjetoCarpeta" msprop:Generator_RelationVarName="relationObjeto_ObjetoCarpeta" msprop:Generator_UserParentTable="Objeto" msprop:Generator_ParentPropName="ObjetoRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
