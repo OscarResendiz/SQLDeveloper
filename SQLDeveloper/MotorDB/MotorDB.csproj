@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MotorDB</RootNamespace>
+    <AssemblyName>MotorDB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\LiberiasExternas\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.1.1\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCampo.cs" />
+    <Compile Include="CCampoBase.cs" />
+    <Compile Include="CCampoFereneces.cs" />
+    <Compile Include="CCampoGroup.cs" />
+    <Compile Include="CCampoIndex.cs" />
+    <Compile Include="CCheck.cs" />
+    <Compile Include="CObetoBuqueda.cs" />
+    <Compile Include="CSQLComandQuery.cs" />
+    <Compile Include="CConstraint.cs" />
+    <Compile Include="CForeignKey.cs" />
+    <Compile Include="CFuncion.cs" />
+    <Compile Include="CIdentidad.cs" />
+    <Compile Include="Cindex.cs" />
+    <Compile Include="CTablaFuncion.cs" />
+    <Compile Include="CTipoBusqueda.cs" />
+    <Compile Include="DBProvider.cs" />
+    <Compile Include="ExceptionDB.cs" />
+    <Compile Include="Motores\MySql\CMotorMySQL.cs" />
+    <Compile Include="Motores\MySql\FormDlgConfigMySql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motores\MySql\FormDlgConfigMySql.Designer.cs">
+      <DependentUpon>FormDlgConfigMySql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motores\MySql\FormDlsMultiConfigMySql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motores\MySql\FormDlsMultiConfigMySql.Designer.cs">
+      <DependentUpon>FormDlsMultiConfigMySql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motores\PostgreSql\CMotorPostgreSql.cs" />
+    <Compile Include="Motores\PostgreSql\FormDlgConfigPostgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motores\PostgreSql\FormDlgConfigPostgress.Designer.cs">
+      <DependentUpon>FormDlgConfigPostgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motores\SQLServer\CMotorSQLServer.cs" />
+    <Compile Include="CObjeto.cs" />
+    <Compile Include="CParametro.cs" />
+    <Compile Include="CPrimaryKey.cs" />
+    <Compile Include="CProviderDataBase.cs" />
+    <Compile Include="CStoreProcedure.cs" />
+    <Compile Include="CTabla.cs" />
+    <Compile Include="CTipoDato.cs" />
+    <Compile Include="CTrigger.cs" />
+    <Compile Include="CUnique.cs" />
+    <Compile Include="CVista.cs" />
+    <Compile Include="Motores\SQLServer\FormDlgConfigSqlServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motores\SQLServer\FormDlgConfigSqlServer.Designer.cs">
+      <DependentUpon>FormDlgConfigSqlServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motores\IMotorDB.cs" />
+    <Compile Include="Motores\SQLServer\FormDlsMultiConfigSqlServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motores\SQLServer\FormDlsMultiConfigSqlServer.Designer.cs">
+      <DependentUpon>FormDlsMultiConfigSqlServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Motores\MySql\FormDlgConfigMySql.resx">
+      <DependentUpon>FormDlgConfigMySql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motores\MySql\FormDlsMultiConfigMySql.resx">
+      <DependentUpon>FormDlsMultiConfigMySql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motores\PostgreSql\FormDlgConfigPostgress.resx">
+      <DependentUpon>FormDlgConfigPostgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motores\SQLServer\FormDlgConfigSqlServer.resx">
+      <DependentUpon>FormDlgConfigSqlServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motores\SQLServer\FormDlsMultiConfigSqlServer.resx">
+      <DependentUpon>FormDlsMultiConfigSqlServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
