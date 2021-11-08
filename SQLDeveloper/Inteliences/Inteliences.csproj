@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6931BCC1-F51D-4FC6-90BF-29FD713695E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inteliences</RootNamespace>
+    <AssemblyName>Inteliences</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.1.1\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoCompleteWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteWindow.Designer.cs">
+      <DependentUpon>AutoCompleteWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buffer\CBuffer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Buffer\CBuffer.Designer.cs">
+      <DependentUpon>CBuffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buffer\CBufferProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Buffer\CBufferProvider.Designer.cs">
+      <DependentUpon>CBufferProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CInteliences.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CInteliences.Designer.cs">
+      <DependentUpon>CInteliences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CInteliencesObject.cs" />
+    <Compile Include="IDataBaseChild.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextAnaliser\CAlias.cs" />
+    <Compile Include="TextAnaliser\CAliasManager.cs" />
+    <Compile Include="TextAnaliser\CAnaliseManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextAnaliser\CAnaliseManager.Designer.cs">
+      <DependentUpon>CAnaliseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextAnaliser\CBaseTextAnaliser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextAnaliser\CBaseTextAnaliser.Designer.cs">
+      <DependentUpon>CBaseTextAnaliser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextAnaliser\CSimbolo.cs" />
+    <Compile Include="TextAnaliser\CSQLTextAnaliser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextAnaliser\CSQLTextAnaliser.Designer.cs">
+      <DependentUpon>CSQLTextAnaliser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextAnaliser\ITextAnaliser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Buffer\CBuffer.resx">
+      <DependentUpon>CBuffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CInteliences.resx">
+      <DependentUpon>CInteliences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextAnaliser\CBaseTextAnaliser.resx">
+      <DependentUpon>CBaseTextAnaliser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextAnaliser\CSQLTextAnaliser.resx">
+      <DependentUpon>CSQLTextAnaliser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Compiler\Compiler.csproj">
+      <Project>{12f74cbc-e016-47d9-91fb-2c73e118bb45}</Project>
+      <Name>Compiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCodeTextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MotorDB\MotorDB.csproj">
+      <Project>{ffb7b78c-45e4-40e4-9ab9-60e3a9176986}</Project>
+      <Name>MotorDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
