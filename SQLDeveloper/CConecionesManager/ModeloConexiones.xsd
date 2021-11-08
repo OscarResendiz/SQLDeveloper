@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ModeloConexiones" targetNamespace="http://tempuri.org/ModeloConexiones.xsd" xmlns:mstns="http://tempuri.org/ModeloConexiones.xsd" xmlns="http://tempuri.org/ModeloConexiones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ModeloConexiones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ModeloConexiones" msprop:Generator_UserDSName="ModeloConexiones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Grupo" msprop:Generator_TableClassName="GrupoDataTable" msprop:Generator_TableVarName="tableGrupo" msprop:Generator_TablePropName="Grupo" msprop:Generator_RowDeletingName="GrupoRowDeleting" msprop:Generator_RowChangingName="GrupoRowChanging" msprop:Generator_RowEvHandlerName="GrupoRowChangeEventHandler" msprop:Generator_RowDeletedName="GrupoRowDeleted" msprop:Generator_UserTableName="Grupo" msprop:Generator_RowChangedName="GrupoRowChanged" msprop:Generator_RowEvArgName="GrupoRowChangeEvent" msprop:Generator_RowClassName="GrupoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Grupo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID_Grupo" msprop:Generator_ColumnPropNameInRow="ID_Grupo" msprop:Generator_ColumnPropNameInTable="ID_GrupoColumn" msprop:Generator_UserColumnName="ID_Grupo" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Conexion" msprop:Generator_TableClassName="ConexionDataTable" msprop:Generator_TableVarName="tableConexion" msprop:Generator_TablePropName="Conexion" msprop:Generator_RowDeletingName="ConexionRowDeleting" msprop:Generator_RowChangingName="ConexionRowChanging" msprop:Generator_RowEvHandlerName="ConexionRowChangeEventHandler" msprop:Generator_RowDeletedName="ConexionRowDeleted" msprop:Generator_UserTableName="Conexion" msprop:Generator_RowChangedName="ConexionRowChanged" msprop:Generator_RowEvArgName="ConexionRowChangeEvent" msprop:Generator_RowClassName="ConexionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Conexion" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Conexion" msprop:Generator_ColumnPropNameInRow="ID_Conexion" msprop:Generator_ColumnPropNameInTable="ID_ConexionColumn" msprop:Generator_UserColumnName="ID_Conexion" type="xs:int" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="ConecctionString" msprop:Generator_ColumnVarNameInTable="columnConecctionString" msprop:Generator_ColumnPropNameInRow="ConecctionString" msprop:Generator_ColumnPropNameInTable="ConecctionStringColumn" msprop:Generator_UserColumnName="ConecctionString" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Grupo" msprop:Generator_ColumnVarNameInTable="columnID_Grupo" msprop:Generator_ColumnPropNameInRow="ID_Grupo" msprop:Generator_ColumnPropNameInTable="ID_GrupoColumn" msprop:Generator_UserColumnName="ID_Grupo" type="xs:int" />
+              <xs:element name="MotorDB" msprop:Generator_ColumnVarNameInTable="columnMotorDB" msprop:Generator_ColumnPropNameInRow="MotorDB" msprop:Generator_ColumnPropNameInTable="MotorDBColumn" msprop:Generator_UserColumnName="MotorDB" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grupo" />
+      <xs:field xpath="mstns:ID_Grupo" />
+    </xs:unique>
+    <xs:unique name="Conexion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Conexion" />
+      <xs:field xpath="mstns:ID_Conexion" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Grupo_Conexion" msdata:parent="Grupo" msdata:child="Conexion" msdata:parentkey="ID_Grupo" msdata:childkey="ID_Grupo" msprop:Generator_UserChildTable="Conexion" msprop:Generator_ChildPropName="GetConexionRows" msprop:Generator_UserRelationName="Grupo_Conexion" msprop:Generator_ParentPropName="GrupoRow" msprop:Generator_RelationVarName="relationGrupo_Conexion" msprop:Generator_UserParentTable="Grupo" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

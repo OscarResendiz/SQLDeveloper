@@ -1,0 +1,6 @@
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\CConecionesManager.dll
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\CConecionesManager.pdb
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ConecionesManager.csprojAssemblyReference.cache
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ConecionesManager.csproj.CoreCompileInputs.cache
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\CConecionesManager.dll
+D:\PROYECTOS\SqlDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\CConecionesManager.pdb
