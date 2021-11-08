@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modelador</RootNamespace>
+    <AssemblyName>Modelador</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.1.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.5.0.1.1\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arbol\CArbol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Arbol\CArbol.Designer.cs">
+      <DependentUpon>CArbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arbol\CNodoBase.cs" />
+    <Compile Include="Arbol\CNodoBusqueda.cs" />
+    <Compile Include="Arbol\CNodoCampo.cs" />
+    <Compile Include="Arbol\CNodoCampoIndex.cs" />
+    <Compile Include="Arbol\CNodoCampos.cs" />
+    <Compile Include="Arbol\CNodoCapa.cs" />
+    <Compile Include="Arbol\CNodoCapas.cs" />
+    <Compile Include="Arbol\CNodoFk.cs" />
+    <Compile Include="Arbol\CNodoFks.cs" />
+    <Compile Include="Arbol\CNodoFolder.cs" />
+    <Compile Include="Arbol\CNodoIndex.cs" />
+    <Compile Include="Arbol\CNodoIndexs.cs" />
+    <Compile Include="Arbol\CNodoProyecto.cs" />
+    <Compile Include="Arbol\CnodoRegion.cs" />
+    <Compile Include="Arbol\CNodoTabla.cs" />
+    <Compile Include="Arbol\CNodoTablaCapa.cs" />
+    <Compile Include="Arbol\CNodoTablas.cs" />
+    <Compile Include="Arbol\CNodoTipoDato.cs" />
+    <Compile Include="Arbol\CNodoTipoDatos.cs" />
+    <Compile Include="Dibujable\DBarraTitulo.cs" />
+    <Compile Include="Dibujable\DCampo.cs" />
+    <Compile Include="Dibujable\DCapa.cs" />
+    <Compile Include="Dibujable\CCuadricula.cs" />
+    <Compile Include="Dibujable\CDibujable.cs" />
+    <Compile Include="Dibujable\CObjetoDibujable.cs" />
+    <Compile Include="Dibujable\ControlDibujable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dibujable\ControlDibujable.Designer.cs">
+      <DependentUpon>ControlDibujable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dibujable\DDimencionable.cs" />
+    <Compile Include="Dibujable\DForeKey.cs" />
+    <Compile Include="Dibujable\DMovible.cs" />
+    <Compile Include="Dibujable\DRectangulo.cs" />
+    <Compile Include="Dibujable\DRegion.cs" />
+    <Compile Include="Dibujable\DTabla.cs" />
+    <Compile Include="Dibujable\DTablaCapa.cs" />
+    <Compile Include="Dibujable\DTexto.cs" />
+    <Compile Include="Dibujable\MiGraphics.cs" />
+    <Compile Include="ImageManager.cs" />
+    <Compile Include="Modelo\CBaseModelo.cs" />
+    <Compile Include="Modelo\CCampo.cs" />
+    <Compile Include="Modelo\CCampoIndex.cs" />
+    <Compile Include="Modelo\CCampoReferencia.cs" />
+    <Compile Include="Modelo\CCampoUnique.cs" />
+    <Compile Include="Modelo\CCapa.cs" />
+    <Compile Include="Modelo\CCheck.cs" />
+    <Compile Include="Modelo\CIndex.cs" />
+    <Compile Include="Modelo\CLineaFK.cs" />
+    <Compile Include="Modelo\CLlaveForanea.cs" />
+    <Compile Include="Modelo\CRegion.cs" />
+    <Compile Include="Modelo\CTabla.cs" />
+    <Compile Include="Modelo\CTipoDato.cs" />
+    <Compile Include="Modelo\CUnique.cs" />
+    <Compile Include="Modelo\ModeloDatos.cs">
+      <DependentUpon>ModeloDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CCampoProFk.cs" />
+    <Compile Include="UI\ControladorCapas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControladorCapas.Designer.cs">
+      <DependentUpon>ControladorCapas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlCapa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlCapa.Designer.cs">
+      <DependentUpon>ControlCapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormBuscadorTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormBuscadorTablas.Designer.cs">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesFK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesFK.Designer.cs">
+      <DependentUpon>FormPropiedadesFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormImportarTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormImportarTablas.Designer.cs">
+      <DependentUpon>FormImportarTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormModeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormModeler.Designer.cs">
+      <DependentUpon>FormModeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesCampo.Designer.cs">
+      <DependentUpon>FormPropiedadesCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesCapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesCapa.Designer.cs">
+      <DependentUpon>FormPropiedadesCapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesIndex.Designer.cs">
+      <DependentUpon>FormPropiedadesIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesRegion.Designer.cs">
+      <DependentUpon>FormPropiedadesRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPropiedadesTabla.Designer.cs">
+      <DependentUpon>FormPropiedadesTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormSeleccionarTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormSeleccionarTablas.Designer.cs">
+      <DependentUpon>FormSeleccionarTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormTipoDato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormTipoDato.Designer.cs">
+      <DependentUpon>FormTipoDato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Lienzo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Lienzo.Designer.cs">
+      <DependentUpon>Lienzo.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Arbol\CArbol.resx">
+      <DependentUpon>CArbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dibujable\ControlDibujable.resx">
+      <DependentUpon>ControlDibujable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControladorCapas.resx">
+      <DependentUpon>ControladorCapas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ControlCapa.resx">
+      <DependentUpon>ControlCapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormBuscadorTablas.resx">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesFK.resx">
+      <DependentUpon>FormPropiedadesFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormImportarTablas.resx">
+      <DependentUpon>FormImportarTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormModeler.resx">
+      <DependentUpon>FormModeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesCampo.resx">
+      <DependentUpon>FormPropiedadesCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesCapa.resx">
+      <DependentUpon>FormPropiedadesCapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesIndex.resx">
+      <DependentUpon>FormPropiedadesIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesRegion.resx">
+      <DependentUpon>FormPropiedadesRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPropiedadesTabla.resx">
+      <DependentUpon>FormPropiedadesTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormSeleccionarTablas.resx">
+      <DependentUpon>FormSeleccionarTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormTipoDato.resx">
+      <DependentUpon>FormTipoDato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Lienzo.resx">
+      <DependentUpon>Lienzo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Modelo\ModeloDatos.xsc">
+      <DependentUpon>ModeloDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Modelo\ModeloDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModeloDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\ModeloDatos.xss">
+      <DependentUpon>ModeloDatos.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\abrir321.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCarpeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bascula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comentario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copiar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-process-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteCarpeta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedit211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaves11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\propiedades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\molde2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filesave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table Field Insert.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tabla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trashcan_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CConecionesManager\ManagerConnect.csproj">
+      <Project>{2b08d98a-3804-4c79-9a06-c903eb6017f9}</Project>
+      <Name>ManagerConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EditorManager\EditorManager.csproj">
+      <Project>{63463f3f-b8e0-4abe-86ae-dea4d080a8ec}</Project>
+      <Name>EditorManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MotorDB\MotorDB.csproj">
+      <Project>{ffb7b78c-45e4-40e4-9ab9-60e3a9176986}</Project>
+      <Name>MotorDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaitControl\WaitControl.csproj">
+      <Project>{1fd9b694-c99f-430c-a41f-83adc746d402}</Project>
+      <Name>WaitControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llavesforaneas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PK.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaveAbajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaveArriba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaveDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaveIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gurdarcomo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
