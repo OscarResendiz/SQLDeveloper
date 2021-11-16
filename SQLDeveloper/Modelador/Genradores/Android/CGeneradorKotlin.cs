@@ -177,6 +177,7 @@ namespace Modelador.Genradores.Android
         /// <param name="tbla"></param>
         private void CreaDataClass(CTabla tabla)
         {
+            Cadena = Cadena + $"/** {tabla.Comentarios} */";
             Cadena = Cadena + $"\ndata class {tabla.Nombre}(";
             //me traigo los campos de la tabla
             List<CCampo> campos = tabla.Get_Campos();
@@ -189,7 +190,7 @@ namespace Modelador.Genradores.Android
                     Cadena = Cadena + ",";
                 }
                 primero = false;
-                Cadena = Cadena + $"val {campo.NombreX}: {campo.Get_TipoDato().Nombre}\t// {campo.Comentarios}";
+                Cadena = Cadena + $"val {campo.NombreX}:\t{campo.Get_TipoDato().Nombre}\t/** {campo.Comentarios} */";
             }
             Cadena = Cadena + "\n)";
         }
@@ -275,7 +276,7 @@ namespace Modelador.Genradores.Android
         {
             string NombreDB = DataBaseName;// Modelo.getNombreCorto();
             Cadena = "package " + Package + ".DataBase"; ;
-            Cadena = "\nimport android.content.Context";
+            Cadena = Cadena + "\nimport android.content.Context";
             Cadena = Cadena + "\nimport androidx.room.Database";
             Cadena = Cadena + "\nimport androidx.room.Room";
             Cadena = Cadena + "\nimport androidx.room.RoomDatabase";
@@ -300,7 +301,7 @@ namespace Modelador.Genradores.Android
             foreach (CTabla tabla in Procesadas)
             {
                 Cadena = Cadena + $"\n\t";
-                Cadena = Cadena + $"abstract val {tabla.Nombre}:{tabla.Nombre}";
+                Cadena = Cadena + $"abstract val {tabla.Nombre}:{tabla.Nombre}\t/**{tabla.Comentarios}*/";
             }
             Cadena = Cadena + "\n}";
             Cadena = Cadena + $"\nprivate lateinit var INSTANCE:{NombreDB}";
