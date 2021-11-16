@@ -1180,6 +1180,7 @@ namespace SQLDeveloper
             {
                 Modelador.UI.FormModeler dlg = new Modelador.UI.FormModeler();
                 dlg.OnVerDiseñador += new EditorManager.OnShowEditorGenericoEvent(VerModeladorDiagramas);
+                dlg.OnVerCodigo += new Modelador.UI.FormModelerVerCodigoEvent(VerCodigoModelador);
                 VentanaAcoplable(dlg, 0, true, State.DockLeft);
                 dlg.VerDiseñador();
             }
@@ -1189,6 +1190,10 @@ namespace SQLDeveloper
             CargaEditor();
             VEditor.AgregaEditor(edit, text);
             edit.SetFocus();
+        }
+        private void VerCodigoModelador(string nombre, string codigo)
+        {
+            VerCodigo(DBProvider.DB, nombre, codigo);
         }
     }
 }

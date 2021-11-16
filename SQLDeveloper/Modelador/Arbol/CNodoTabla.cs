@@ -58,10 +58,13 @@ namespace Modelador.Arbol
             base.InicializaMenu();
             AddMenuItem("Editar", "IconoEditar", MenuEditar_Click);
             AddMenuItem("Resaltar", "Resaltar", MenuMarcar_Click);
+            ToolStripMenuItem menu2=AddMenuItem("Generar Codigo", "document");
+            AddMenuItem(menu2, "Identidad Android", "android1", MenuGenerar_Click);
+            AddMenuItem(menu2, "DAO Android", "android1", MenuGenerarDao_Click);
+
             AddMenuSeparator();
             AddMenuItem("Eliminar", "Eliminar", MenuEliminar_Click);
         }
-
         private void MenuMarcar_Click(object sender, EventArgs e)
         {
             CTabla obj=GetTabla();
@@ -125,6 +128,23 @@ namespace Modelador.Arbol
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void MenuGenerar_Click(Object sender, EventArgs e)
+        {
+            Modelador.Genradores.Android.CGeneradorKotlin generador = new Genradores.Android.CGeneradorKotlin(Modelo);
+            string codigo = generador.GeneraIdentidad(GetTabla());
+            //ahora muestro el codigo generado
+            Modelador.UI.FormModeler form=GetFormFormModeler();
+            form.MuestraCodigo(this.Nombre, codigo);
+        }
+        private void MenuGenerarDao_Click(Object sender, EventArgs e)
+        {
+            Modelador.Genradores.Android.CGeneradorKotlin generador = new Genradores.Android.CGeneradorKotlin(Modelo);
+            string codigo = generador.CreaDAO(GetTabla());
+            //ahora muestro el codigo generado
+            Modelador.UI.FormModeler form = GetFormFormModeler();
+            form.MuestraCodigo(this.Nombre, codigo);
+
         }
 
     }

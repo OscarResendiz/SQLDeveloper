@@ -52,6 +52,10 @@ namespace Modelador.Modelo
         {
             Modelo.Update_LlaveForanea(ID_FK, ID_TablaPadre, ID_TablaHija, Nombre,AcctionDelete,AcctionUpdate, LineColor);
         }
+        /// <summary>
+        /// regresa los campos que pertenecen a la llave foranea
+        /// </summary>
+        /// <returns></returns>
         public List<CCampoReferencia> Get_Campos()
         {
             return Modelo.Get_CamposReferencia(ID_FK);

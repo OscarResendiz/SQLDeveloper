@@ -13,6 +13,7 @@ namespace Modelador.Arbol
     public partial class CArbol : UserControl
     {
         public event OnShowEditorGenericoEvent OnVerModelo;
+        public event OnShowEditorGenericoEvent OnVerCodigo;
         private CNodoProyecto NodoProyecto;
         private Modelo.ModeloDatos FModelo=null;
         public Modelo.ModeloDatos Modelo
@@ -38,6 +39,7 @@ namespace Modelador.Arbol
             NodoProyecto = new CNodoProyecto();
             NodoProyecto.Modelo = FModelo;
             NodoProyecto.VerModelo += OnVerModelo;
+            NodoProyecto.VerCodigo += OnVerCodigo;
             treeView1.Nodes.Add(NodoProyecto);
         }
         public void VerDiseñador()

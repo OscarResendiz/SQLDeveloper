@@ -13,6 +13,7 @@ namespace Modelador.Arbol
     {
         private Lienzo FLienzo;
         public event OnShowEditorGenericoEvent VerModelo;
+        public event OnShowEditorGenericoEvent VerCodigo;
         public CNodoProyecto()
         {
             Nombre = "Modelo";
@@ -55,6 +56,10 @@ namespace Modelador.Arbol
             AddMenuItem("Guardar Como", "filesave", MenuGuardarComo_Click);
             AddMenuSeparator();
             AddMenuItem("Ver Diseñador", "Diagrama", MenuVerDiseñador_Click);
+            AddMenuSeparator();
+            ToolStripMenuItem menu2 = AddMenuItem("Generar Codigo", "document");
+            AddMenuItem(menu2, "Crear DB Kotlin Room", "android1", MenuGenerar_Click);
+
             AddMenuSeparator();
             AddMenuItem("Cerrar", "exit32", MenuCerrar_Click);
         }
@@ -160,6 +165,14 @@ namespace Modelador.Arbol
             Nodes.Clear();
             Nombre = Modelo.getNombreCorto();
             Inicializa();
+        }
+        private void MenuGenerar_Click(Object sender, EventArgs e)
+        {
+            Modelador.Genradores.Android.CGeneradorKotlin generador = new Genradores.Android.CGeneradorKotlin(Modelo);
+            string codigo = generador.CreaDataBase();
+            //ahora muestro el codigo generado
+            Modelador.UI.FormModeler form = GetFormFormModeler();
+            form.MuestraCodigo(this.Nombre, codigo);
         }
     }
 }

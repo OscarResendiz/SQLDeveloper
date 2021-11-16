@@ -844,6 +844,10 @@ namespace Modelador.Modelo
             }
             return null;
         }
+        /// <summary>
+        /// regresa todas las tablas que se tienen en el modelo
+        /// </summary>
+        /// <returns></returns>
         public List<CTabla> Get_Tablas()
         {
             List<CTabla> lista = new List<CTabla>();

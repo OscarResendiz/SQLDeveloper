@@ -202,9 +202,6 @@
   <data name="refresh11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\refresh11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\PK.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="exit32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\exit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -222,5 +219,14 @@
   </data>
   <data name="gurdarcomo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\gurdarcomo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PK.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SP.ICO;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="android1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\android1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -127,6 +127,7 @@
     <Compile Include="Dibujable\DTablaCapa.cs" />
     <Compile Include="Dibujable\DTexto.cs" />
     <Compile Include="Dibujable\MiGraphics.cs" />
+    <Compile Include="Genradores\Android\CGeneradorKotlin.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="Modelo\CBaseModelo.cs" />
     <Compile Include="Modelo\CCampo.cs" />
@@ -433,6 +434,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gurdarcomo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SP.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

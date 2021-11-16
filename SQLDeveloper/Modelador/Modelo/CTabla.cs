@@ -77,10 +77,17 @@ namespace Modelador.Modelo
         }
         #endregion
         #region Metodos
+        /// <summary>
+        /// Actualiza los datos de la tabla en el modelo
+        /// </summary>
         public void Update()
         {
             Modelo.Update_Tabla(ID_Tabla, Nombre, Ancho, Alto, BKColor, Modo, ID_Identidad, PK_Nombre, ForeColor,Comentarios);
         }
+        /// <summary>
+        /// borra la tabla del modelo
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void Delete()
         {
             if (Get_FKHijas().Count > 0)
@@ -110,6 +117,9 @@ namespace Modelador.Modelo
             }
             Modelo.Delete_Tabla(this.ID_Tabla);
         }
+        /// <summary>
+        /// elimina la tabla y todas sus dependencias
+        /// </summary>
         public void DeleteCascade()
         {
             foreach (CLlaveForanea fk in Get_FKHijas())
@@ -118,10 +128,19 @@ namespace Modelador.Modelo
             }
             Delete();
         }
+
+        /// <summary>
+        /// regresa la lista de constrains Checks
+        /// </summary>
+        /// <returns></returns>
         public List<CCheck> Get_Checks()
         {
             return Modelo.Get_ChecksTabla(this.ID_Tabla);
         }
+       /// <summary>
+       /// Regresa la lista de Indices
+       /// </summary>
+       /// <returns></returns>
         public List<CIndex> Get_Indexs()
         {
             return Modelo.Get_IndexTabla(ID_Tabla);
@@ -142,27 +161,61 @@ namespace Modelador.Modelo
         {
             return Modelo.Get_LlavesForaneasPadre(ID_Tabla);
         }
+        /// <summary>
+        /// regresa la lista de campos de la tabla
+        /// </summary>
+        /// <returns></returns>
         public List<CCampo> Get_Campos()
         {
             return Modelo.Get_CamposTabla(ID_Tabla);
         }
+        /// <summary>
+        /// regresa la lista de uniques
+        /// </summary>
+        /// <returns></returns>
         public List<CUnique> Get_Uniques()
         {
             return Modelo.Get_UniquesTabla(ID_Tabla);
         }
+        /// <summary>
+        /// regresa la region a la que pertenece la tabla
+        /// </summary>
+        /// <returns></returns>
         public CRegion Get_Region()
         {
             return Modelo.Get_RegionTabla(ID_Tabla);
         }
+        /// <summary>
+        /// regresa el campo que esta definido como identidad
+        /// </summary>
+        /// <returns></returns>
         public CCampo Get_CampoIdentidad()
         {
             return Modelo.Get_Campo(this.ID_Identidad);
         }
+        /// <summary>
+        /// agrega un campo a la tabla
+        /// </summary>
+        /// <param name="Nombre">nombre del campo</param>
+        /// <param name="ID_TipoDato">tipo de dato</param>
+        /// <param name="Longitud">longitud del campo</param>
+        /// <param name="PK">indica si es parte de la llave primaria</param>
+        /// <param name="AceptaNulos">indica si acepta valores nulos</param>
+        /// <param name="Calculado">indica si es un campo calculado</param>
+        /// <param name="Formula">formula ppor si es campo calculado</param>
+        /// <param name="EsDefault">indica si tiene un valor por default</param>
+        /// <param name="DefaultName">nombre del contrait default</param>
+        /// <param name="comentarios">comentarios sobre el campo</param>
         public void Insert_Campo(string Nombre, int ID_TipoDato, int Longitud, bool PK, bool AceptaNulos, bool Calculado, string Formula, bool EsDefault, string DefaultName, string comentarios)
         {
             List<CCampo> l = Get_Campos();
             Modelo.Insert_Campo(Nombre, ID_Tabla, ID_TipoDato, Longitud, PK, AceptaNulos, Calculado, Formula, EsDefault, DefaultName,l.Count,comentarios);
         }
+        /// <summary>
+        /// regresa el campo
+        /// </summary>
+        /// <param name="campo"></param>
+        /// <returns></returns>
         public CCampo Get_Campo(string campo)
         {
             foreach(CCampo obj in Get_Campos())
@@ -174,6 +227,10 @@ namespace Modelador.Modelo
             }
             return null;
         }
+        /// <summary>
+        /// comvierte tabla  a cadena
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Nombre;
@@ -190,6 +247,23 @@ namespace Modelador.Modelo
                 }
             }
             return obj;
+        }
+        /// <summary>
+        /// regresa la lista de campos que pertenecen a la llave primaria de la tabla
+        /// </summary>
+        /// <returns></returns>
+        public List<CCampo> GetCampoPK()
+        {
+            List<CCampo> l = new List<CCampo>();
+            foreach(CCampo campo in this.Get_Campos())
+            {
+                if(campo.PK)
+                {
+                    l.Add(campo);
+                }
+            }
+            return l;
+
         }
         #endregion
     }

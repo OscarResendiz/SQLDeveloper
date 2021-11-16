@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "35c1a7ac-665d-4c15-8ce6-0b9c02b63f5d": {
+      "ProjectGuid": "35c1a7ac-665d-4c15-8ce6-0b9c02b63f5d",
+      "DisplayName": "Modelador",
+      "ColorIndex": 0
+    },
+    "a94be1f9-9755-4929-8475-7f6ccb6040e2": {
+      "ProjectGuid": "a94be1f9-9755-4929-8475-7f6ccb6040e2",
+      "DisplayName": "SQLDeveloper",
+      "ColorIndex": 1
+    },
+    "2b08d98a-3804-4c79-9a06-c903eb6017f9": {
+      "ProjectGuid": "2b08d98a-3804-4c79-9a06-c903eb6017f9",
+      "DisplayName": "ManagerConnect",
+      "ColorIndex": 2
+    },
+    "63463f3f-b8e0-4abe-86ae-dea4d080a8ec": {
+      "ProjectGuid": "63463f3f-b8e0-4abe-86ae-dea4d080a8ec",
+      "DisplayName": "EditorManager",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}

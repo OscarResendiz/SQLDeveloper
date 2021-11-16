@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using EditorManager;
 namespace Modelador.UI
 {
+    public delegate void FormModelerVerCodigoEvent(string nombre, string codigo);
     public partial class FormModeler : Form
     {
         public event OnShowEditorGenericoEvent OnVerDiseñador;
+        public event FormModelerVerCodigoEvent OnVerCodigo;
         public FormModeler()
         {
             InitializeComponent();
@@ -32,6 +34,15 @@ namespace Modelador.UI
         public void VerDiseñador()
         {
             cArbol1.VerDiseñador();
+        }
+
+        private void cArbol1_OnVerCodigo(EditorGenerico editor, string text)
+        {
+        }
+        public void MuestraCodigo(string nombre, string codigo)
+        {
+            if (OnVerCodigo != null)
+                OnVerCodigo(nombre, codigo);
         }
     }
 }

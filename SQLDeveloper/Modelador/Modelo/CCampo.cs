@@ -9,66 +9,105 @@ namespace Modelador.Modelo
     public class CCampo : CBaseModelo
     {
         #region Propiedades
+        /// <summary>
+        /// id que identifica el campo
+        /// </summary>
         public int ID_Campo
         {
             get;
             set;
         }
+        /// <summary>
+        /// nombre del campo
+        /// </summary>
         public string NombreX
         {
             get;
             set;
         }
+        /// <summary>
+        /// comentarios sobre el campo
+        /// </summary>
         public string Comentarios
         {
             get;
             set;
         }
+        /// <summary>
+        /// id de la tabla a la que pertenece
+        /// </summary>
         public int ID_Tabla
         {
             get;
             set;
         }
+        /// <summary>
+        /// id del tipo de dato
+        /// </summary>
         public int ID_TipoDato
         {
             get;
             set;
         }
+        /// <summary>
+        /// longitud del campo
+        /// </summary>
         public int Longitud
         {
             get;
             set;
         }
+        /// <summary>
+        /// indica si es parte de la llave primaria
+        /// </summary>
         public bool PK
         {
             get;
             set;
         }
+        /// <summary>
+        /// indica si acepta nulos
+        /// </summary>
         public bool AceptaNulos
         {
             get;
             set;
         }
+        /// <summary>
+        /// indica si es un campo calculado
+        /// </summary>
         public bool Calculado
         {
             get;
             set;
         }
+        /// <summary>
+        /// contiene la formula del campo calculado 
+        /// </summary>
         public string Formula
         {
             get;
             set;
         }
+        /// <summary>
+        /// indica si es un valor default
+        /// </summary>
         public bool EsDefault
         {
             get;
             set;
         }
+        /// <summary>
+        /// valor defuat
+        /// </summary>
         public string DefaultName
         {
             get;
             set;
         }
+        /// <summary>
+        /// orden en que se encuentra dentro de la tabla
+        /// </summary>
         public int Orden
         {
             get;
@@ -76,18 +115,34 @@ namespace Modelador.Modelo
         }
         #endregion
         #region Metodos
+        /// <summary>
+        /// regresa la lista de indices a los que pertenece el campo
+        /// </summary>
+        /// <returns></returns>
         public List<CCampoIndex> Get_IndexsCampo()
         {
             return Modelo.Get_IndexsCampo(ID_Campo);
         }
+        /// <summary>
+        /// regresa la lista de referencias que hay hacia este campo
+        /// </summary>
+        /// <returns></returns>
         public List<CCampoReferencia> Get_ReferenciasCampo()
         {
             return Modelo.Get_ReferenciasCampo(ID_Campo);
         }
+        /// <summary>
+        /// regresa los uniques
+        /// </summary>
+        /// <returns></returns>
         public List<CCampoUnique> Get_Uniques()
         {
             return Modelo.Get_UniquesCampo(ID_Campo);
         }
+        /// <summary>
+        /// elimina el campo de la tabla
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void Delete()
         {
             if (Get_ReferenciasCampo().Count > 0)
@@ -104,6 +159,9 @@ namespace Modelador.Modelo
             }
             Modelo.Delete_Campo(ID_Campo);
         }
+        /// <summary>
+        /// actualiza el campo en el modelo
+        /// </summary>
         public void Update()
         {
             Modelo.Update_Campo(ID_Campo, NombreX, ID_Tabla, ID_TipoDato, Longitud, PK, AceptaNulos, Calculado, Formula, EsDefault, DefaultName, Orden,Comentarios);
@@ -143,10 +201,18 @@ namespace Modelador.Modelo
                 }
             }
         }
+        /// <summary>
+        /// regresa la tabla a la que pertenece el campo
+        /// </summary>
+        /// <returns></returns>
         public CTabla Get_Tabla()
         {
             return Modelo.Get_Tabla(ID_Tabla);
         }
+        /// <summary>
+        /// regresa el tipo de datos al que pertenece el campo
+        /// </summary>
+        /// <returns></returns>
         public CTipoDato Get_TipoDato()
         {
             return Modelo.Get_TipoDato(ID_TipoDato);

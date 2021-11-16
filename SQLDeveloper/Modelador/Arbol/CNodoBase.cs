@@ -69,6 +69,37 @@ namespace Modelador.Arbol
             MenuItem.Click += funcion;// new System.EventHandler(funcion);                        
             this.MenuPrinciapl.Items.Add(MenuItem);
         }
+        protected void AddMenuItem(System.Windows.Forms.ToolStripMenuItem menuPdre,string texto, string imagen, System.EventHandler funcion)
+        {
+            string nombre = "menuItem" + (this.MenuPrinciapl.Items.Count + 1).ToString();
+
+            System.Windows.Forms.ToolStripMenuItem MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            // 
+            // propiedades del menu
+            // 
+            MenuItem.Image = ImageManager.getImagen(imagen);
+            MenuItem.Name = nombre;
+            MenuItem.Size = new System.Drawing.Size(201, 22);
+            MenuItem.Text = texto;
+            MenuItem.Click += funcion;// new System.EventHandler(funcion);                        
+            menuPdre.DropDownItems.Add(MenuItem);
+        }
+        protected System.Windows.Forms.ToolStripMenuItem AddMenuItem(string texto, string imagen)
+        {
+            string nombre = "menuItem" + (this.MenuPrinciapl.Items.Count + 1).ToString();
+
+            System.Windows.Forms.ToolStripMenuItem MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            // 
+            // propiedades del menu
+            // 
+            MenuItem.Image = ImageManager.getImagen(imagen);
+            MenuItem.Name = nombre;
+            MenuItem.Size = new System.Drawing.Size(201, 22);
+            MenuItem.Text = texto;
+//            MenuItem.Click += funcion;// new System.EventHandler(funcion);                        
+            this.MenuPrinciapl.Items.Add(MenuItem);
+            return MenuItem;
+        }
         protected void AddMenuSeparator()
         {
             System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -344,6 +375,16 @@ namespace Modelador.Arbol
             {
                 n.ExpandeTodo();
             }
+        }
+        protected Modelador.UI.FormModeler GetFormFormModeler()
+        {
+            System.Windows.Forms.Control obj = this.TreeView;
+            while (obj.GetType() != typeof(Modelador.UI.FormModeler))
+            {
+                obj = obj.Parent;
+            }
+            Modelador.UI.FormModeler form = (Modelador.UI.FormModeler)obj;
+            return form;
         }
     }
 }

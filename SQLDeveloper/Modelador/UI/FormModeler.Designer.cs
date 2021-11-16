@@ -47,6 +47,7 @@
             this.cArbol1.Size = new System.Drawing.Size(376, 690);
             this.cArbol1.TabIndex = 0;
             this.cArbol1.OnVerModelo += new EditorManager.OnShowEditorGenericoEvent(this.cArbol1_OnVerModelo);
+            this.cArbol1.OnVerCodigo += new EditorManager.OnShowEditorGenericoEvent(this.cArbol1_OnVerCodigo);
             // 
             // FormModeler
             // 
