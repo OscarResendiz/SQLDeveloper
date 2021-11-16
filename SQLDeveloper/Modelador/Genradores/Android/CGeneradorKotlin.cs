@@ -15,6 +15,16 @@ namespace Modelador.Genradores.Android
         string Cadena = "";
         List<CTabla> Procesadas;
         List<CTabla> Tablas;
+        public string Package
+        {
+            get;
+            set;
+        }
+        public string DataBaseName
+        {
+            get;
+            set;
+        }
         public CGeneradorKotlin(Modelo.ModeloDatos modelo)
         {
             Modelo = modelo;    
@@ -25,7 +35,8 @@ namespace Modelador.Genradores.Android
         /// <param name="tabla"></param>
         public String GeneraIdentidad(Modelo.CTabla tabla)
         {
-            Cadena = $"import androidx.room.Entity\n" +
+            Cadena = "package " + Package+".DataBase";
+            Cadena = Cadena+ $"\nimport androidx.room.Entity\n" +
                 $"import androidx.room.ForeignKey\n" +
                 $"@Entity\n(\n\ttableName = \"{ tabla.Nombre}\"";
             //le agrego la llave primaria
@@ -189,7 +200,8 @@ namespace Modelador.Genradores.Android
         /// <returns></returns>
         public string CreaDAO(CTabla tabla)
         {
-            Cadena = "import androidx.room.*";
+            Cadena = "package "+Package + ".DataBase"; ;
+            Cadena = Cadena + "\nimport androidx.room.*";
             Cadena = Cadena + "\n@Dao";
             Cadena = Cadena + $"\ninterface DAO_{tabla.Nombre}";
             Cadena = Cadena + "{";
@@ -261,8 +273,9 @@ namespace Modelador.Genradores.Android
         }
         public string CreaDataBase()
         {
-            string NombreDB = Modelo.getNombreCorto();
-            Cadena = "import android.content.Context";
+            string NombreDB = DataBaseName;// Modelo.getNombreCorto();
+            Cadena = "package " + Package + ".DataBase"; ;
+            Cadena = "\nimport android.content.Context";
             Cadena = Cadena + "\nimport androidx.room.Database";
             Cadena = Cadena + "\nimport androidx.room.Room";
             Cadena = Cadena + "\nimport androidx.room.RoomDatabase";

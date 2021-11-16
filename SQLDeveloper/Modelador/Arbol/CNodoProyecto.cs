@@ -168,11 +168,8 @@ namespace Modelador.Arbol
         }
         private void MenuGenerar_Click(Object sender, EventArgs e)
         {
-            Modelador.Genradores.Android.CGeneradorKotlin generador = new Genradores.Android.CGeneradorKotlin(Modelo);
-            string codigo = generador.CreaDataBase();
-            //ahora muestro el codigo generado
-            Modelador.UI.FormModeler form = GetFormFormModeler();
-            form.MuestraCodigo(this.Nombre, codigo);
+            Modelador.Genradores.Android.FormGenerador dlg = new Genradores.Android.FormGenerador(Modelo);
+            dlg.Show();
         }
     }
 }
