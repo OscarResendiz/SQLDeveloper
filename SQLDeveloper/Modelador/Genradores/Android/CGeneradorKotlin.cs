@@ -38,7 +38,9 @@ namespace Modelador.Genradores.Android
             Cadena = "package " + Package+".DataBase";
             Cadena = Cadena+ $"\nimport androidx.room.Entity\n" +
                 $"import androidx.room.ForeignKey\n" +
-                $"@Entity\n(\n\ttableName = \"{ tabla.Nombre}\"";
+                $"import android.os.Parcelable\n" +
+                $"import kotlinx.android.parcel.Parcelize\n" +
+                $"@Parcelize\n@Entity\n(\n\ttableName = \"{ tabla.Nombre}\"";
             //le agrego la llave primaria
             AgregaLLavePrimaria(tabla);
             //agrego las llaves foraneas
@@ -192,7 +194,7 @@ namespace Modelador.Genradores.Android
                 primero = false;
                 Cadena = Cadena + $"val {campo.NombreX}:\t{campo.Get_TipoDato().Nombre}\t/** {campo.Comentarios} */";
             }
-            Cadena = Cadena + "\n)";
+            Cadena = Cadena + "\n): Parcelable";
         }
         /// <summary>
         /// genera el codigo para actuar con la t
@@ -230,8 +232,8 @@ namespace Modelador.Genradores.Android
                         parametros = parametros + ",";
                     }
                     primero = false;
-                    Cadena = Cadena + $"{campo.NombreX}=:_{campo.NombreX}";
-                    parametros = parametros + $"_{campo.NombreX}:{campo.Get_TipoDato().Nombre}";
+                    Cadena = Cadena + $"{campo.NombreX}=:V{campo.NombreX}";
+                    parametros = parametros + $"V{campo.NombreX}:{campo.Get_TipoDato().Nombre}";
                 }
                 Cadena = Cadena + "\")";
                 parametros = parametros + ")";
@@ -264,8 +266,8 @@ namespace Modelador.Genradores.Android
                     parametros = parametros + ",";
                 }
                 primero = false;
-                Cadena = Cadena + $"{campo.Get_CampoHijo().NombreX}=:_{campo.Get_CampoHijo().NombreX}";
-                parametros = parametros + $"_{campo.Get_CampoHijo().NombreX}:{campo.Get_CampoHijo().Get_TipoDato().Nombre}";
+                Cadena = Cadena + $"{campo.Get_CampoHijo().NombreX}=:V{campo.Get_CampoHijo().NombreX}";
+                parametros = parametros + $"V{campo.Get_CampoHijo().NombreX}:{campo.Get_CampoHijo().Get_TipoDato().Nombre}";
 
             }
             Cadena = Cadena + "\")";
@@ -301,7 +303,7 @@ namespace Modelador.Genradores.Android
             foreach (CTabla tabla in Procesadas)
             {
                 Cadena = Cadena + $"\n\t";
-                Cadena = Cadena + $"abstract val {tabla.Nombre}:{tabla.Nombre}\t/**{tabla.Comentarios}*/";
+                Cadena = Cadena + $"abstract val DAO_{tabla.Nombre}:DAO_{tabla.Nombre}\t/**{tabla.Comentarios}*/";
             }
             Cadena = Cadena + "\n}";
             Cadena = Cadena + $"\nprivate lateinit var INSTANCE:{NombreDB}";
