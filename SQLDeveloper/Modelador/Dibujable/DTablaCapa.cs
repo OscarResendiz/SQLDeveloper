@@ -246,11 +246,11 @@ namespace Modelador.Dibujable
         private void MenuAgregarIndex_Click(Object sender, EventArgs arg)
         {
             UI.FormPropiedadesIndex dlg = new UI.FormPropiedadesIndex();
-            dlg.OnCampoIndex += new UI.OnFormPropiedadesIndexEvent(CampoSeleccionado);
+            dlg.OnCampoIndex += new UI.OnFormPropiedadesCampoIndexEvent(CampoSeleccionado);
             dlg.OnIndex += new UI.OnFormPropiedadesIndexEvent(IndiceSeleccionado);
             foreach (Modelo.CCampo campo in GetTabla().Get_Campos())
             {
-                dlg.AddCampoTabla(campo.NombreX);
+                dlg.AddCampoTabla(campo.Nombre);
             }
             dlg.ShowDialog();
         }
@@ -258,11 +258,11 @@ namespace Modelador.Dibujable
         {
             try
             {
-                Modelo.CIndex index = Modelo.Get_Index(Id_Index);
+                Modelo.CIndexX index = Modelo.Get_Index(Id_Index);
                 List<Modelo.CCampo> campos = GetTabla().Get_Campos();
                 foreach (Modelo.CCampo campo in campos)
                 {
-                    if (campo.NombreX == NomCampo)
+                    if (campo.Nombre == NomCampo)
                     {
                         index.Insert_Campo(campo.ID_Campo, descendente);
                     }
@@ -273,11 +273,11 @@ namespace Modelador.Dibujable
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void IndiceSeleccionado(string nombre, bool pk)
+        private void IndiceSeleccionado(string nombre, bool pk, bool genrarFuncion, bool MultiplesObjetos)
         {
             try
             {
-                Id_Index = Modelo.Insert_Index(nombre, ID_Tabla);
+                Id_Index = Modelo.Insert_IndexX(nombre, ID_Tabla, genrarFuncion, MultiplesObjetos);
             }
             catch (System.Exception ex)
             {

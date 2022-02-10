@@ -149,4 +149,3 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Modelador\obj\Debug\Modelador.cspro
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Modelador\obj\Debug\Modelador.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Modelador\obj\Debug\Modelador.pdb
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Modelador\obj\Debug\Modelador.Genradores.Android.FormGenerador.resources
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Modelador\obj\Debug\Modelador.csproj.CopyComplete

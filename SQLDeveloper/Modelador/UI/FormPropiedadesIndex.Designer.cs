@@ -49,8 +49,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CHPrimaryKey = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CkGenFuncion = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ChMultiplesObjetos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -198,7 +200,7 @@
             // 
             this.TNombre.Location = new System.Drawing.Point(53, 9);
             this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(192, 20);
+            this.TNombre.Size = new System.Drawing.Size(321, 20);
             this.TNombre.TabIndex = 4;
             // 
             // label2
@@ -213,7 +215,7 @@
             // CHPrimaryKey
             // 
             this.CHPrimaryKey.AutoSize = true;
-            this.CHPrimaryKey.Location = new System.Drawing.Point(265, 8);
+            this.CHPrimaryKey.Location = new System.Drawing.Point(293, 35);
             this.CHPrimaryKey.Name = "CHPrimaryKey";
             this.CHPrimaryKey.Size = new System.Drawing.Size(81, 17);
             this.CHPrimaryKey.TabIndex = 2;
@@ -223,14 +225,26 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ChMultiplesObjetos);
+            this.panel1.Controls.Add(this.CkGenFuncion);
             this.panel1.Controls.Add(this.TNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.CHPrimaryKey);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(386, 48);
+            this.panel1.Size = new System.Drawing.Size(386, 67);
             this.panel1.TabIndex = 3;
+            // 
+            // CkGenFuncion
+            // 
+            this.CkGenFuncion.AutoSize = true;
+            this.CkGenFuncion.Location = new System.Drawing.Point(6, 35);
+            this.CkGenFuncion.Name = "CkGenFuncion";
+            this.CkGenFuncion.Size = new System.Drawing.Size(102, 17);
+            this.CkGenFuncion.TabIndex = 5;
+            this.CkGenFuncion.Text = "GenerarFuncion";
+            this.CkGenFuncion.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -245,16 +259,26 @@
             this.dataGridView1.DataMember = "CamposIndex";
             this.dataGridView1.DataSource = this.dataSet1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(386, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(386, 327);
             this.dataGridView1.TabIndex = 5;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // ChMultiplesObjetos
+            // 
+            this.ChMultiplesObjetos.AutoSize = true;
+            this.ChMultiplesObjetos.Location = new System.Drawing.Point(114, 35);
+            this.ChMultiplesObjetos.Name = "ChMultiplesObjetos";
+            this.ChMultiplesObjetos.Size = new System.Drawing.Size(149, 17);
+            this.ChMultiplesObjetos.TabIndex = 6;
+            this.ChMultiplesObjetos.Text = "Regresar multiples objetos";
+            this.ChMultiplesObjetos.UseVisualStyleBackColor = true;
             // 
             // FormPropiedadesIndex
             // 
@@ -308,5 +332,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox CkGenFuncion;
+        private System.Windows.Forms.CheckBox ChMultiplesObjetos;
     }
 }

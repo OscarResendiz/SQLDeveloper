@@ -173,22 +173,22 @@ namespace MotorDB
                     query = "select 	CONSTRAINT_NAME as name, 'F' as xtype from 	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS  where CONSTRAINT_SCHEMA ='"+ GetDataBseName ()+ "' and UPPER(CONSTRAINT_NAME) like UPPER('%" + nombre.Trim() + "%')";
                     break;
                 case EnumTipoObjeto.FUNCION:
-                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and UPPER(ROUTINE_NAME) like UPPER('" + nombre.Trim() + "%') and ROUTINE_TYPE='FUNCTION'"; ;
+                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and UPPER(ROUTINE_NAME) like UPPER('%" + nombre.Trim() + "%') and ROUTINE_TYPE='FUNCTION'"; ;
                     break;
                 case EnumTipoObjeto.IDENTITY:
                     query = "select column_name as name, 'identity' as xtype from INFORMATION_SCHEMA.COLUMNS where table_schema='"+ GetDataBseName ()+ "' and UPPER(COLUMN_NAME) like UPPER('%" + nombre.Trim() + "%') and extra='auto_increment'";
                     break;
                 case EnumTipoObjeto.NONE:
-                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and UPPER(ROUTINE_NAME) like UPPER('" + nombre.Trim() + "%')\n";
+                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and UPPER(ROUTINE_NAME) like UPPER('%" + nombre.Trim() + "%')\n";
                     query = query + "union all\n";
-                    query = query + "select table_NAME as NAME,TABLE_TYPE as XTYPE from information_schema.tables where table_SCHEMA='" + GetDataBseName() + "' and UPPER(table_NAME) like UPPER('" + nombre.Trim() + "%')\n";
+                    query = query + "select table_NAME as NAME,TABLE_TYPE as XTYPE from information_schema.tables where table_SCHEMA='" + GetDataBseName() + "' and UPPER(table_NAME) like UPPER('%" + nombre.Trim() + "%')\n";
                     query = query + "order by name";
                     break;
                 case EnumTipoObjeto.PRIMARYKEY:
                     query = "select distinct CONSTRAINT_NAME as name, 'PK' as xtype from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_SCHEMA='"+ GetDataBseName ()+ "' and UPPER(CONSTRAINT_NAME) like UPPER('%" + nombre.Trim()+"%') and CONSTRAINT_TYPE='PRIMARY KEY'";
                     break;
                 case EnumTipoObjeto.PROCEDURE:
-                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName ()+ "' and UPPER(ROUTINE_NAME) like UPPER('" + nombre.Trim() + "%') and ROUTINE_TYPE='PROCEDURE'";
+                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName ()+ "' and UPPER(ROUTINE_NAME) like UPPER('%" + nombre.Trim() + "%') and ROUTINE_TYPE='PROCEDURE'";
                     break;
                 case EnumTipoObjeto.TABLE:
                     query = "select table_name as NAME,table_type as XTYPE from information_schema.tables where table_type=\'BASE TABLE\' and UPPER(table_name) like UPPER(\'" + nombre.Trim() + "%\') and table_schema=\'" + GetDataBseName ()+ "\';";
@@ -203,7 +203,7 @@ namespace MotorDB
                     query = "select distinct CONSTRAINT_NAME as name, 'UQ' as xtype from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_SCHEMA='"+ GetDataBseName ()+ "' and UPPER(CONSTRAINT_NAME) like UPPER('%" + nombre.Trim()+"%') and CONSTRAINT_TYPE='UNIQUE'";
                     break;
                 case EnumTipoObjeto.VIEW:
-                    query = "select table_name as NAME,\'V\' as XTYPE from information_schema.tables where table_type=\'VIEW\' and table_schema=\'" + GetDataBseName() + "\' and UPPER(table_name) like UPPER(\'" + nombre.Trim() + "%\')";
+                    query = "select table_name as NAME,\'V\' as XTYPE from information_schema.tables where table_type=\'VIEW\' and table_schema=\'" + GetDataBseName() + "\' and UPPER(table_name) like UPPER(%\'" + nombre.Trim() + "%\')";
                     break;
                 case EnumTipoObjeto.INDEX:
                     query = "select index_name as name, 'INDEX' as xtype from INFORMATION_SCHEMA.STATISTICS where index_schema='"+ GetDataBseName ()+ "' and UPPER(index_name) like UPPER('%" + nombre.Trim()+"%')";
@@ -1328,14 +1328,17 @@ namespace MotorDB
                 //veo si es identidad
                 dr = EsIdentidad(tabla.Nombre, campo.Nombre);
                 dr.Read();
-                if (int.Parse(dr["Identidad"].ToString()) == 1)
+                if (dr["Identidad"] != null)
                 {
-                    //si es identidad, por lo que agrego el campo
-                    CIdentidad identidad = new CIdentidad();
-                    identidad.Campo = campo;
-                    identidad.ValorInicial = int.Parse(dr["seed_value"].ToString());
-                    identidad.Incremento = int.Parse(dr["increment_value"].ToString());
-                    tabla.Identidad = identidad;
+                    if (int.Parse(dr["Identidad"].ToString()) == 1)
+                    {
+                        //si es identidad, por lo que agrego el campo
+                        CIdentidad identidad = new CIdentidad();
+                        identidad.Campo = campo;
+                        identidad.ValorInicial = int.Parse(dr["seed_value"].ToString());
+                        identidad.Incremento = int.Parse(dr["increment_value"].ToString());
+                        tabla.Identidad = identidad;
+                    }
                 }
                 dr.Close();
             }

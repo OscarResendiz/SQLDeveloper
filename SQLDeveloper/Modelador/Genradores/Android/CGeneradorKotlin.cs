@@ -71,7 +71,7 @@ namespace Modelador.Genradores.Android
                         //si no es el primero. le agrego una coma para separalo
                         Cadena = Cadena + ",";
                     }
-                    Cadena = Cadena + $"\"{campo.NombreX}\"";
+                    Cadena = Cadena + $"\"{campo.Nombre}\"";
                     primero = false;
                 }
                 Cadena = Cadena + "]";
@@ -125,8 +125,8 @@ namespace Modelador.Genradores.Android
                     childColumns = childColumns + ",";
                 }
                 primero = false;
-                Cadena = Cadena + $"\"{campo.Get_CampoPadre().NombreX}\"";
-                childColumns = childColumns + $"\"{campo.Get_CampoHijo().NombreX}\"";
+                Cadena = Cadena + $"\"{campo.Get_CampoPadre().Nombre}\"";
+                childColumns = childColumns + $"\"{campo.Get_CampoHijo().Nombre}\"";
             }
             Cadena = Cadena + "]";
             childColumns = childColumns + "]";
@@ -192,7 +192,7 @@ namespace Modelador.Genradores.Android
                     Cadena = Cadena + ",";
                 }
                 primero = false;
-                Cadena = Cadena + $"val {campo.NombreX}:\t{campo.Get_TipoDato().Nombre}\t/** {campo.Comentarios} */";
+                Cadena = Cadena + $"var {campo.Nombre}:\t{campo.Get_TipoDato().Nombre}\t/** {campo.Comentarios} */";
             }
             Cadena = Cadena + "\n): Parcelable";
         }
@@ -232,14 +232,15 @@ namespace Modelador.Genradores.Android
                         parametros = parametros + ",";
                     }
                     primero = false;
-                    Cadena = Cadena + $"{campo.NombreX}=:V{campo.NombreX}";
-                    parametros = parametros + $"V{campo.NombreX}:{campo.Get_TipoDato().Nombre}";
+                    Cadena = Cadena + $"{campo.Nombre}=:V{campo.Nombre}";
+                    parametros = parametros + $"V{campo.Nombre}:{campo.Get_TipoDato().Nombre}";
                 }
                 Cadena = Cadena + "\")";
                 parametros = parametros + ")";
             Cadena = Cadena + $"\n\tfun Get_{tabla.Nombre}{parametros}:{tabla.Nombre}";
             }
             CreaDAOFKs(tabla);
+            GeneraIndices(tabla);
             Cadena = Cadena + "\n}";
             return Cadena;
         }
@@ -266,8 +267,8 @@ namespace Modelador.Genradores.Android
                     parametros = parametros + ",";
                 }
                 primero = false;
-                Cadena = Cadena + $"{campo.Get_CampoHijo().NombreX}=:V{campo.Get_CampoHijo().NombreX}";
-                parametros = parametros + $"V{campo.Get_CampoHijo().NombreX}:{campo.Get_CampoHijo().Get_TipoDato().Nombre}";
+                Cadena = Cadena + $"{campo.Get_CampoHijo().Nombre}=:V{campo.Get_CampoHijo().Nombre}";
+                parametros = parametros + $"V{campo.Get_CampoHijo().Nombre}:{campo.Get_CampoHijo().Get_TipoDato().Nombre}";
 
             }
             Cadena = Cadena + "\")";
@@ -378,6 +379,42 @@ namespace Modelador.Genradores.Android
                     return true;
             }
             return false;
+        }
+        private void GeneraIndices(CTabla tabla)
+        {
+            List<CIndexX> indices = tabla.Get_Indexs();
+            foreach(CIndexX index in indices)
+            {
+                if(index.GenerarFuncionX)
+                {
+                    CreaFuncionIndex(index, tabla);
+                }
+            }
+        }
+        private void CreaFuncionIndex(CIndexX index, CTabla tabla)
+        {
+            Cadena = Cadena + $"\n\n\t@Query(\"select* from {tabla.Nombre} where ";
+            bool primero = true;
+            string parametros = "(";            
+            foreach (CCampoIndex campo in index.Get_CamposIndex())
+            {
+                if (!primero)
+                {
+                    Cadena = Cadena + " and ";
+                    parametros = parametros + ",";
+                }
+                primero = false;
+                Cadena = Cadena + $"{campo.Get_Campo().Nombre}=:V{campo.Get_Campo().Nombre}";
+                parametros = parametros + $"V{campo.Get_Campo().Nombre}:{campo.Get_Campo().Get_TipoDato().Nombre}";
+
+            }
+            Cadena = Cadena + "\")";
+            parametros = parametros + ")";
+            if(index.MultiplesObjetos)
+                Cadena = Cadena + $"\n\tfun {index.Nombre}{parametros}:MutableList<{tabla.Nombre}>";
+            else
+                Cadena = Cadena + $"\n\tfun {index.Nombre}{parametros}:{tabla.Nombre}";
+
         }
     }
 }

@@ -31,9 +31,9 @@ namespace Modelador.Genradores.Android
             bool ok = true;
             if (TDirectorio.Text == "")
                 ok = false;
-            if(TPackage.Text.Trim() =="")
-                ok=false;
-            if (TDatabase.Text.Trim() =="")
+            if (TPackage.Text.Trim() == "")
+                ok = false;
+            if (TDatabase.Text.Trim() == "")
                 ok = false;
             if (Generando == true)
                 ok = false;
@@ -44,15 +44,21 @@ namespace Modelador.Genradores.Android
         private void BGenerar_Click(object sender, EventArgs e)
         {
             Generando = true;
-            Directorio = TDirectorio.Text+"\\DataBase";
+            Directorio = TDirectorio.Text + "\\DataBase";
             Package = TPackage.Text;
             DataBase = TDatabase.Text;
             Tablas = Modelo.Get_Tablas();
-            Progreso.Maximum =Tablas.Count + 2;
+            Progreso.Maximum = Tablas.Count + 2;
             Progreso.Value = 0;
             Generador = new CGeneradorKotlin(Modelo);
             Generador.Package = Package;
-            Generador.DataBaseName=DataBase;
+            Generador.DataBaseName = DataBase;
+
+            Modelo.Set_Config("DirectorioKotlin", TDirectorio.Text);
+            Modelo.Set_Config("PakageKotlin", TPackage.Text);
+            Modelo.Set_Config("DataBaseKotlin", TDatabase.Text);
+
+
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -66,7 +72,7 @@ namespace Modelador.Genradores.Android
                 codigo = Generador.GeneraIdentidad(tabla);
                 CreaArchivo(tabla.Nombre, codigo);
                 codigo = Generador.CreaDAO(tabla);
-                CreaArchivo("DAO"+tabla.Nombre, codigo);
+                CreaArchivo("DAO" + tabla.Nombre, codigo);
                 backgroundWorker1.ReportProgress(progreso);
             }
             codigo = Generador.CreaDataBase();
@@ -75,7 +81,7 @@ namespace Modelador.Genradores.Android
         private void CreaArchivo(string nombre, string Codigo)
         {
             //si no existe el directorio lo crea
-            if(System.IO.Directory.Exists(Directorio)==false)
+            if (System.IO.Directory.Exists(Directorio) == false)
             {
                 System.IO.Directory.CreateDirectory(Directorio);
             }
@@ -86,14 +92,14 @@ namespace Modelador.Genradores.Android
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            Progreso.Value=e.ProgressPercentage;
+            Progreso.Value = e.ProgressPercentage;
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Generando = false;
             Progreso.Value = 0;
-            MessageBox.Show("Codigo generado","Generador de codigo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Codigo generado", "Generador de codigo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BCerrar_Click(object sender, EventArgs e)
@@ -106,6 +112,13 @@ namespace Modelador.Genradores.Android
             if (folderBrowserDialog1.ShowDialog() != DialogResult.OK)
                 return;
             TDirectorio.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void FormGenerador_Load(object sender, EventArgs e)
+        {
+            TDirectorio.Text = Modelo.Get_Config("DirectorioKotlin");
+            TPackage.Text = Modelo.Get_Config("PakageKotlin");
+            TDatabase.Text = Modelo.Get_Config("DataBaseKotlin");
         }
     }
 }

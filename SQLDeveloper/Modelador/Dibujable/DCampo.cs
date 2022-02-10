@@ -22,7 +22,7 @@ namespace Modelador.Dibujable
         {
             base.ModeloAsignado();
             FCampo = Modelo.Get_Campo(ID_Campo);
-            Texto = FCampo.NombreX;
+            Texto = FCampo.Nombre;
             //            Modelador.Modelo.CTabla tabla=Modelo.Get_Tabla(FCampo.ID_Tabla);
             //            ColorFondo = new SolidBrush(tabla.BKColor);// System.Drawing.Color.Black);
             ColorFondo = new SolidBrush(System.Drawing.Color.Black);// );
@@ -46,7 +46,7 @@ namespace Modelador.Dibujable
             if (ID_Campo == id_campo)
             {
                 FCampo = Modelo.Get_Campo(id_campo);
-                Texto = FCampo.NombreX;
+                Texto = FCampo.Nombre;
                 Modelador.Modelo.CTabla tabla = Modelo.Get_Tabla(FCampo.ID_Tabla);
                 //ColorFondo = new SolidBrush(tabla.BKColor);
                 Redibuja();
@@ -84,7 +84,7 @@ namespace Modelador.Dibujable
             {
                 Modelo.CCampo campo = GetCampo();
                 UI.FormPropiedadesCampo dlg = new UI.FormPropiedadesCampo(Modelo);
-                dlg.NombreX = campo.NombreX;
+                dlg.NombreX = campo.Nombre;
                 dlg.Comentarios = campo.Comentarios;
                 dlg.ID_TipoDato = campo.ID_TipoDato;
                 dlg.Longitud = campo.Longitud;
@@ -96,7 +96,7 @@ namespace Modelador.Dibujable
                 dlg.DefaultName = campo.DefaultName;
                 if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                     return;
-                campo.NombreX = dlg.NombreX;
+                campo.Nombre = dlg.NombreX;
                 campo.Comentarios = dlg.Comentarios;
                 campo.ID_TipoDato = dlg.ID_TipoDato;
                 campo.Longitud = dlg.Longitud;

@@ -106,6 +106,7 @@
 				<Key word = "EXECUTE" />
 				<Key word = "identity" />
 				<Key word = "NOLOCK" />
+				<Key word = "CALL" />
 			</KeyWords>
 			<KeyWords name ="SqlActionWords" bold="true" italic = "false" color="#0080FF">
 				<Key word = "INSERT" />
@@ -204,6 +205,7 @@
 				<Key word = "dateadd" />
 				<Key word = "POWER" />
 				<Key word = "ISDATE" />
+				<Key word = "IFNULL" />
 			</KeyWords>
 			<KeyWords name ="GroupByFunctions" bold="true" italic = "false" color="#AE1737">
 				<Key word = "SUM" />

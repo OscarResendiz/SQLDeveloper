@@ -38,10 +38,11 @@ namespace Modelador.Modelo
         {
             return Modelo.Get_Campo(ID_Campo);
         }
-        public CIndex Get_Index()
+        public CIndexX Get_Index()
         {
             return Modelo.Get_Index(ID_Index);
         }
         #endregion
+
     }
 }

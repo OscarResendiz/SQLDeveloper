@@ -84,5 +84,4 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.csproj.Ge
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.csproj.CopyComplete
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\MotorDB\obj\Debug\MotorDB.csproj.AssemblyReference.cache

@@ -1239,8 +1239,8 @@ namespace Modelador.Modelo
                     ID_TipoDato = row.ID_TipoDato,
                     Longitud = row.Longitud,
                     Modelo = this,
-                    NombreX = row.Nombre,
-                    Comentarios=row.Comentarios,    
+                    Nombre = row.Nombre,
+                    Comentarios = row.Comentarios,
                     Orden = row.Orden,
                     PK = row.PK
                 });
@@ -1324,7 +1324,7 @@ namespace Modelador.Modelo
                 ID_TipoDato = row.ID_TipoDato,
                 Longitud = row.Longitud,
                 Modelo = this,
-                NombreX = row.Nombre,
+                Nombre = row.Nombre,
                 Orden = row.Orden,
                 PK = row.PK,
                 Comentarios = row.Comentarios
@@ -1350,11 +1350,11 @@ namespace Modelador.Modelo
                     ID_TipoDato = row.ID_TipoDato,
                     Longitud = row.Longitud,
                     Modelo = this,
-                    NombreX = row.Nombre,
+                    Nombre = row.Nombre,
                     Comentarios = row.Comentarios,
                     Orden = row.Orden,
                     PK = row.PK
-                }); 
+                });
             }
             return lista;
         }
@@ -1383,7 +1383,7 @@ namespace Modelador.Modelo
         }
         #endregion
         #region update
-        public void Update_Campo(int ID_Campo, string Nombre, int ID_Tabla, int ID_TipoDato, int Longitud, bool PK, bool AceptaNulos, bool Calculado, string Formula, bool EsDefault, string DefaultName, int orden,string Comentarios)
+        public void Update_Campo(int ID_Campo, string Nombre, int ID_Tabla, int ID_TipoDato, int Longitud, bool PK, bool AceptaNulos, bool Calculado, string Formula, bool EsDefault, string DefaultName, int orden, string Comentarios)
         {
             CampoRow row = Get_CampoRow(ID_Campo);
             if (row == null)
@@ -1525,22 +1525,24 @@ namespace Modelador.Modelo
             }
             return l.First();
         }
-        public CIndex Get_Index(int ID_Index)
+        public CIndexX Get_Index(int ID_Index)
         {
             IndexRow row = Get_IndexRow(ID_Index);
             if (row == null)
             {
                 throw new Exception("No se encontro el Index");
             }
-            return new CIndex()
+            return new CIndexX()
             {
                 ID_Index = row.ID_Index,
                 ID_Tabla = row.ID_Tabla,
                 Modelo = this,
-                Nombre = row.Nombre
+                Nombre = row.Nombre,
+                GenerarFuncionX = row.GenerarFuncion,
+                MultiplesObjetos=row.MultiplesObjetos
             };
         }
-        public CIndex Get_Index(string nombre)
+        public CIndexX Get_Index(string nombre)
         {
             var l = (from obj in Index where obj.Nombre.ToUpper().Trim() == nombre.ToUpper().Trim() select obj);
             if (l.Count() == 0)
@@ -1548,39 +1550,45 @@ namespace Modelador.Modelo
                 return null;
             }
             var row = l.First();
-            return new CIndex()
+            return new CIndexX()
             {
                 ID_Index = row.ID_Index,
                 ID_Tabla = row.ID_Tabla,
                 Modelo = this,
-                Nombre = row.Nombre
+                Nombre = row.Nombre,
+                GenerarFuncionX = row.GenerarFuncion,
+                MultiplesObjetos=row.MultiplesObjetos
             };
         }
         #endregion
         #region SelectN
-        public List<CIndex> Get_IndexTabla(int ID_Tabla)
+        public List<CIndexX> Get_IndexTabla(int ID_Tabla)
         {
-            List<CIndex> lista = new List<CIndex>();
+            List<CIndexX> lista = new List<CIndexX>();
             var l = (from obj in Index where obj.ID_Tabla == ID_Tabla select obj);
             foreach (var row in l)
             {
-                lista.Add(new CIndex()
+                lista.Add(new CIndexX()
                 {
                     ID_Index = row.ID_Index,
                     ID_Tabla = row.ID_Tabla,
                     Modelo = this,
-                    Nombre = row.Nombre
+                    Nombre = row.Nombre,
+                    GenerarFuncionX = row.GenerarFuncion,
+                    MultiplesObjetos=row.MultiplesObjetos
                 });
             }
             return lista;
         }
         #endregion
         #region Insert
-        public int Insert_Index(string Nombre, int ID_Tabla)
+        public int Insert_IndexX(string Nombre, int ID_Tabla, bool GenerarFuncion, bool MultiplesObjetos)
         {
             IndexRow row = Index.NewIndexRow();
             row.Nombre = Nombre;
             row.ID_Tabla = ID_Tabla;
+            row.GenerarFuncion = GenerarFuncion;
+            row.MultiplesObjetos = MultiplesObjetos;
             Index.AddIndexRow(row);
             Fmodificando = true;
             if (OnIndexInsert != null)
@@ -1590,7 +1598,7 @@ namespace Modelador.Modelo
         }
         #endregion
         #region update
-        public void Update_Index(int ID_Index, string Nombre, int ID_Tabla)
+        public void Update_Index(int ID_Index, string Nombre, int ID_Tabla, bool GenerarFuncion, bool MultiplesObjetos)
         {
             IndexRow row = Get_IndexRow(ID_Index);
             if (row == null)
@@ -1599,6 +1607,8 @@ namespace Modelador.Modelo
             }
             row.Nombre = Nombre;
             row.ID_Tabla = ID_Tabla;
+            row.GenerarFuncion = GenerarFuncion;
+            row.MultiplesObjetos = MultiplesObjetos;
             row.AcceptChanges();
             Fmodificando = true;
             if (OnIndexUpdate != null)
@@ -2244,5 +2254,38 @@ namespace Modelador.Modelo
             }
             */
         }
+        #region Config
+        private ConfigRow GetConfigRow(String clave)
+        {
+            var rows = from x in Config where x.Clave == clave select x;
+            return rows.FirstOrDefault();
+        }
+        public void Set_Config(string Clave, string valor)
+        {
+            ConfigRow row = GetConfigRow(Clave);
+            if (row != null)
+            {
+                row.Valor = valor;
+                row.AcceptChanges();
+            }
+            else
+            {
+                row = Config.NewConfigRow();
+                row.Clave = Clave;
+                row.Valor = valor;
+                Config.AddConfigRow(row);
+            }
+            Fmodificando = true;
+        }
+        public string Get_Config(string clave)
+        {
+            ConfigRow row = GetConfigRow(clave);
+            if (row != null)
+            {
+                return row.Valor;
+            }
+            return "";
+        }
+        #endregion
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelador.Modelo
 {
-    public class CIndex : CBaseModelo
+    public class CIndexX : CBaseModelo
     {
         #region Propiedades
         public int ID_Index
@@ -20,6 +20,17 @@ namespace Modelador.Modelo
             set;
         }
         public int ID_Tabla
+        {
+            get;
+            set;
+        }
+        public bool GenerarFuncionX
+        {
+            get;
+            set;
+
+        }
+        public bool MultiplesObjetos
         {
             get;
             set;
@@ -49,6 +60,10 @@ namespace Modelador.Modelo
         public void Insert_Campo(int id_campo,bool desc)
         {
             Modelo.Insert_CampoIndex(ID_Index, id_campo, desc);
+        }
+        public void Update()
+        {
+            Modelo.Update_Index(ID_Index, Nombre, ID_Tabla, GenerarFuncionX, MultiplesObjetos);
         }
         #endregion
 

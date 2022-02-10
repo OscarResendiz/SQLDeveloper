@@ -20,10 +20,17 @@ namespace Modelador.Modelo
         /// <summary>
         /// nombre del campo
         /// </summary>
-        public string NombreX
+        public string Nombre
         {
             get;
             set;
+        }
+        public string NombreExtendido
+        {
+            get
+            {
+                return Nombre+":"+Get_TipoDato().Nombre;
+            }
         }
         /// <summary>
         /// comentarios sobre el campo
@@ -164,7 +171,7 @@ namespace Modelador.Modelo
         /// </summary>
         public void Update()
         {
-            Modelo.Update_Campo(ID_Campo, NombreX, ID_Tabla, ID_TipoDato, Longitud, PK, AceptaNulos, Calculado, Formula, EsDefault, DefaultName, Orden,Comentarios);
+            Modelo.Update_Campo(ID_Campo, Nombre, ID_Tabla, ID_TipoDato, Longitud, PK, AceptaNulos, Calculado, Formula, EsDefault, DefaultName, Orden,Comentarios);
             //me traigo las llaves foraneas hijas para propagar el tipo de campo en caso de haber cambiado
             CTabla tbl = Modelo.Get_Tabla(ID_Tabla);
 
