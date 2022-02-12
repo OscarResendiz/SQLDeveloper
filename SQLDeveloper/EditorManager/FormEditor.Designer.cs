@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditor));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarTodasLasPestañasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TimerCerrar = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.contextMenuStrip1.SuspendLayout();
@@ -39,16 +42,35 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarToolStripMenuItem});
+            this.cerrarToolStripMenuItem,
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem,
+            this.cerrarTodasLasPestañasToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(274, 70);
             // 
             // cerrarToolStripMenuItem
             // 
+            this.cerrarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarToolStripMenuItem.Image")));
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar pestaña";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
+            // 
+            // cerrarTodasLasPestañasExceptoEstaToolStripMenuItem
+            // 
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Image")));
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Name = "cerrarTodasLasPestañasExceptoEstaToolStripMenuItem";
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Text = "Cerrar todas las pestañas excepto esta";
+            this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem.Click += new System.EventHandler(this.cerrarTodasLasPestañasExceptoEstaToolStripMenuItem_Click);
+            // 
+            // cerrarTodasLasPestañasToolStripMenuItem
+            // 
+            this.cerrarTodasLasPestañasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarTodasLasPestañasToolStripMenuItem.Image")));
+            this.cerrarTodasLasPestañasToolStripMenuItem.Name = "cerrarTodasLasPestañasToolStripMenuItem";
+            this.cerrarTodasLasPestañasToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.cerrarTodasLasPestañasToolStripMenuItem.Text = "Cerrar todas las pestañas";
+            this.cerrarTodasLasPestañasToolStripMenuItem.Click += new System.EventHandler(this.cerrarTodasLasPestañasToolStripMenuItem_Click);
             // 
             // TimerCerrar
             // 
@@ -56,6 +78,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.ContextMenuStrip = this.contextMenuStrip1;
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -89,5 +112,7 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
         private System.Windows.Forms.Timer TimerCerrar;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem cerrarTodasLasPestañasExceptoEstaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarTodasLasPestañasToolStripMenuItem;
     }
 }

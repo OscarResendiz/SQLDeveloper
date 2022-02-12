@@ -40,6 +40,7 @@ namespace SQLDeveloper.Modulos.DBComparador
             ComboVer.SelectedIndex = 0;
             CargaTipos();
             CargaGrupos();
+            DBProvider.DB.SuscribeErrorMessageEvent(ErrorQuery);
         }
         private void CargaVer()
         {
@@ -92,8 +93,12 @@ namespace SQLDeveloper.Modulos.DBComparador
             MotorDB.EnumMotoresDB tipoDB = ManagerConnect.ControladorConexiones.DameTipoMotor(obj.MotorDB);
             ConexionDerecha = MotorDB.CProviderDataBase.DameMotor(tipoDB);
             ConexionDerecha.SetConnectionString(obj.ConecctionString);
+            ConexionDerecha.SuscribeErrorMessageEvent(ErrorQuery);
         }
-
+        private void ErrorQuery(IMotorDB motor, string msg)
+        {
+            MessageBox.Show(this,msg,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void ComboTipo_VisibleChanged(object sender, EventArgs e)
         {
             TipoBusqueda = (MotorDB.CTipoBusqueda)ComboTipo.SelectedItem;
@@ -380,7 +385,10 @@ namespace SQLDeveloper.Modulos.DBComparador
         {
             if (e.RowIndex == -1)
                 return;
-            DataRow dr = Tabla.Rows[e.RowIndex];
+            VerComparacion(Tabla.Rows[e.RowIndex]);
+        }
+        private void VerComparacion(DataRow dr)
+        {
             if (dr["TipoDiferencia"].ToString() == "D")
             {
                 //es diferencia
@@ -406,6 +414,213 @@ namespace SQLDeveloper.Modulos.DBComparador
                         OnVerCodigoObjeto(ConexionDerecha, dr["Derecho"].ToString(), dr["CodigoDerecho"].ToString());
                 }
             }
+
+        }
+        private void verIzquierdo(DataRow dr)
+        {
+            if (OnVerCodigoObjeto != null)
+                OnVerCodigoObjeto(DBProvider.DB, dr["Izquierdo"].ToString(), dr["CodigoIzquierdo"].ToString());
+
+        }
+        private void abrirIzquierdoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            verIzquierdo(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+
+        }
+        private void verComparacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            VerComparacion(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+
+        }
+        private void verDerecho(DataRow dr)
+        {
+            if (OnVerCodigoObjeto != null)
+                OnVerCodigoObjeto(ConexionDerecha, dr["Derecho"].ToString(), dr["CodigoDerecho"].ToString());
+
+        }
+
+        private void abrirDerechoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            verDerecho(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+
+        }
+
+        private void marcarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Ver todo
+            if (dataGridView1.CurrentRow == null)
+                return;
+            verDerecho(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+            verIzquierdo(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+            VerComparacion(Tabla.Rows[dataGridView1.CurrentRow.Index]);
+        }
+
+        private void marcarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.YellowGreen;
+
+        }
+
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+            dataGridView1.ClearSelection();
+            dataGridView1.Rows[e.RowIndex].Selected = true;
+            dataGridView1.CurrentCell= dataGridView1.Rows[e.RowIndex].Cells[0];
+
+
+        }
+        private string dameDropQuery(CObjeto obj)
+        {
+            string dropquery = "";
+            switch (obj.Tipo)
+            {
+                case EnumTipoObjeto.FUNCION:
+                    dropquery = "drop function " + obj.Nombre;
+                    break;
+                case EnumTipoObjeto.PROCEDURE:
+                    dropquery = "drop procedure " + obj.Nombre;
+                    break;
+                case EnumTipoObjeto.TABLE:
+                    dropquery = "drop table " + obj.Nombre;
+                    break;
+                case EnumTipoObjeto.TRIGER:
+                    dropquery = "drop triger " + obj.Nombre;
+                    break;
+            }
+            return dropquery;
+        }
+        private void pasarDeIzquierdaADerechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            DataRow dr = Tabla.Rows[dataGridView1.CurrentRow.Index];
+            string izquierdo = dr["Izquierdo"].ToString();
+            string codigoIzquierdo = dr["CodigoIzquierdo"].ToString();
+            string dropquery = "";
+            bool encontrado = false;
+            //me raigo el objeto
+            List<CObjeto> l= DBProvider.DB.Buscar(izquierdo);
+            foreach (CObjeto obj in l)
+            {
+                if(obj.Nombre==izquierdo)
+                {
+                    encontrado = true;
+                    //me salgo del bucle
+                    dropquery = dameDropQuery(obj);
+                    break;
+                }
+            }
+            if(dropquery=="" && encontrado)
+            {
+                MessageBox.Show("Operacion no soportada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                //corro el drop
+                if (dropquery != "")
+                {
+                    //busco el objeto en el destino
+                    List<CObjeto> l3 = ConexionDerecha.Buscar(izquierdo);
+                    foreach (CObjeto obj in l3)
+                    {
+                        if (obj.Nombre == izquierdo)
+                        {
+                            ConexionDerecha.EjecutaQuery(dropquery);
+                            break;
+                        }
+                    }
+
+                    
+                }
+                //ejecuto el codigo
+                ConexionDerecha.EjecutaQuery(codigoIzquierdo);
+                //me traigo el codigo de la derecha
+                List<CObjeto> l2=ConexionDerecha.Buscar(izquierdo);
+                foreach (CObjeto obj in l2)
+                {
+                    if (obj.Nombre == izquierdo)
+                    {
+                        string codigo = DameCodigo(ConexionDerecha,obj);
+                        if (OnVerCodigoObjeto != null)
+                            OnVerCodigoObjeto(ConexionDerecha, obj.Nombre, codigo);
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+        }
+
+        private void pasarDeDerechaAIzquerdaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+            DataRow dr = Tabla.Rows[dataGridView1.CurrentRow.Index];
+            string Derecho = dr["Derecho"].ToString();
+            string CodigoDerecho = dr["CodigoDerecho"].ToString();
+            string dropquery = "";
+            bool encontrado = false;
+            //me raigo el objeto
+            List<CObjeto> l = ConexionDerecha.Buscar(Derecho);
+            foreach (CObjeto obj in l)
+            {
+                if (obj.Nombre == Derecho)
+                {
+                    encontrado = true;
+                    //me salgo del bucle
+                    dropquery = dameDropQuery(obj);
+                    break;
+                }
+            }
+            if (dropquery == "" && encontrado)
+            {
+                MessageBox.Show("Operacion no soportada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                //corro el drop
+                if(dropquery!="")
+                    DBProvider.DB.EjecutaQuery(dropquery);
+                //ejecuto el codigo
+                DBProvider.DB.EjecutaQuery(CodigoDerecho);
+                //me traigo el codigo de la izquierda
+                List<CObjeto> l2 = DBProvider.DB.Buscar(Derecho);
+                foreach (CObjeto obj in l2)
+                {
+                    if (obj.Nombre == Derecho)
+                    {
+                        string codigo = DameCodigo(DBProvider.DB, obj);
+                        if (OnVerCodigoObjeto != null)
+                            OnVerCodigoObjeto(DBProvider.DB, obj.Nombre, codigo);
+                        return;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
         }
     }
 }

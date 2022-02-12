@@ -108,7 +108,7 @@ namespace EditorManager
         {
             return FGuardado;
         }
-        protected bool FGuardado;
+        protected bool FGuardado=true;
         public bool Guardado
         {
             get

@@ -36,7 +36,7 @@ namespace EditorManager
         {
             if (tabControl1.SelectedIndex == -1)
                 return;
-            tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
+            CierraPestaña(tabControl1.SelectedIndex);
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,48 +192,6 @@ namespace EditorManager
             }
 
         }
-        private bool CierraPestaña()
-        {
-            if (tabControl1.SelectedIndex == -1)
-                tabControl1.SelectedIndex = 0;
-            EditorGenerico obj = null;
-            try
-            {
-                obj = (EditorGenerico)tabControl1.TabPages[tabControl1.SelectedIndex].Tag;
-            }
-            catch (System.Exception)
-            {
-                //no es un texto
-                tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
-                TimerCerrar.Enabled = false;
-                Guardando = false;
-                return true;
-            }
-            if (obj != null)
-            {
-                if (obj.Guardado == false)
-                {
-                    if (Guardando == true)
-                        return true;
-                    Guardando = true;
-                    System.Windows.Forms.DialogResult dr = MessageBox.Show("¿Desea guardar los cambios hechos al archivo: " + tabControl1.TabPages[tabControl1.SelectedIndex].Text + "?", "Cerrar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    switch (dr)
-                    {
-                        case DialogResult.Yes:
-                            obj.Guardar();
-                            break;
-                        case DialogResult.Cancel:
-                            TimerCerrar.Enabled = false;
-                            Guardando = false;
-                            return false;
-                    }
-                }
-            }
-            tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
-            TimerCerrar.Enabled = false;
-            Guardando = false;
-            return true;
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (OnPuedoCerrar != null)
@@ -243,7 +201,7 @@ namespace EditorManager
                     return;
                 }
             }
-            CierraPestaña();
+            CierraPestaña(tabControl1.SelectedIndex);
         }
         public void CanecaCerrarPestañas()
         {
@@ -253,7 +211,7 @@ namespace EditorManager
         {
             while (tabControl1.TabPages.Count > 0)
             {
-                if (CierraPestaña() == false)
+                if (CierraPestaña(0) == false)
                     return false;
             }
             return true;
@@ -419,6 +377,28 @@ namespace EditorManager
             tabControl1.SelectedIndex = 0;
 
         }
+
+        private void cerrarTodasLasPestañasExceptoEstaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (tabControl1.SelectedIndex == -1)
+                return;
+            //me traigo la pagina que no se va a cerrar
+            TabPage c = tabControl1.TabPages[tabControl1.SelectedIndex];
+            while(tabControl1.TabPages.Count>1) //solo debe quedar abierta una
+            {
+                //checo si puedo cerrar la pagina cero
+                if(tabControl1.TabPages[0]!=c)
+                {
+                    CierraPestaña(0);
+                }
+                else
+                {
+                    CierraPestaña(1);
+                }
+            }
+        }
+
         public Dictionary<int, EditorGenerico> GetTabs()
         {
             Dictionary<int,EditorGenerico> l=new Dictionary<int,EditorGenerico>();
@@ -428,6 +408,55 @@ namespace EditorManager
                 l.Add(i, obj);
             }
             return l;
+        }
+
+        private void cerrarTodasLasPestañasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CierraPestañas();
+        }
+
+        private bool CierraPestaña(int index)
+        {
+            //tabControl1.SelectedIndex 
+            if (index == -1)
+                index = 0;
+            EditorGenerico obj = null;
+            try
+            {
+                obj = (EditorGenerico)tabControl1.TabPages[index].Tag;
+            }
+            catch (System.Exception)
+            {
+                //no es un texto
+                tabControl1.TabPages.RemoveAt(index);
+                TimerCerrar.Enabled = false;
+                Guardando = false;
+                return true;
+            }
+            if (obj != null)
+            {
+                if (obj.Guardado == false)
+                {
+                    if (Guardando == true)
+                        return true;
+                    Guardando = true;
+                    System.Windows.Forms.DialogResult dr = MessageBox.Show("¿Desea guardar los cambios hechos al archivo: " + tabControl1.TabPages[index].Text + "?", "Cerrar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    switch (dr)
+                    {
+                        case DialogResult.Yes:
+                            obj.Guardar();
+                            break;
+                        case DialogResult.Cancel:
+                            TimerCerrar.Enabled = false;
+                            Guardando = false;
+                            return false;
+                    }
+                }
+            }
+            tabControl1.TabPages.RemoveAt(index);
+            TimerCerrar.Enabled = false;
+            Guardando = false;
+            return true;
         }
     }
 }

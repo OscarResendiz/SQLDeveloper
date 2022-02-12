@@ -203,7 +203,7 @@ namespace MotorDB
                     query = "select distinct CONSTRAINT_NAME as name, 'UQ' as xtype from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_SCHEMA='"+ GetDataBseName ()+ "' and UPPER(CONSTRAINT_NAME) like UPPER('%" + nombre.Trim()+"%') and CONSTRAINT_TYPE='UNIQUE'";
                     break;
                 case EnumTipoObjeto.VIEW:
-                    query = "select table_name as NAME,\'V\' as XTYPE from information_schema.tables where table_type=\'VIEW\' and table_schema=\'" + GetDataBseName() + "\' and UPPER(table_name) like UPPER(%\'" + nombre.Trim() + "%\')";
+                    query = "select table_name as NAME,\'V\' as XTYPE from information_schema.tables where table_type=\'VIEW\' and table_schema=\'" + GetDataBseName() + "\' and UPPER(table_name) like UPPER(\'%" + nombre.Trim() + "%\')";
                     break;
                 case EnumTipoObjeto.INDEX:
                     query = "select index_name as name, 'INDEX' as xtype from INFORMATION_SCHEMA.STATISTICS where index_schema='"+ GetDataBseName ()+ "' and UPPER(index_name) like UPPER('%" + nombre.Trim()+"%')";
@@ -1687,6 +1687,8 @@ namespace MotorDB
         //private CSQLComandQuery MyDataReader;
         public IDataReader EjecutaQuery(string cadena)
         {
+            if (cadena == "")
+                return null;
             CSQLComandQuery MyDataReader=null;
             if (MyDataReader == null)
             {
@@ -1706,7 +1708,7 @@ namespace MotorDB
             //y lo abro
             try
             {
-                MyDataReader.Open();
+                MyDataReader.Open(true);
             }
             catch (System.Exception ex)
             {
@@ -1749,8 +1751,9 @@ namespace MotorDB
                 }
                 MyComando.CommandTimeout = 50000;
                 MyComando.CommandText = comando;
-                if(MyComando.Connection.State!= ConnectionState.Open)
-                    MyComando.Connection.Open();
+                if (MyComando.Connection.State == ConnectionState.Open)
+                    MyComando.Connection.Close();
+                MyComando.Connection.Open();
                 IDataReader dr = MyComando.ExecuteReader();
                 ds.Load(dr, LoadOption.OverwriteChanges, new string[] { "Tabla 1", "Tabla 2", "Tabla 3", "Tabla 4", "Tabla 5", "Tabla 6", "Tabla 7", "Tabla 8", "Tabla 9", "Tabla 10", "Tabla 11", "Tabla 12", "Tabla 13", "Tabla 14", "Tabla 15" });
 //                MyComando.Connection.Close();

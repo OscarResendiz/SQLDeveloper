@@ -19,7 +19,7 @@ namespace FileManager
         private bool Guardando;
         public CFileManager()
         {
-            Guardando = false;
+            Guardando = true;
             InitializeComponent();
         }
         public CFIleInfo Abrir()
@@ -39,22 +39,6 @@ namespace FileManager
             InitMonitorFile();
             return Info;
         }
-        /*public CFIleInfo Abrir(string archivo)
-        {
-            if (Monitor != null)
-                Monitor.EnableRaisingEvents = false;
-
-            if (Info == null)
-                Info = new CFIleInfo();
-            string[] l = archivo.Split('\\');
-            Info.NombreCorto = l[l.Length - 1];
-            Info.NombreCompleto = archivo;
-            StreamReader sr = File.OpenText(archivo);
-            Info.Contenido = sr.ReadToEnd();
-            sr.Close();
-            InitMonitorFile();
-            return Info;
-        }*/
         private string getNombreCorto(string archivo)
         {
             string s = "";
@@ -126,13 +110,13 @@ namespace FileManager
             {
                 filename = info.NombreCompleto;
             }
-            Guardando = true;
+            //Guardando = true;
             StreamWriter sw = File.CreateText(filename);
             sw.Write(info.Contenido);
             sw.Close();
             Info = info;
             InitMonitorFile();
-            Guardando = false;
+            Guardando = true;
             return filename;
         }
         public string GuardarComo(CFIleInfo info)
@@ -144,9 +128,6 @@ namespace FileManager
                 {
                     saveFileDialog1.FileName = ValidaExtencion(info.NombreCorto);
                 }
-//                filename = saveFileDialog1.FileName;
-  //              info.NombreCompleto = filename;
-    //            info.NombreCorto = getNombreCorto(filename);
             }
             else
             {
@@ -161,13 +142,13 @@ namespace FileManager
             filename = saveFileDialog1.FileName;
             info.NombreCompleto = filename;
             info.NombreCorto = getNombreCorto(filename);
-            Guardando = true;
+            //Guardando = true;
             StreamWriter sw = File.CreateText(filename);
             sw.Write(info.Contenido);
             sw.Close();
             Info = info;
             InitMonitorFile();
-            Guardando = false;
+            Guardando = true;
             return filename;
         }
         private  void OnChanged(object source, FileSystemEventArgs e)
