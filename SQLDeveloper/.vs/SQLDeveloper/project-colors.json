@@ -25,7 +25,27 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Archivos varios",
       "ColorIndex": -1
+    },
+    "ffb7b78c-45e4-40e4-9ab9-60e3a9176986": {
+      "ProjectGuid": "ffb7b78c-45e4-40e4-9ab9-60e3a9176986",
+      "DisplayName": "MotorDB",
+      "ColorIndex": 4
+    },
+    "f5f29c55-8ff0-4c14-aa74-6b9f801a4b18": {
+      "ProjectGuid": "f5f29c55-8ff0-4c14-aa74-6b9f801a4b18",
+      "DisplayName": "GridControl",
+      "ColorIndex": 5
+    },
+    "ab169514-c2f8-4e27-b74d-8103c169f43b": {
+      "ProjectGuid": "ab169514-c2f8-4e27-b74d-8103c169f43b",
+      "DisplayName": "FileManager",
+      "ColorIndex": 6
+    },
+    "55c75890-76b6-42df-9bae-f2c6920829fd": {
+      "ProjectGuid": "55c75890-76b6-42df-9bae-f2c6920829fd",
+      "DisplayName": "TextEditor",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 8
 }

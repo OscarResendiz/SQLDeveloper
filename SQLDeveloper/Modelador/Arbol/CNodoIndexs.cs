@@ -44,8 +44,8 @@ namespace Modelador.Arbol
 
         private void CargaIndexs()
         {
-            List<Modelo.CIndex> l = GetTabla().Get_Indexs();
-            foreach(Modelo.CIndex indice in l)
+            List<Modelo.CIndexX> l = GetTabla().Get_Indexs();
+            foreach(Modelo.CIndexX indice in l)
             {
                 CNodoIndex nodo = new CNodoIndex();
                 nodo.ID_Index = indice.ID_Index;
@@ -56,7 +56,7 @@ namespace Modelador.Arbol
         }
         private void IndexInsert(ModeloDatos modelo , int ID_Index)
         {
-            Modelo.CIndex obj = Modelo.Get_Index(ID_Index);
+            Modelo.CIndexX obj = Modelo.Get_Index(ID_Index);
             if (obj.ID_Tabla == ID_Tabla)
             {
 
@@ -70,19 +70,19 @@ namespace Modelador.Arbol
         private void MenuAgregarIndex_Click(Object sender, EventArgs arg)
         {
             FormPropiedadesIndex dlg = new FormPropiedadesIndex();
-            dlg.OnCampoIndex += new OnFormPropiedadesIndexEvent(CampoSeleccionado);
+            dlg.OnCampoIndex += new OnFormPropiedadesCampoIndexEvent(CampoSeleccionado);
             dlg.OnIndex += new OnFormPropiedadesIndexEvent(IndiceSeleccionado);
             foreach(CCampo campo in GetTabla().Get_Campos())
             {
-                dlg.AddCampoTabla(campo.NombreX);
+                dlg.AddCampoTabla(campo.Nombre);
             }
             dlg.ShowDialog();
         }
-        private void IndiceSeleccionado(string nombre, bool pk)
+        private void IndiceSeleccionado(string nombre, bool pk, bool generarFuncion, bool MultiplesObjetos)
         {
             try
             {
-                Id_Index = Modelo.Insert_Index(nombre, ID_Tabla);
+                Id_Index = Modelo.Insert_IndexX(nombre, ID_Tabla, generarFuncion, MultiplesObjetos);
             }
             catch(System.Exception ex)
             {
@@ -93,11 +93,11 @@ namespace Modelador.Arbol
         {
             try
             {
-                CIndex index = Modelo.Get_Index(Id_Index);
+                CIndexX index = Modelo.Get_Index(Id_Index);
                 List<CCampo> campos = GetTabla().Get_Campos();
                 foreach (CCampo campo in campos)
                 {
-                    if (campo.NombreX == NomCampo)
+                    if (campo.Nombre == NomCampo)
                     {
                         index.Insert_Campo(campo.ID_Campo, descendente);
                     }

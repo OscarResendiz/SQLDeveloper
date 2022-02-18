@@ -32,7 +32,7 @@ namespace MotorDB
             get;
             set;
         }
-        public void Open()
+        public void Open(bool lanzarExcepcion=false)
         {
             //crea la conexion
             switch (Motor)
@@ -68,10 +68,12 @@ namespace MotorDB
                 FCommand.Connection.Open();
                 //RECUPERANDO DATOS
                 FDataReader = FCommand.ExecuteReader();
+                //FCommand.Connection.Close();
             }
             catch (System.Exception ex)
             {
-                ; //no hago nada
+                if (lanzarExcepcion)
+                    throw ex;
             }
         }
         //componenete que va a trabajar con la conexion de la base de datos

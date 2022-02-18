@@ -28,7 +28,7 @@ namespace Modelador.Arbol
         {
             base.ModeloAsignado();
             CCampo campo = GetCampo();
-            Nombre = campo.NombreX;
+            Nombre = campo.NombreExtendido;
             ToolTipText = campo.Comentarios;
             if(campo.PK)
             {
@@ -43,7 +43,7 @@ namespace Modelador.Arbol
             if (ID_Campo == id_campo)
             {
                 CCampo campo = GetCampo();
-                Nombre = campo.NombreX;
+                Nombre = campo.NombreExtendido;
                 ToolTipText = campo.Comentarios;
                 if (campo.PK)
                 {
@@ -64,7 +64,7 @@ namespace Modelador.Arbol
             {
                 CCampo campo = GetCampo();
                 UI.FormPropiedadesCampo dlg = new UI.FormPropiedadesCampo(Modelo);
-                dlg.NombreX = campo.NombreX;
+                dlg.NombreX = campo.Nombre;
                 dlg.Comentarios = campo.Comentarios;
                 dlg.ID_TipoDato = campo.ID_TipoDato;
                 dlg.Longitud = campo.Longitud;
@@ -76,7 +76,7 @@ namespace Modelador.Arbol
                 dlg.DefaultName = campo.DefaultName;
                 if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                     return;
-                campo.NombreX = dlg.NombreX;
+                campo.Nombre = dlg.NombreX;
                 campo.Comentarios = dlg.Comentarios;
                 campo.ID_TipoDato = dlg.ID_TipoDato;
                 campo.Longitud = dlg.Longitud;

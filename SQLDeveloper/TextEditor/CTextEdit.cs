@@ -43,6 +43,10 @@ namespace TextEditor
                 return BGuardar.Enabled;
             }
         }
+        protected override bool GetGuardado()
+        {
+            return !Modificado;
+        }
         public FileManager.IFileManager GestorArchivo
         {
             get

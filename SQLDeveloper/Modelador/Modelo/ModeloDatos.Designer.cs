@@ -54,9 +54,11 @@ namespace Modelador.Modelo {
         
         private RelCapaTablaDataTable tableRelCapaTabla;
         
-        private global::System.Data.DataRelation relationFK_Capa_RelCapaTabla;
+        private ConfigDataTable tableConfig;
         
         private global::System.Data.DataRelation relationFK_Tabla_RelCapaTabla;
+        
+        private global::System.Data.DataRelation relationFK_Capa_RelCapaTabla;
         
         private global::System.Data.DataRelation relationRegion_Region;
         
@@ -168,6 +170,9 @@ namespace Modelador.Modelo {
                 }
                 if ((ds.Tables["RelCapaTabla"] != null)) {
                     base.Tables.Add(new RelCapaTablaDataTable(ds.Tables["RelCapaTabla"]));
+                }
+                if ((ds.Tables["Config"] != null)) {
+                    base.Tables.Add(new ConfigDataTable(ds.Tables["Config"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -339,6 +344,16 @@ namespace Modelador.Modelo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ConfigDataTable Config {
+            get {
+                return this.tableConfig;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -448,6 +463,9 @@ namespace Modelador.Modelo {
                 }
                 if ((ds.Tables["RelCapaTabla"] != null)) {
                     base.Tables.Add(new RelCapaTablaDataTable(ds.Tables["RelCapaTabla"]));
+                }
+                if ((ds.Tables["Config"] != null)) {
+                    base.Tables.Add(new ConfigDataTable(ds.Tables["Config"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -572,8 +590,14 @@ namespace Modelador.Modelo {
                     this.tableRelCapaTabla.InitVars();
                 }
             }
-            this.relationFK_Capa_RelCapaTabla = this.Relations["FK_Capa_RelCapaTabla"];
+            this.tableConfig = ((ConfigDataTable)(base.Tables["Config"]));
+            if ((initTable == true)) {
+                if ((this.tableConfig != null)) {
+                    this.tableConfig.InitVars();
+                }
+            }
             this.relationFK_Tabla_RelCapaTabla = this.Relations["FK_Tabla_RelCapaTabla"];
+            this.relationFK_Capa_RelCapaTabla = this.Relations["FK_Capa_RelCapaTabla"];
             this.relationRegion_Region = this.Relations["Region_Region"];
             this.relationRegion_RegionTabla = this.Relations["Region_RegionTabla"];
             this.relationTabla_RegionTabla = this.Relations["Tabla_RegionTabla"];
@@ -633,14 +657,9 @@ namespace Modelador.Modelo {
             base.Tables.Add(this.tableCapa);
             this.tableRelCapaTabla = new RelCapaTablaDataTable();
             base.Tables.Add(this.tableRelCapaTabla);
+            this.tableConfig = new ConfigDataTable();
+            base.Tables.Add(this.tableConfig);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Capa_RelCapaTabla", new global::System.Data.DataColumn[] {
-                        this.tableCapa.ID_CapaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRelCapaTabla.ID_CapaColumn});
-            this.tableRelCapaTabla.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Tabla_RelCapaTabla", new global::System.Data.DataColumn[] {
                         this.tableTabla.ID_TablaColumn}, new global::System.Data.DataColumn[] {
                         this.tableRelCapaTabla.ID_TablaColumn});
@@ -648,14 +667,21 @@ namespace Modelador.Modelo {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Capa_RelCapaTabla = new global::System.Data.DataRelation("FK_Capa_RelCapaTabla", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Capa_RelCapaTabla", new global::System.Data.DataColumn[] {
                         this.tableCapa.ID_CapaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRelCapaTabla.ID_CapaColumn}, false);
-            this.Relations.Add(this.relationFK_Capa_RelCapaTabla);
+                        this.tableRelCapaTabla.ID_CapaColumn});
+            this.tableRelCapaTabla.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_Tabla_RelCapaTabla = new global::System.Data.DataRelation("FK_Tabla_RelCapaTabla", new global::System.Data.DataColumn[] {
                         this.tableTabla.ID_TablaColumn}, new global::System.Data.DataColumn[] {
                         this.tableRelCapaTabla.ID_TablaColumn}, false);
             this.Relations.Add(this.relationFK_Tabla_RelCapaTabla);
+            this.relationFK_Capa_RelCapaTabla = new global::System.Data.DataRelation("FK_Capa_RelCapaTabla", new global::System.Data.DataColumn[] {
+                        this.tableCapa.ID_CapaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRelCapaTabla.ID_CapaColumn}, false);
+            this.Relations.Add(this.relationFK_Capa_RelCapaTabla);
             this.relationRegion_Region = new global::System.Data.DataRelation("Region_Region", new global::System.Data.DataColumn[] {
                         this.tableRegion.ID_RegionColumn}, new global::System.Data.DataColumn[] {
                         this.tableRegion.ID_RegionPadreColumn}, false);
@@ -826,6 +852,12 @@ namespace Modelador.Modelo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeConfig() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -923,6 +955,9 @@ namespace Modelador.Modelo {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void RelCapaTablaRowChangeEventHandler(object sender, RelCapaTablaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ConfigRowChangeEventHandler(object sender, ConfigRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3629,6 +3664,10 @@ namespace Modelador.Modelo {
             
             private global::System.Data.DataColumn columnID_Tabla;
             
+            private global::System.Data.DataColumn columnGenerarFuncion;
+            
+            private global::System.Data.DataColumn columnMultiplesObjetos;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public IndexDataTable() {
@@ -3688,6 +3727,22 @@ namespace Modelador.Modelo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GenerarFuncionColumn {
+                get {
+                    return this.columnGenerarFuncion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MultiplesObjetosColumn {
+                get {
+                    return this.columnMultiplesObjetos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3723,12 +3778,14 @@ namespace Modelador.Modelo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public IndexRow AddIndexRow(string Nombre, TablaRow parentTablaRowByTabla_Index) {
+            public IndexRow AddIndexRow(string Nombre, TablaRow parentTablaRowByTabla_Index, bool GenerarFuncion, bool MultiplesObjetos) {
                 IndexRow rowIndexRow = ((IndexRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
-                        null};
+                        null,
+                        GenerarFuncion,
+                        MultiplesObjetos};
                 if ((parentTablaRowByTabla_Index != null)) {
                     columnValuesArray[2] = parentTablaRowByTabla_Index[0];
                 }
@@ -3764,6 +3821,8 @@ namespace Modelador.Modelo {
                 this.columnID_Index = base.Columns["ID_Index"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnID_Tabla = base.Columns["ID_Tabla"];
+                this.columnGenerarFuncion = base.Columns["GenerarFuncion"];
+                this.columnMultiplesObjetos = base.Columns["MultiplesObjetos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3775,12 +3834,18 @@ namespace Modelador.Modelo {
                 base.Columns.Add(this.columnNombre);
                 this.columnID_Tabla = new global::System.Data.DataColumn("ID_Tabla", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Tabla);
+                this.columnGenerarFuncion = new global::System.Data.DataColumn("GenerarFuncion", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGenerarFuncion);
+                this.columnMultiplesObjetos = new global::System.Data.DataColumn("MultiplesObjetos", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMultiplesObjetos);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Index}, true));
                 this.columnID_Index.AutoIncrement = true;
                 this.columnID_Index.AutoIncrementSeed = 1;
                 this.columnID_Index.AllowDBNull = false;
                 this.columnID_Index.Unique = true;
+                this.columnGenerarFuncion.DefaultValue = ((bool)(false));
+                this.columnMultiplesObjetos.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5844,6 +5909,278 @@ namespace Modelador.Modelo {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ConfigDataTable : global::System.Data.TypedTableBase<ConfigRow> {
+            
+            private global::System.Data.DataColumn columnClave;
+            
+            private global::System.Data.DataColumn columnValor;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigDataTable() {
+                this.TableName = "Config";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ConfigDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ConfigDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ClaveColumn {
+                get {
+                    return this.columnClave;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ValorColumn {
+                get {
+                    return this.columnValor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRow this[int index] {
+                get {
+                    return ((ConfigRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ConfigRowChangeEventHandler ConfigRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ConfigRowChangeEventHandler ConfigRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ConfigRowChangeEventHandler ConfigRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ConfigRowChangeEventHandler ConfigRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddConfigRow(ConfigRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRow AddConfigRow(string Clave, string Valor) {
+                ConfigRow rowConfigRow = ((ConfigRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Clave,
+                        Valor};
+                rowConfigRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowConfigRow);
+                return rowConfigRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRow FindByClave(string Clave) {
+                return ((ConfigRow)(this.Rows.Find(new object[] {
+                            Clave})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ConfigDataTable cln = ((ConfigDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ConfigDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnClave = base.Columns["Clave"];
+                this.columnValor = base.Columns["Valor"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnClave = new global::System.Data.DataColumn("Clave", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClave);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValor);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnClave}, true));
+                this.columnClave.AllowDBNull = false;
+                this.columnClave.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRow NewConfigRow() {
+                return ((ConfigRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ConfigRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ConfigRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ConfigRowChanged != null)) {
+                    this.ConfigRowChanged(this, new ConfigRowChangeEvent(((ConfigRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ConfigRowChanging != null)) {
+                    this.ConfigRowChanging(this, new ConfigRowChangeEvent(((ConfigRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ConfigRowDeleted != null)) {
+                    this.ConfigRowDeleted(this, new ConfigRowChangeEvent(((ConfigRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ConfigRowDeleting != null)) {
+                    this.ConfigRowDeleting(this, new ConfigRowChangeEvent(((ConfigRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveConfigRow(ConfigRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ModeloDatos ds = new ModeloDatos();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ConfigDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class RegionRow : global::System.Data.DataRow {
@@ -7510,6 +7847,38 @@ namespace Modelador.Modelo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool GenerarFuncion {
+                get {
+                    try {
+                        return ((bool)(this[this.tableIndex.GenerarFuncionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'GenerarFuncion\' de la tabla \'Index\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIndex.GenerarFuncionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool MultiplesObjetos {
+                get {
+                    try {
+                        return ((bool)(this[this.tableIndex.MultiplesObjetosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MultiplesObjetos\' de la tabla \'Index\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIndex.MultiplesObjetosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TablaRow TablaRow {
                 get {
                     return ((TablaRow)(this.GetParentRow(this.Table.ParentRelations["Tabla_Index"])));
@@ -7541,6 +7910,30 @@ namespace Modelador.Modelo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetID_TablaNull() {
                 this[this.tableIndex.ID_TablaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGenerarFuncionNull() {
+                return this.IsNull(this.tableIndex.GenerarFuncionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGenerarFuncionNull() {
+                this[this.tableIndex.GenerarFuncionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMultiplesObjetosNull() {
+                return this.IsNull(this.tableIndex.MultiplesObjetosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMultiplesObjetosNull() {
+                this[this.tableIndex.MultiplesObjetosColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8412,23 +8805,23 @@ namespace Modelador.Modelo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CapaRow CapaRow {
-                get {
-                    return ((CapaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Capa_RelCapaTabla"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Capa_RelCapaTabla"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TablaRow TablaRow {
                 get {
                     return ((TablaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Tabla_RelCapaTabla"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Tabla_RelCapaTabla"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CapaRow CapaRow {
+                get {
+                    return ((CapaRow)(this.GetParentRow(this.Table.ParentRelations["FK_Capa_RelCapaTabla"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Capa_RelCapaTabla"]);
                 }
             }
             
@@ -8466,6 +8859,60 @@ namespace Modelador.Modelo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetVisibleNull() {
                 this[this.tableRelCapaTabla.VisibleColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ConfigRow : global::System.Data.DataRow {
+            
+            private ConfigDataTable tableConfig;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ConfigRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableConfig = ((ConfigDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Clave {
+                get {
+                    return ((string)(this[this.tableConfig.ClaveColumn]));
+                }
+                set {
+                    this[this.tableConfig.ClaveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Valor {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig.ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Valor\' de la tabla \'Config\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig.ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsValorNull() {
+                return this.IsNull(this.tableConfig.ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetValorNull() {
+                this[this.tableConfig.ValorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8965,6 +9412,40 @@ namespace Modelador.Modelo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RelCapaTablaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ConfigRowChangeEvent : global::System.EventArgs {
+            
+            private ConfigRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRowChangeEvent(ConfigRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ConfigRow Row {
                 get {
                     return this.eventRow;
                 }

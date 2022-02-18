@@ -31,7 +31,7 @@ namespace Modelador.Arbol
         {
             base.ModeloAsignado();
             CCampo campo = GetCampo().Get_Campo();
-            Nombre = campo.NombreX;
+            Nombre = campo.Nombre;
             ToolTipText = campo.Comentarios;
         }
     }

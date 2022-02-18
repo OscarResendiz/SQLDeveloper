@@ -155,7 +155,7 @@ namespace Modelador.UI
                 {
                    string tipo =AgregaTipo(campo.Get_TipoDato(), campo.Longitud);
                     DataRow dr = dt.NewRow();
-                    dr["ColumnaPadre"] = campo.NombreX;
+                    dr["ColumnaPadre"] = campo.Nombre;
                     dr["Tipo"] = tipo;
                     dt.Rows.Add(dr);
                 }
@@ -239,7 +239,7 @@ namespace Modelador.UI
                 {
                     //si y solo si existe el tipo de dato lo agrega
                     DataRow dr = dt.NewRow();
-                    dr["Campo"] = obj.NombreX;
+                    dr["Campo"] = obj.Nombre;
                     dt.Rows.Add(dr);
                 }
             }
@@ -257,9 +257,9 @@ namespace Modelador.UI
                     //busco el campo que le coorezponde
                     foreach (Modelo.CCampo campo in Tabla.Get_Campos())
                     {
-                        if (campo.NombreX == dr["ColumnaPadre"].ToString() && AgregaTipo(campo.Get_TipoDato(), campo.Longitud)== dr["Tipo"].ToString())
+                        if (campo.Nombre == dr["ColumnaPadre"].ToString() && AgregaTipo(campo.Get_TipoDato(), campo.Longitud)== dr["Tipo"].ToString())
                         {
-                            dr["ColumnaHija"] = campo.NombreX;
+                            dr["ColumnaHija"] = campo.Nombre;
                             break;
                         }
                     }
@@ -415,9 +415,9 @@ namespace Modelador.UI
                 //busco el campo que le coorezponde
                 foreach(Modelo.CCampoReferencia campo in campos)
                 {
-                    if(campo.Get_CampoPadre().NombreX== dr["ColumnaPadre"].ToString())
+                    if(campo.Get_CampoPadre().Nombre== dr["ColumnaPadre"].ToString())
                     {
-                        dr["ColumnaHija"] = campo.Get_CampoHijo().NombreX;
+                        dr["ColumnaHija"] = campo.Get_CampoHijo().Nombre;
                         break;
                     }
                 }

@@ -102,7 +102,7 @@ namespace Modelador.Modelo
             {
                 check.Delete();
             }
-            foreach (CIndex index in Get_Indexs())
+            foreach (CIndexX index in Get_Indexs())
             {
                 index.Delete();
             }
@@ -141,7 +141,7 @@ namespace Modelador.Modelo
        /// Regresa la lista de Indices
        /// </summary>
        /// <returns></returns>
-        public List<CIndex> Get_Indexs()
+        public List<CIndexX> Get_Indexs()
         {
             return Modelo.Get_IndexTabla(ID_Tabla);
         }
@@ -220,7 +220,7 @@ namespace Modelador.Modelo
         {
             foreach(CCampo obj in Get_Campos())
             {
-                if(obj.NombreX.ToUpper().Trim()==campo.ToUpper().Trim())
+                if(obj.Nombre.ToUpper().Trim()==campo.ToUpper().Trim())
                 {
                     return obj;
                 }
@@ -235,10 +235,10 @@ namespace Modelador.Modelo
         {
             return Nombre;
         }
-        public CIndex Get_PrimaryKeyIndex()
+        public CIndexX Get_PrimaryKeyIndex()
         {
-            CIndex obj = null;                
-            foreach (CIndex index in Get_Indexs())
+            CIndexX obj = null;                
+            foreach (CIndexX index in Get_Indexs())
             {
                 if(index.Nombre==PK_Nombre)
                 {

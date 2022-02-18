@@ -11,11 +11,13 @@ using MotorDB;
 
 namespace Modelador.UI
 {
-    public delegate void OnFormPropiedadesIndexEvent(string nombre, bool pk);
+    public delegate void OnFormPropiedadesIndexEvent(string nombre, bool pk, bool genrarFuncion,bool MultiplesObjetos);
+    public delegate void OnFormPropiedadesCampoIndexEvent(string nombre, bool pk);
     public partial class FormPropiedadesIndex : Form
     {
         public event OnFormPropiedadesIndexEvent OnIndex;
-        public event OnFormPropiedadesIndexEvent OnCampoIndex;
+        public event OnFormPropiedadesIndexEvent OnFinIndex;
+        public event OnFormPropiedadesCampoIndexEvent OnCampoIndex;
         public string Nombre
         {
             get
@@ -36,6 +38,28 @@ namespace Modelador.UI
             set
             {
                 CHPrimaryKey.Checked = value;
+            }
+        }
+        public bool GenerarFuncion
+        {
+            get
+            {
+                return CkGenFuncion.Checked;
+            }
+            set
+            {
+                CkGenFuncion.Checked = value;
+            }
+        }
+        public bool MultiplesObjetos
+        {
+            get
+            {
+                return ChMultiplesObjetos.Checked;
+            }
+            set
+            {
+                ChMultiplesObjetos.Checked = value;
             }
         }
         private DataTable CamposIndex;
@@ -108,7 +132,7 @@ namespace Modelador.UI
         private void Baceptar_Click(object sender, EventArgs e)
         {
             if (OnIndex != null)
-                OnIndex(Nombre, PrimaryKey);
+                OnIndex(Nombre, PrimaryKey, GenerarFuncion, MultiplesObjetos);
             foreach (DataRow row in CamposIndex.Rows)
             {
                 if(bool.Parse(row["Seleccionado"].ToString())==true)
@@ -120,7 +144,8 @@ namespace Modelador.UI
                         OnCampoIndex(row["Campo"].ToString(), desc);
                 }
             }
-
+            if (OnFinIndex != null)
+                OnFinIndex(Nombre, PrimaryKey, GenerarFuncion, MultiplesObjetos);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

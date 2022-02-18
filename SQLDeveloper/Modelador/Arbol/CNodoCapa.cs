@@ -253,15 +253,16 @@ namespace Modelador.Arbol
             //me traigo los indices
             foreach (Cindex index in tabla.Indexs)
             {
-                if (Modelo.Get_Index(index.Nombre) == null)
+                CIndexX index2 = Modelo.Get_Index(index.Nombre)
+;                if (index2 == null)
                 {
-                    int id_index = Modelo.Insert_Index(index.Nombre, tbl.ID_Tabla);
+                    int id_index = Modelo.Insert_IndexX(index.Nombre, tbl.ID_Tabla, index2.GenerarFuncionX,index2.MultiplesObjetos);
                     //ahora me traigo los campos
                     foreach (MotorDB.CCampoIndex ci in index.Campos)
                     {
                         foreach (Modelo.CCampo obj2 in tbl.Get_Campos())
                         {
-                            if (obj2.NombreX == ci.Nombre)
+                            if (obj2.Nombre == ci.Nombre)
                             {
                                 Modelo.Insert_CampoIndex(id_index, obj2.ID_Campo, ci.Ordenamiento == EnumOrdenIndex.DESC);
                             }
