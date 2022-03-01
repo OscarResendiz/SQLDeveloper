@@ -18,9 +18,10 @@ namespace ManagerConnect
         {
             get
             {
-                if (System.IO.Directory.Exists(Application.StartupPath + "\\Colores") == false)
-                    System.IO.Directory.CreateDirectory(Application.StartupPath + "\\Colores");
-                return Application.StartupPath + "\\Colores\\Config.xml";
+                //                if (System.IO.Directory.Exists(Application.StartupPath + "\\Colores") == false)
+                //                    System.IO.Directory.CreateDirectory(Application.StartupPath + "\\Colores");
+//                return Application.StartupPath + "\\Colores\\Config.xml";
+                return Application.StartupPath + "\\Config.xml";
             }
         }
         public void LoadConfig()
@@ -31,7 +32,15 @@ namespace ManagerConnect
         }
         public void SaveConfig()
         {
-            dataSet1.WriteXml(NombreArchivo);
+            try
+            {
+                dataSet1.WriteXml(NombreArchivo);
+            }
+            catch(System.UnauthorizedAccessException ex)
+            {
+                
+                MessageBox.Show("Nececita ejecutar la aplicacion como adminisrador: "+ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public ConfiguradorApp()
         {

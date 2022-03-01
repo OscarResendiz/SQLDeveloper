@@ -84,6 +84,7 @@ namespace SQLDeveloper
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.BComparar = new System.Windows.Forms.ToolStripButton();
             this.BDBComparer = new System.Windows.Forms.ToolStripButton();
+            this.BModeloador = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -92,7 +93,6 @@ namespace SQLDeveloper
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cProjectManager1 = new SQLDeveloper.Modulos.ProyectAdmin.CProjectManager(this.components);
             this.configuradorApp1 = new ManagerConnect.ConfiguradorApp(this.components);
-            this.BModeloador = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -260,42 +260,42 @@ namespace SQLDeveloper
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.newWindowToolStripMenuItem.Text = "&Nueva ventana";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.Conecciones);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascada";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.closeAllToolStripMenuItem.Text = "C&errar todo";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -569,6 +569,16 @@ namespace SQLDeveloper
             this.BDBComparer.Text = "Comparar Bases de Datos";
             this.BDBComparer.Click += new System.EventHandler(this.BDBComparer_Click);
             // 
+            // BModeloador
+            // 
+            this.BModeloador.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BModeloador.Image = ((System.Drawing.Image)(resources.GetObject("BModeloador.Image")));
+            this.BModeloador.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BModeloador.Name = "BModeloador";
+            this.BModeloador.Size = new System.Drawing.Size(24, 24);
+            this.BModeloador.Text = "Modelador";
+            this.BModeloador.Click += new System.EventHandler(this.BModeloador_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -600,16 +610,6 @@ namespace SQLDeveloper
             // cProjectManager1
             // 
             this.cProjectManager1.OnProjectHistoruChange += new SQLDeveloper.Modulos.ProyectAdmin.CProjectManagerEvent(this.LoadHistoryproyects);
-            // 
-            // BModeloador
-            // 
-            this.BModeloador.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BModeloador.Image = ((System.Drawing.Image)(resources.GetObject("BModeloador.Image")));
-            this.BModeloador.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BModeloador.Name = "BModeloador";
-            this.BModeloador.Size = new System.Drawing.Size(24, 24);
-            this.BModeloador.Text = "toolStripButton1";
-            this.BModeloador.Click += new System.EventHandler(this.BModeloador_Click);
             // 
             // FormPrincipal
             // 
