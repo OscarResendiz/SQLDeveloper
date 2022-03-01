@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLDeveloper", "SQLDeveloper\SQLDeveloper.csproj", "{A94BE1F9-9755-4929-8475-7F6CCB6040E2}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{AB169514-C2F8-4E27-B74D-8103C169F43B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inteliences", "Inteliences\Inteliences.csproj", "{6931BCC1-F51D-4FC6-90BF-29FD713695E7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSQLDeveloper", "SetupSQLDeveloper\SetupSQLDeveloper.vdproj", "{92802E87-B429-489A-BA74-22DC8AB20928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,8 @@ Global
 		{6931BCC1-F51D-4FC6-90BF-29FD713695E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6931BCC1-F51D-4FC6-90BF-29FD713695E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6931BCC1-F51D-4FC6-90BF-29FD713695E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92802E87-B429-489A-BA74-22DC8AB20928}.Debug|Any CPU.ActiveCfg = Debug
+		{92802E87-B429-489A-BA74-22DC8AB20928}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
