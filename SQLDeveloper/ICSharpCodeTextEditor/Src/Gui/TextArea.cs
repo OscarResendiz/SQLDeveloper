@@ -195,8 +195,7 @@ namespace ICSharpCode.TextEditor
 			SetStyle(ControlStyles.Selectable, true);
 			
 			textView = new TextView(this);
-			
-			gutterMargin = new GutterMargin(this);
+			gutterMargin = new ICSharpCode.TextEditor.GutterMargin(this);
 			foldMargin   = new FoldMargin(this);
 			iconBarMargin = new IconBarMargin(this);
 			leftMargins.AddRange(new AbstractMargin[] { iconBarMargin, gutterMargin, foldMargin });

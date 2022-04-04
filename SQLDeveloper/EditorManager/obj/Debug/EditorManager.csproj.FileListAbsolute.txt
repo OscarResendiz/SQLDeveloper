@@ -95,9 +95,9 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.Thre
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.ValueTuple.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.AssemblyReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.FormEditor.resources
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.Properties.Resources.resources
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.GenerateResource.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CoreCompileInputs.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CopyComplete
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.pdb
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.Properties.Resources.resources

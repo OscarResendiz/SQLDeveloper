@@ -104,6 +104,9 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\Manage
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ManagerConnect.csproj.CopyComplete
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ManagerConnect.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ManagerConnect.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ICSharpCode.TextEditor.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\MotorDB.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Threading.Channels.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ManagerConnect.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ManagerConnect.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ManagerConnect.pdb
@@ -121,9 +124,7 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Threading.Tasks.Extensions.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.ValueTuple.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\MySql.Data.dll
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ICSharpCode.TextEditor.pdb
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\ICSharpCode.TextEditor.dll.config
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\MotorDB.pdb
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\MotorDB.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\Npgsql.xml
@@ -133,7 +134,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Text.Encodings.Web.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Text.Json.xml
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Threading.Channels.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\bin\Debug\System.ValueTuple.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\CConecionesManager\obj\Debug\ManagerConnect.csproj.AssemblyReference.cache
