@@ -329,7 +329,7 @@ namespace SQLDeveloper.Modulos.DBComparador
         private void BKComparar_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Progreso.Value = 0;
-            Status = "Proceso terminado";
+            Status = Tabla.Rows.Count+" Objetos encontrados";
             Comparando = false;
             GeneralEnable = true;
             TablaOrg = Tabla.Copy();
@@ -521,7 +521,7 @@ namespace SQLDeveloper.Modulos.DBComparador
                     break;
                 }
             }
-            if(dropquery=="" && encontrado)
+            if(encontrado==false)//dropquery == "" && encontrado)
             {
                 MessageBox.Show("Operacion no soportada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
