@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\motordb\\motores\\sqlserver\\cmotorsqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|solutionrelative:motordb\\motores\\sqlserver\\cmotorsqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\modulos\\buscador\\formbuscadorobjetos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\buscador\\formbuscadorobjetos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\modulos\\buscador\\formbuscadorobjetos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\buscador\\formbuscadorobjetos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CMotorSQLServer.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "RelativeDocumentMoniker": "MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "RelativeToolTip": "MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "ViewState": "AgIAALMBAAAAAAAAAADwv8EBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:49:16.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormTabla.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAlwN8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:45:29.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormTabla.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:45:32.361Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormBuscadorObjetos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:44:18.153Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormBuscadorObjetos.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Buscador\\FormBuscadorObjetos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:44:13.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormPrincipal.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\FormPrincipal.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\FormPrincipal.cs",
+              "RelativeToolTip": "SQLDeveloper\\FormPrincipal.cs",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAawFsBAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:44:05.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\FormPrincipal.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\FormPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SQLDeveloper\\FormPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T18:43:58.363Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

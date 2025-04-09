@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.BAceptar = new System.Windows.Forms.Button();
             this.BCancelar = new System.Windows.Forms.Button();
+            this.BtnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,12 +176,23 @@
             this.BCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BCancelar.UseVisualStyleBackColor = false;
             // 
+            // BtnVer
+            // 
+            this.BtnVer.Image = ((System.Drawing.Image)(resources.GetObject("BtnVer.Image")));
+            this.BtnVer.Location = new System.Drawing.Point(456, 207);
+            this.BtnVer.Name = "BtnVer";
+            this.BtnVer.Size = new System.Drawing.Size(44, 45);
+            this.BtnVer.TabIndex = 33;
+            this.BtnVer.UseVisualStyleBackColor = true;
+            this.BtnVer.Click += new System.EventHandler(this.BtnVer_Click);
+            // 
             // FormDlgConfigMySql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 350);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnVer);
             this.Controls.Add(this.BAceptar);
             this.Controls.Add(this.BCancelar);
             this.Controls.Add(this.TNombre);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BAceptar;
         private System.Windows.Forms.Button BCancelar;
+        private System.Windows.Forms.Button BtnVer;
     }
 }

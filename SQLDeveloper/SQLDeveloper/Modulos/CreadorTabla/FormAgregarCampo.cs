@@ -24,7 +24,7 @@ namespace SQLDeveloper.Modulos.CreadorTabla
         private void CargaTiposDatos()
         {
             ComboTipo.Items.Clear();
-            List<CTipoDato> l=DBProvider.DB.DameTiposDato();
+            List<CTipoDato> l = DBProvider.DB.DameTiposDato();
             foreach(CTipoDato obj in l)
             {
                 ComboTipo.Items.Add(obj);

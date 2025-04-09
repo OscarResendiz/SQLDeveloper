@@ -94,7 +94,7 @@ namespace Modelador.Arbol
                 Modelo.CTabla tbl = Modelo.Get_Tabla(nombre);
                 if (tbl == null)
                 {
-                    int id_tabla = Modelo.Insert_Tabla(tabla.Nombre, 10, 10, Color.White,  "", 0, "", Color.Black, tbl.Comentarios);
+                    int id_tabla = Modelo.Insert_Tabla(tabla.Nombre, 10, 10, Color.White,  "", 0, "", Color.Black, "");
                     tbl = Modelo.Get_Tabla(id_tabla);
                 }
                 if (tabla.PrimaryKey != null)
@@ -145,7 +145,7 @@ namespace Modelador.Arbol
             foreach (Cindex index in tabla.Indexs)
             {
                 CIndexX Index2 = Modelo.Get_Index(index.Nombre)
-;                if (Index2 == null)
+;                if (Index2 != null)
                 {
                     int id_index = Modelo.Insert_IndexX(index.Nombre, tbl.ID_Tabla, Index2.GenerarFuncionX,Index2.MultiplesObjetos);
                     //ahora me traigo los campos

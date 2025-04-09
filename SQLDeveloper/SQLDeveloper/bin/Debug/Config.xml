@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Texts>
+    <Parametro>AlgoritmoComparador</Parametro>
+    <Valor>Palabra por palabra</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>SensibilidadComparador</Parametro>
+    <Valor>15</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColoLetraLineaDiferente</Parametro>
+    <Valor>#000000</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorLetraDiferenciaDetalle</Parametro>
+    <Valor>#000000</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorLetraNuevaLinea</Parametro>
+    <Valor>#000000</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorDiferenciaLinea</Parametro>
+    <Valor>#FFFF80</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorPalbraDiferente</Parametro>
+    <Valor>#808080</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorNuevaLinea</Parametro>
+    <Valor>#FF0000</Valor>
+  </Texts>
+  <Texts>
+    <Parametro>ColorLineaVirtual</Parametro>
+    <Valor>#8080FF</Valor>
+  </Texts>
+</NewDataSet>

@@ -71,6 +71,7 @@ namespace Modelador.Arbol
         {
             FormSelectConecion dlg = new FormSelectConecion();
             dlg.OnConexion += new OnFormConexionInicialEvent(OnConexionEvent);
+            dlg.ShowDialog();
         }
         private void OnConexionEvent(string nombre, CConexion con)
         {

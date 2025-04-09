@@ -137,7 +137,7 @@ namespace ManagerConnect
             //me traigo los datos de la conexion
             CConexion obj = new CConexion();
             obj.Nombre = motor.GetConnectionName();
-            obj.MotorDB = EnumMotoresDB.SQLSERVER.ToString();
+            obj.MotorDB = motor.GetMotor().ToString();// EnumMotoresDB.SQLSERVER.ToString();
             obj.ConecctionString = motor.GetConecctionString();
             //mando a agregar la conexion
             try

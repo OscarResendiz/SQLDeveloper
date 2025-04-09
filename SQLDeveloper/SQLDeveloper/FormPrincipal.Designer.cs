@@ -426,7 +426,7 @@ namespace SQLDeveloper
             // 
             this.ComboGrupos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboGrupos.Name = "ComboGrupos";
-            this.ComboGrupos.Size = new System.Drawing.Size(121, 27);
+            this.ComboGrupos.Size = new System.Drawing.Size(221, 27);
             this.ComboGrupos.DropDown += new System.EventHandler(this.ComboGrupos_DropDown);
             // 
             // toolStripLabel2
@@ -439,7 +439,7 @@ namespace SQLDeveloper
             // 
             this.ComboConexiones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboConexiones.Name = "ComboConexiones";
-            this.ComboConexiones.Size = new System.Drawing.Size(121, 27);
+            this.ComboConexiones.Size = new System.Drawing.Size(221, 27);
             this.ComboConexiones.DropDown += new System.EventHandler(this.ComboConexiones_DropDown);
             this.ComboConexiones.SelectedIndexChanged += new System.EventHandler(this.ComboConexiones_SelectedIndexChanged);
             this.ComboConexiones.Click += new System.EventHandler(this.ComboConexiones_Click);

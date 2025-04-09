@@ -453,7 +453,8 @@ namespace MotorDB
             s += " select \n";
             s += "  c.name as Nombre, \n";
             s += "  t.name as TipoDato, \n";
-            s += "  c.length as Longitud, \n";
+//            s += "  c.length as Longitud, \n";
+            s += "  c.prec as Longitud, \n";
             s += "  c.isnullable as AceptaNulo, \n";
             s += "  c.iscomputed as CampoCalculado, \n";
             s += "  c.cdefault , \n";

@@ -254,7 +254,7 @@ namespace Modelador.Arbol
             foreach (Cindex index in tabla.Indexs)
             {
                 CIndexX index2 = Modelo.Get_Index(index.Nombre)
-;                if (index2 == null)
+;                if (index2 != null)
                 {
                     int id_index = Modelo.Insert_IndexX(index.Nombre, tbl.ID_Tabla, index2.GenerarFuncionX,index2.MultiplesObjetos);
                     //ahora me traigo los campos
@@ -368,7 +368,7 @@ namespace Modelador.Arbol
                 Modelo.CTabla tbl = Modelo.Get_Tabla(nombre);
                 if (tbl == null)
                 {
-                    int id_tabla = Modelo.Insert_Tabla(tabla.Nombre, 10, 10, Color.White,  "", 0, "",Color.Black,tbl.Comentarios);
+                    int id_tabla = Modelo.Insert_Tabla(tabla.Nombre, 10, 10, Color.White,  "", 0, "",Color.Black,"");
                     Modelo.Insert_TablaCapa(ID_Capa, id_tabla, 0, 0, true);
                     tbl = Modelo.Get_Tabla(id_tabla);
                 }

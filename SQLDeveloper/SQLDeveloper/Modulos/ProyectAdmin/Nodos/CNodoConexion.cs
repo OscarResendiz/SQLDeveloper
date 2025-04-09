@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using MotorDB;
+using ManagerConnect;
+
 namespace SQLDeveloper.Modulos.ProyectAdmin
 {
     class CNodoConexion : CNodoFolder
     {
         private System.Windows.Forms.ToolStripMenuItem MenuAgregar;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditar;
         private System.Windows.Forms.ToolStripMenuItem MenuEliminar;
         private System.Windows.Forms.ToolStripMenuItem MenuNuevaCarpeta;
         private System.Windows.Forms.ToolStripMenuItem MenuNuevoScript;
@@ -22,6 +25,8 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
         public CNodoConexion()
         {
             Text = "Conexion";
+            ImageIndex = 22;
+            SelectedImageIndex = 22;
 
         }
         public ManagerConnect.CConexion Conexion
@@ -41,6 +46,7 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
         {
             System.Windows.Forms.ContextMenuStrip MenuPrinciapl = base.CreaMenu();
             this.MenuAgregar = new System.Windows.Forms.ToolStripMenuItem();
+            MenuEditar = new System.Windows.Forms.ToolStripMenuItem();
             MenuMultiAgregar = new ToolStripMenuItem();
             MenuEliminar = new System.Windows.Forms.ToolStripMenuItem();
             MenuNuevaCarpeta = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +57,7 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
             // MenuTabla
             // 
             MenuPrinciapl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+               MenuEditar,
             this.MenuAgregar,
             MenuMultiAgregar,
             this.MenuNuevoScript,
@@ -58,6 +65,14 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
             MenuNuevoDocumento,
             MenuNuevaCarpeta ,
             this.MenuEliminar});
+            // 
+            // MenuEditar
+            // 
+            this.MenuEditar.Image = ImageManager.getImagen("document"); // ((System.Drawing.Image)(resources.GetObject("IconoAgregar")));
+            this.MenuEditar.Name = "MenuEditar";
+            this.MenuEditar.Size = new System.Drawing.Size(201, 22);
+            this.MenuEditar.Text = "Editar Conexion";
+            this.MenuEditar.Click += new System.EventHandler(this.MenuEditar_Click);
             // 
             // MenuAgregar
             // 
@@ -117,6 +132,8 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
              
             return MenuPrinciapl;
         }
+
+
         private void MenuAgregar_Click(object sender, EventArgs e)
         {
             Modulos.Buscador.FormSelectObjet dlg = new Buscador.FormSelectObjet();
@@ -136,9 +153,19 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
         
         private void MenuEliminar_Click(object sender, EventArgs e)
         {
-            CNodoBase padre = (CNodoBase)this.Parent;
-            padre.RefreshData();
-           
+            try
+            {
+                CNodoBase padre = (CNodoBase)this.Parent;
+                if (MessageBox.Show("Eliminar la conexion: " + this.Text, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+                this.Modelo.EliminaConexion(padre.Nombre, this.Nombre);
+                padre.RefreshData();
+                this.Remove();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public string Servidor
         {
@@ -584,6 +611,47 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dlg.Cursor = Cursors.Default;
+        }
+        public override void Expandido()
+        {
+            //se sobre escibe para manejar el vento de expandido
+            ImageIndex = 22;
+            SelectedImageIndex = 22;
+        }
+        public override void Colapsado()
+        {
+            ImageIndex = 22;
+            SelectedImageIndex = 22;
+        }
+        private void MenuEditar_Click(object sender, EventArgs e)
+        {
+            //me traigo el grupo al que pertenesco
+            string grupo = Parent.Text;
+            //me traigo la conexion
+            IMotorDB motor = ManagerConnect.ControladorConexiones.DameMotor(FConexion); 
+            //CProviderDataBase.DameMotor(ControladorConexiones.DameTipoMotor(FConexion.MotorDB));
+            motor.SetConnectionName(FConexion.Nombre);
+            motor.SetConnectionString(FConexion.ConecctionString);
+            //mando a mostrar la pantalla de configuracion del motor
+            if (motor.ShowDlgConfig() != DialogResult.OK)
+            {
+                //se cancelo, por lo que no hago nada
+                return;
+            }
+            FConexion.Nombre = motor.GetConnectionName();
+            FConexion.ConecctionString = motor.GetConecctionString();
+            try
+            {
+                ControladorConexiones.ActualizaConexion(grupo, Text, FConexion.ConecctionString, FConexion.Nombre);
+            }
+            catch (System.Exception ex)
+            {
+                //muestro el mensaje de error
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Text != FConexion.Nombre && FConexion.Nombre != "" && FConexion.Nombre != null)
+                Text = FConexion.Nombre;
         }
     }
 }

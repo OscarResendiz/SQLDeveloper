@@ -571,6 +571,8 @@ namespace MotorDB
             //System.Data.IDataReader dr;
             IDataReader dr;
             dr = EjecutaQuery(s);
+            if (dr == null)
+                return l;
             while (dr.Read())// (dr.IsClosed == false && dr.Read())
             {
                 CCampo campo = new CCampo();
@@ -671,7 +673,7 @@ namespace MotorDB
             string campo = "Create function";
             System.Data.IDataReader dr;
             dr = EjecutaQuery(s);
-            s = "";
+            s = "SET GLOBAL log_bin_trust_function_creators = 1;\r\ndrop function " + nombre.Trim()+";\r\n";
             while (dr.Read())
             {
                 s = s + dr[campo].ToString().Replace('�', 'ñ');
@@ -692,7 +694,7 @@ namespace MotorDB
             string campo = "Create Procedure";
             System.Data.IDataReader dr;
             dr = EjecutaQuery(s);
-            s = "";
+            s = "drop procedure " + nombre.Trim() + ";\r\n";
             while (dr.Read())
             {
                 s = s + dr[campo].ToString().Replace('�', 'ñ');
@@ -830,6 +832,8 @@ namespace MotorDB
             string s = "select createtime as crdate from INFORMATION_SCHEMA.TABLES where table_schema='" + GetDataBseName() + "'  and table_name='" + nombreObjeto + "'";
             DateTime fecha = DateTime.Now;
             IDataReader dr = EjecutaQuery(s);
+            if(dr==null)
+                return System.DateTime.Now;
             while (dr.Read())
             {
                 fecha = DateTime.Parse(dr["crdate"].ToString());
@@ -865,6 +869,8 @@ namespace MotorDB
 
             System.Data.IDataReader dr;
             dr = EjecutaQuery(s);
+            if (dr == null)
+                return null;
             while (dr.Read())
             {
                 CCampoBase campo = new CCampoBase();
@@ -893,6 +899,8 @@ namespace MotorDB
             List<CForeignKey> fks = new List<CForeignKey>();
             string s = "select CONSTRAINT_NAME as FK,TABLE_NAME as TablaHija,REFERENCED_TABLE_NAME as TablaPadre, UPDATE_RULE,DELETE_RULE from INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS where CONSTRAINT_SCHEMA='" + GetDataBseName()+"' and TABLE_NAME='"+ tablaHija + "'";
             IDataReader dr = EjecutaQuery(s);
+            if (dr == null)
+                return fks;
             while (dr.Read())
             {
                 CForeignKey fk = new CForeignKey();
@@ -1310,6 +1318,8 @@ namespace MotorDB
             //Busco si existe la tabla
             s = "select TABLE_NAME as name from INFORMATION_SCHEMA.TABLES  where TABLE_SCHEMA ='"+GetDataBseName()+ "' and (TABLE_TYPE='TABLE' or TABLE_TYPE='BASE TABLE' ) and TABLE_NAME='" + nombre+"'";
             IDataReader dr = EjecutaQuery(s);
+            if (dr == null)
+                return null;
             if (dr.Read() == false)
             {
                 //no se encontro la tabla
@@ -1360,6 +1370,8 @@ namespace MotorDB
             //genero el query para tyraerme los indices asociados a la tabla
             string query = "select distinct index_name as name from INFORMATION_SCHEMA.STATISTICS where table_schema='"+GetDataBseName()+"' and table_name='"+tabla+"'";
             IDataReader dr = EjecutaQuery(query);
+            if (dr == null)
+                return l1;
             while (dr.Read())
             {
                 Cindex obj = new Cindex();
@@ -1395,28 +1407,39 @@ namespace MotorDB
             query += "     i.SEQ_IN_INDEX \n";
             //------------------------------
             List<CCampoIndex> l = new List<CCampoIndex>();
-            IDataReader dr = EjecutaQuery(query);
-            while (dr.Read())
+            IDataReader dr = null;
+            try
             {
-                CCampoIndex obj = new CCampoIndex();
-                obj.Nombre = dr["COLUMNA"].ToString();
-                obj.TipoDato = GetTipoDato(dr["TIPO"].ToString());
-                if (dr["Longitud"].ToString().Trim() != "")
-                    obj.Longitud = int.Parse(dr["Longitud"].ToString());
-                else
-                    obj.Longitud = 0;
-                if (bool.Parse(dr["descendente"].ToString()))
+                dr = EjecutaQuery(query);
+                if (dr == null)
+                    return l;
+                while (dr.Read())
                 {
-                    obj.Ordenamiento = EnumOrdenIndex.DESC;
+                    CCampoIndex obj = new CCampoIndex();
+                    obj.Nombre = dr["COLUMNA"].ToString();
+                    obj.TipoDato = GetTipoDato(dr["TIPO"].ToString());
+                    if (dr["Longitud"].ToString().Trim() != "")
+                        obj.Longitud = int.Parse(dr["Longitud"].ToString());
+                    else
+                        obj.Longitud = 0;
+                    if (bool.Parse(dr["descendente"].ToString()))
+                    {
+                        obj.Ordenamiento = EnumOrdenIndex.DESC;
 
+                    }
+                    else
+                    {
+                        obj.Ordenamiento = EnumOrdenIndex.ASC;
+                    }
+                    l.Add(obj);
                 }
-                else
-                {
-                    obj.Ordenamiento = EnumOrdenIndex.ASC;
-                }
-                l.Add(obj);
+                dr.Close();
             }
-            dr.Close();
+            catch (Exception ex)
+            {
+                if (!dr.IsClosed)
+                    dr.Close();
+            }
             return l;
         }
 
@@ -1427,6 +1450,8 @@ namespace MotorDB
             string cadena = "select CONSTRAINT_NAME as nombre from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_TYPE='UNIQUE' and CONSTRAINT_SCHEMA='" + GetDataBseName() + "' and table_name ='"+tabla+"' ";
             IDataReader dr;
             dr = EjecutaQuery(cadena);
+            if(dr==null)
+                return l;
             while (dr.Read())
             {
                 obj = new CUnique();
@@ -1664,6 +1689,8 @@ namespace MotorDB
             CVista vista = null;// new CVista();
             string query = "select table_name as name, 'V' as xtype from INFORMATION_SCHEMA.VIEWS where table_schema='"+GetDataBseName()+"' and table_name='"+nombre+"'";
             IDataReader dr = EjecutaQuery(query);
+            if (dr == null)
+                return null;
             if (dr.Read())
             {
                 vista = new CVista();
@@ -2099,7 +2126,7 @@ namespace MotorDB
                     {
                         if (tabla.Identidad.Campo.Nombre == campo.Nombre)
                         {
-                            s += " IDENTITY (" + tabla.Identidad.ValorInicial + "," + tabla.Identidad.Incremento + ")";
+                            s += " AUTO_INCREMENT ";// (" + tabla.Identidad.ValorInicial + "," + tabla.Identidad.Incremento + ")";
                         }
                     }
                 }

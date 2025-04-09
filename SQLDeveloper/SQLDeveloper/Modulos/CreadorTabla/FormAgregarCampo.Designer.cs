@@ -306,6 +306,11 @@
             // TLongitud
             // 
             this.TLongitud.Location = new System.Drawing.Point(284, 37);
+            this.TLongitud.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.TLongitud.Name = "TLongitud";
             this.TLongitud.Size = new System.Drawing.Size(68, 20);
             this.TLongitud.TabIndex = 5;

@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inteliences", "Inteliences\
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSQLDeveloper", "SetupSQLDeveloper\SetupSQLDeveloper.vdproj", "{92802E87-B429-489A-BA74-22DC8AB20928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneradorScripts", "GeneradorScripts\GeneradorScripts.csproj", "{6250C9BA-AF89-43A8-AB38-D1BF350F804B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{6931BCC1-F51D-4FC6-90BF-29FD713695E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{92802E87-B429-489A-BA74-22DC8AB20928}.Debug|Any CPU.ActiveCfg = Debug
 		{92802E87-B429-489A-BA74-22DC8AB20928}.Release|Any CPU.ActiveCfg = Release
+		{6250C9BA-AF89-43A8-AB38-D1BF350F804B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6250C9BA-AF89-43A8-AB38-D1BF350F804B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6250C9BA-AF89-43A8-AB38-D1BF350F804B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6250C9BA-AF89-43A8-AB38-D1BF350F804B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

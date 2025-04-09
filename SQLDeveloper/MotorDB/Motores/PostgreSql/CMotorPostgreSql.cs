@@ -20,6 +20,10 @@ namespace MotorDB
         private string FConnectionString="";
         private List<CObjeto> Buffer;
         private System.DateTime BufferTimer;
+        public CMotorPostgreSql()
+        {
+            //GeneraListaTiposDato();
+         }
         public void AlterTable_AddCheck(string tabla, CCheck check)
         {
             throw new NotImplementedException();
@@ -72,10 +76,10 @@ namespace MotorDB
 
         public List<CObjeto> Buscar(string nombre, EnumTipoObjeto tipo = EnumTipoObjeto.NONE)
         {
-            if (tipo == EnumTipoObjeto.NONE || tipo == EnumTipoObjeto.TABLE)
-            {
-                return BuscaEnBuffer(nombre,tipo);
-            }
+//            if (tipo == EnumTipoObjeto.NONE || tipo == EnumTipoObjeto.TABLE)
+  //          {
+    //            return BuscaEnBuffer(nombre,tipo);
+      //      }
             //regresa el listado de objetos que coincidan con el nombre y tipo seleccionado
             List<CObjeto> l = new List<CObjeto>();
             string query = "";
@@ -85,43 +89,43 @@ namespace MotorDB
                     query = "select distinct  o.relname as NAME, o.relkind as xtype from pg_attribute c ,pg_class o where c.attname like '" + nombre.Trim() + "%' and c.attrelid=o.oid order by o.relname";
                     break;
                 case EnumTipoObjeto.CHECK:
-                    query = "select 	CONSTRAINT_NAME as name	,CONSTRAINT_TYPE as xtype from 	INFORMATION_SCHEMA.TABLE_CONSTRAINTS c where 	c.CONSTRAINT_TYPE='CHECK' 	and CONSTRAINT_NAME like '%" + nombre.Trim() + "%' 	and TABLE_SCHEMA='" + GetDataBseName() + "'";
+                    query = "select 	CONSTRAINT_NAME as name	,CONSTRAINT_TYPE as xtype from 	INFORMATION_SCHEMA.TABLE_CONSTRAINTS c where 	c.CONSTRAINT_TYPE='CHECK' 	and CONSTRAINT_NAME like '%" + nombre.Trim() + "%' 	and ( TABLE_SCHEMA='" + GetDataBseName() + "' or table_catalog='"+ GetDataBseName() + "')";
                     break;
                 case EnumTipoObjeto.FOREIGNKEY:
                     query = "select 	CONSTRAINT_NAME as name, 'F' as xtype from 	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS  where CONSTRAINT_SCHEMA ='" + GetDataBseName() + "' and CONSTRAINT_NAME like '%" + nombre.Trim() + "%'";
                     break;
                 case EnumTipoObjeto.FUNCION:
-                    query = "select proname as NAME,'FUNCTION' as xtype from pg_proc where proname like '" + nombre.Trim() + "%' "; ;
+                    query = "select routine_name as NAME,routine_type as xtype from information_schema.routines where specific_catalog='" + GetDataBseName() + "' and routine_schema='public' and routine_type='FUNCTION' and routine_name like '%" + nombre.Trim() + "%'"; 
                     break;
                 case EnumTipoObjeto.IDENTITY:
-                    query = "select column_name as name, 'identity' as xtype from INFORMATION_SCHEMA.COLUMNS where table_schema='" + GetDataBseName() + "' and COLUMN_NAME like'%" + nombre.Trim() + "%' and extra='auto_increment'";
+                    query = "select column_name as name, 'identity' as xtype from INFORMATION_SCHEMA.COLUMNS where ( TABLE_SCHEMA='" + GetDataBseName() + "' or table_catalog='" + GetDataBseName() + "') and COLUMN_NAME like'%" + nombre.Trim() + "%' and extra='auto_increment'";
                     break;
                 case EnumTipoObjeto.NONE:
-                    query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and ROUTINE_NAME like '" + nombre.Trim() + "%'\n";
+                    query = "select distinct ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where routine_catalog='" + GetDataBseName() + "' and routine_schema='public' and ROUTINE_NAME like '" + nombre.Trim() + "%'\n";
                     query = query + "union all\n";
-                    query = query + "select table_NAME as NAME,TABLE_TYPE as XTYPE from information_schema.tables where table_SCHEMA='" + GetDataBseName() + "' and table_NAME like '" + nombre.Trim() + "%'\n";
+                    query = query + "select distinct table_NAME as NAME,TABLE_TYPE as XTYPE from information_schema.tables where  table_catalog='" + GetDataBseName() + "' and table_schema='public' and table_NAME like '" + nombre.Trim() + "%'\n";
                     query = query + "order by name";
                     break;
                 case EnumTipoObjeto.PRIMARYKEY:
                     query = "select distinct CONSTRAINT_NAME as name, 'PK' as xtype from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_SCHEMA='" + GetDataBseName() + "' and CONSTRAINT_NAME like '%" + nombre.Trim() + "%' and CONSTRAINT_TYPE='PRIMARY KEY'";
                     break;
-//                case EnumTipoObjeto.PROCEDURE:
-  //                  query = "select ROUTINE_NAME as NAME,ROUTINE_TYPE as XTYPE from information_schema.routines where ROUTINE_SCHEMA='" + GetDataBseName() + "' and ROUTINE_NAME like '" + nombre.Trim() + "%' and ROUTINE_TYPE='PROCEDURE'";
-    //                break;
+                case EnumTipoObjeto.PROCEDURE:
+                    query = "select routine_name as NAME,routine_type as xtype from information_schema.routines where specific_catalog='" + GetDataBseName() + "' and routine_schema='public' and routine_type='PROCEDURE' and routine_name like '%" + nombre.Trim() + "%'";
+                    break;
                 case EnumTipoObjeto.TABLE:
-                    query = "select table_name as NAME,table_type as XTYPE from information_schema.tables where table_type=\'BASE TABLE\' and table_name like \'" + nombre.Trim() + "%\' and table_schema=\'" + GetDataBseName() + "\';";
+                    query = "select distinct table_name as NAME,table_type as XTYPE from information_schema.tables where table_type=\'BASE TABLE\' and table_name like \'" + nombre.Trim() + "%\' and  table_catalog='" + GetDataBseName() + "' and table_schema='public';";
                     break;
                 //                case EnumTipoObjeto.TIPEDATA:
                 //                  query = "select distinct	name , 'TIPEDATA' as xtype from systypes  where name like'%" + nombre + "%' ";
                 //                break;
                 case EnumTipoObjeto.TRIGER:
-                    query = "select tgname as name,'TR' as xtype from pg_trigger where tgname like '"+ nombre.Trim() + "%'";
+                    query = "select trigger_name as name,'TR' as xtype from information_schema.triggers where trigger_catalog ='"+ GetDataBseName()+ "' and trigger_schema ='public' and trigger_name like '%"+ nombre.Trim() + "%'";
                     break;
                 case EnumTipoObjeto.UNIQUE:
                     query = "select distinct CONSTRAINT_NAME as name, 'UQ' as xtype from INFORMATION_SCHEMA.TABLE_CONSTRAINTS where CONSTRAINT_SCHEMA='" + GetDataBseName() + "' and CONSTRAINT_NAME like '%" + nombre.Trim() + "%' and CONSTRAINT_TYPE='UNIQUE'";
                     break;
                 case EnumTipoObjeto.VIEW:
-                    query = "SELECT relname as NAME, relkind as xtype FROM pg_class a where relkind in ('v') and relname like \'" + nombre.Trim() + "%\'";
+                    query = "select table_name as NAME,'v'as xtype  from information_schema.views where table_catalog='" + GetDataBseName() + "' and table_schema='public' and table_name like '%" + nombre.Trim() + "%'";
                     break;
                 case EnumTipoObjeto.INDEX:
                     query = "select index_name as name, 'INDEX' as xtype from INFORMATION_SCHEMA.STATISTICS where index_schema='" + GetDataBseName() + "' and index_name like '%" + nombre.Trim() + "%'";
@@ -147,6 +151,7 @@ namespace MotorDB
                 obj.Tipo = DameXType(dr["xtype"].ToString());
                 l.Add(obj);
             }
+            dr.Close();
             return l;
         }
         private EnumTipoObjeto DameXType(string xtype)
@@ -327,10 +332,6 @@ namespace MotorDB
             throw new NotImplementedException();
         }
 
-        public void CreaTabla(CTabla tabla)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<EnumAccionReferencial> DameAccionesReferencialesActualizadoValidos()
         {
@@ -797,10 +798,6 @@ namespace MotorDB
             throw new NotImplementedException();
         }
 
-        public string QueryCreaTabla(CTabla tabla)
-        {
-            throw new NotImplementedException();
-        }
 
         public void SetConnectionName(string nombre)
         {
@@ -1166,6 +1163,7 @@ namespace MotorDB
             FTiposDato.Add(new CTipoDato("tinyint", TIPO_LONGITUD.NOREQUERIDO));
             FTiposDato.Add(new CTipoDato("smallint", TIPO_LONGITUD.NOREQUERIDO));
             FTiposDato.Add(new CTipoDato("date", TIPO_LONGITUD.NOREQUERIDO));
+            FTiposDato.Add(new CTipoDato("integer", TIPO_LONGITUD.NOREQUERIDO));
             FTiposDato.Add(new CTipoDato("int", TIPO_LONGITUD.NOREQUERIDO));
             FTiposDato.Add(new CTipoDato("int2", TIPO_LONGITUD.NOREQUERIDO));
             FTiposDato.Add(new CTipoDato("int4", TIPO_LONGITUD.NOREQUERIDO));
@@ -1198,7 +1196,6 @@ namespace MotorDB
             FTiposDato.Add(new CTipoDato("nvarchar", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("varbinary", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("varchar", TIPO_LONGITUD.OBLIGATORIO));
-            DameTiposDato();
         }
         public List<CParametro> DameParametrosFuncction(string funcion)
         {
@@ -1261,6 +1258,8 @@ namespace MotorDB
             System.Data.IDataReader dr;
             dr = EjecutaQuery(s);
             s = "";
+            if (FTiposDato == null)
+                GeneraListaTiposDato();
             while (dr.Read())
             {
                 string nombre= dr["typname"].ToString();
@@ -1272,7 +1271,7 @@ namespace MotorDB
                 }
             }
             dr.Close();
-            return FTiposDato;
+            return ((List<CTipoDato>)((from x in FTiposDato select x).OrderBy(x=>x.Nombre)).ToList<CTipoDato>() );
         }
         public IDataReader EjecutaQuery(string cadena)
         {
@@ -1414,6 +1413,184 @@ namespace MotorDB
 
             }
             return fks;
+        }
+        public void CreaTabla(CTabla tabla)
+        {
+            string s = QueryCreaTabla(tabla);
+            EjecutaQuery(s);
+        }
+        public string QueryCreaTabla(CTabla tabla)
+        {
+            if (tabla == null)
+                return "";
+            string s = "create table " + tabla.Nombre;
+            s += "\n( ";
+            //ya agrege loc campos, ahora agrego si llave primaria
+            s += AgregaCamposQueryTabla(tabla);
+            //agrego la llave primaria
+            s += AgregaQueryTablaPK(tabla);
+            //ahora asigno las llaves foraneas
+            s += AgregaQueryTablaFK(tabla);
+            //agrego los campos unicos
+            s += AgregaQueryTablaUniques(tabla);
+            //agrego las restricciones chek
+            s += AgregaQueryTablaCheck(tabla);
+            s += "\n)";
+            return s;
+        }
+        private string AgregaCamposQueryTabla(CTabla tabla)
+        {
+            string s = "";
+            bool primero = true;
+            //creo los campos
+            foreach (CCampo campo in tabla.Campos)
+            {
+                if (primero == true)
+                {
+                    s += "\n\t ";
+                    primero = false;
+                }
+                else
+                {
+                    //como no es el primero hay que agregarle una coma
+                    s += "\n\t ,";
+                }
+                s += campo + " ";
+                if (campo.CampoCalculado)
+                {
+                    //es un campo calculado
+                    s += " as " + campo.Formula;
+                }
+                else
+                {
+                    //pongo el tipo de dato
+                    s += campo.TipoDato.ToString();
+                    //verifico si hay que especificar la longitud
+                    if (campo.TipoDato.UsaLongitud == TIPO_LONGITUD.OBLIGATORIO)
+                    {
+                        if (campo.Longitud == -1 && (campo.TipoDato.Nombre.ToUpper() == "VARCHAR" || campo.TipoDato.Nombre.ToUpper() == "NVARCHAR"))
+                            s += "(MAX)";
+                        else
+                            s += "(" + campo.Longitud + ")";
+                    }
+                    if (campo.TipoDato.UsaLongitud == TIPO_LONGITUD.OPCIONAL && campo.Longitud > 0)
+                    {
+                        s += "(" + campo.Longitud + ")";
+                    }
+                    if (campo.AceptaNulo == false)
+                    {
+                        s += " not null ";
+                    }
+                    //veo si hay valores por default
+                    if (campo.EsDefault)
+                    {
+                        s += " default " + campo.Formula;
+                    }
+                    //veo si es identidad
+                    if (tabla.Identidad != null)
+                    {
+                        if (tabla.Identidad.Campo.Nombre == campo.Nombre)
+                        {
+                            if (tabla.Identidad.ValorInicial == 0)
+                                tabla.Identidad.ValorInicial = 1;
+                            s += " GENERATED ALWAYS AS IDENTITY ( START WITH " + tabla.Identidad.ValorInicial + " INCREMENT BY " + tabla.Identidad.Incremento + ")";
+                        }
+                    }
+                }
+            }
+            return s;
+        }
+        private string AgregaQueryTablaPK(CTabla tabla)
+        {
+            string s = "";
+            bool primero = true;
+            if (tabla.PrimaryKey != null)
+            {
+                //si tiene llave primaria
+                s += "\n\t ,constraint " + tabla.PrimaryKey.Nombre + " primary key(";
+                //recorro los campos
+                primero = true;
+                foreach (CCampoBase campo in tabla.PrimaryKey.Campos)
+                {
+                    if (primero)
+                    {
+                        s += " ";
+                        primero = false;
+                    }
+                    else
+                    {
+                        s += " ,";
+                    }
+                    s += campo.Nombre;
+                }
+                s += ")";
+            }
+            return s;
+        }
+        private string AgregaQueryTablaFK(CTabla tabla)
+        {
+            string s = "";
+            string s2 = "";
+            bool primero = true;
+
+            //recorro todas las llaves foraneas de la tabla
+            foreach (CForeignKey fk in tabla.ForeignKeys)
+            {
+                s += "\n\t ,constraint " + fk.Nombre + " foreign key(";
+                //recorro los campos
+                foreach (CCampoFereneces rf in fk.Campos)
+                {
+                    if (primero)
+                    {
+                        s += rf.CampoHijo;
+                        s2 = "references " + fk.TablaPadre + "(" + rf.CampoPadre;
+                        primero = false;
+                    }
+                    else
+                    {
+                        s += "," + rf.CampoHijo;
+                        s2 += "," + rf.CampoPadre;
+                    }
+                }
+                s += ") " + s2 + ")";
+            }
+            return s;
+        }
+        private string AgregaQueryTablaUniques(CTabla tabla)
+        {
+            string s = "";
+            bool primero = true;
+            //recorro cada contraint
+            foreach (CUnique obj in tabla.Uniques)
+            {
+                s = s + " \n\t, CONSTRAINT " + obj.Nombre + " UNIQUE(";
+                //recorro los campos
+                foreach (CCampoBase campo in obj.Campos)
+                {
+                    if (primero)
+                    {
+                        primero = false;
+                    }
+                    else
+                    {
+                        s += ",";
+
+                    }
+                    s += campo.Nombre;
+                }
+                s += ")";
+            }
+            return s;
+        }
+        private string AgregaQueryTablaCheck(CTabla tabla)
+        {
+            string s = "";
+            //recorro todos lo0s checks
+            foreach (CCheck obj in tabla.Checks)
+            {
+                s += "\n\t, CONSTRAINT " + obj.Nombre + " check (" + obj.Regla + ")";
+            }
+            return s;
         }
     }
 }
