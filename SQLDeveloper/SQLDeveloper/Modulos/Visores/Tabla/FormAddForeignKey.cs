@@ -281,7 +281,7 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
                 string columnaHija = dr["ColumnaHija"].ToString();
                 //me traigo el campo de la tabla maestra
                 MotorDB.CCampo campo = tablaPadre.GetCampo(columnaMaestra);
-                MotorDB.CCampoFereneces obj = new MotorDB.CCampoFereneces(columnaMaestra, columnaHija,campo.TipoDato, campo.Longitud);
+                MotorDB.CCampoReference obj = new MotorDB.CCampoReference(columnaMaestra, columnaHija,campo.TipoDato, campo.Longitud);
                 fk.Add(obj);
             }
             //ahora a mandar a crear el FK

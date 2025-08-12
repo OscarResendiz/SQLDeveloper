@@ -56,7 +56,7 @@ namespace SQLDeveloper.Modulos.CreadorTabla
             //me traigo la tabla que muestra los datos en la pantalla
             DataTable dt = dataSet1.Tables["Columnas"];
             //recoor los campos de la llave foranea
-            foreach (MotorDB.CCampoFereneces obj in fk.Campos)
+            foreach (MotorDB.CCampoReference obj in fk.Campos)
             {
                 DataRow dr = dt.NewRow();
                 dr["ColumnaPadre"] = obj.CampoPadre;

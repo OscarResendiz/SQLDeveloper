@@ -61,13 +61,14 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.Text
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.Threading.Channels.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\System.ValueTuple.xml
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.AssemblyReference.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.FormEditor.resources
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.Properties.Resources.resources
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.GenerateResource.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CopyComplete
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.AssemblyReference.cache
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorMa.5F5E3C91.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\EditorManager.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\EditorManager.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\bin\Debug\EditorManager.pdb
@@ -98,6 +99,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManag
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.Properties.Resources.resources
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.GenerateResource.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorMa.5F5E3C91.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\EditorManager\obj\Debug\EditorManager.pdb

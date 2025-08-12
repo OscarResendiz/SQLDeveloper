@@ -236,7 +236,7 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
             List<CModelConexion> l = new List<CModelConexion>();
             foreach (DataRow dr in Conexion.Rows)
             {
-                if (int.Parse(dr["ID_Servidor"].ToString()) == srv.ID_Servidor && obj.Nombre == dr["Nombre"].ToString())
+                if (int.Parse(dr["ID_Servidor"].ToString()) == srv.ID_Servidor && nombre == dr["Nombre"].ToString())
                 {
                     Conexion.Rows.Remove(dr);
                     Actualiza();

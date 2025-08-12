@@ -49,6 +49,7 @@ namespace MotorDB
                     ComboAutentication.SelectedIndex = 0;
                 else
                     ComboAutentication.SelectedIndex = 1;
+                ChBoxtrustServerCertificate.Checked = csb.TrustServerCertificate;
                 Conexion.ConnectionString = value;
                 CHContraseña.Checked = csb.PersistSecurityInfo;
             }
@@ -229,6 +230,7 @@ namespace MotorDB
                 sb.IntegratedSecurity = true;
             else
                 sb.IntegratedSecurity = false;
+            sb.TrustServerCertificate = ChBoxtrustServerCertificate.Checked;
             sb.InitialCatalog = ComboBases.Text;
             ConnectionString = sb.ConnectionString;
             DialogResult = DialogResult.OK;

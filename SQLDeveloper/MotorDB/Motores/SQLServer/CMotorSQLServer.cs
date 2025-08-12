@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 namespace MotorDB
 {
-    internal class CMotorSQLServer : IMotorDB
+    public class CMotorSQLServer : IMotorDB
     {
         private event MotorDBMessageEvent MessageErrorEvent;
         private string MsgError;
@@ -20,6 +20,13 @@ namespace MotorDB
         private string FConnectionString;
         private List<string> Conexiones;
         private List<string> Nombres;
+        public IMotorDB Clone()
+        {
+            IMotorDB m = new CMotorMySQL();
+            m.SetConnectionName(ConnectionName);
+            m.SetConnectionString(FConnectionString);
+            return m;
+        }
         private void GeneraListaTiposDato()
         {
             FTiposDato = new List<CTipoDato>();
@@ -453,7 +460,8 @@ namespace MotorDB
             s += " select \n";
             s += "  c.name as Nombre, \n";
             s += "  t.name as TipoDato, \n";
-            s += "  c.length as Longitud, \n";
+//            s += "  c.length as Longitud, \n";
+            s += "  c.prec as Longitud, \n";
             s += "  c.isnullable as AceptaNulo, \n";
             s += "  c.iscomputed as CampoCalculado, \n";
             s += "  c.cdefault , \n";
@@ -731,7 +739,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -877,7 +885,7 @@ namespace MotorDB
             {
                 s += "\n\t ,constraint " + fk.Nombre + " foreign key(";
                 //recorro los campos
-                foreach (CCampoFereneces rf in fk.Campos)
+                foreach (CCampoReference rf in fk.Campos)
                 {
                     if (primero)
                     {
@@ -1326,7 +1334,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -1360,7 +1368,7 @@ namespace MotorDB
             s += fk.Nombre + " foreign key( \n ";
             //recorro todos los campos
             bool primero = true;
-            foreach (CCampoFereneces obj in fk.Campos)
+            foreach (CCampoReference obj in fk.Campos)
             {
                 if (primero)
                 {
@@ -2221,6 +2229,103 @@ namespace MotorDB
         public int GetConnectionsCount()
         {
             return Conexiones.Count();
+        }
+        public bool ExisteCampoTabla(string tabla, string campo)
+        {
+            string s = "declare @tabla varchar(100) \n";
+            s = s + "declare @campo varchar(100) \n";
+            s = s + "declare @id_tabla int \n";
+            s = s + "select @tabla=\'" + tabla + "\' \n";
+            s = s + "select @campo=\'" + campo + "\' \n";
+            s = s + "select @id_tabla= id from sysobjects where name=@tabla \n";
+            s = s + "if exists( select * from syscolumns where id=@id_tabla and name=@campo) \n";
+            s = s + "begin \n";
+            s = s + "	select 1 as existe \n";
+            s = s + "end \n";
+            s = s + "else \n";
+            s = s + "begin \n";
+            s = s + "	select 0 as existe \n";
+            s = s + "end \n";
+            IDataReader dr;
+            int x = 0;
+            try
+            {
+                dr = EjecutaQuery(s);
+                if (dr.Read())
+                {
+                    x = int.Parse(dr["existe"].ToString());
+                }
+            }
+            catch (System.Exception)
+            {
+                //dr.Close();
+                return false;
+            }
+            dr.Close();
+            if (x == 1)
+                return true;
+            return false;
+        }
+        public List<CCampoFK> DameLLaveForanea(string nombre)
+        {
+            string s = "";
+            s = s + "select \n";
+            s = s + "	fo.name as TablaHija,\n";
+            s = s + "	fc.name as ColumnaHija,\n";
+            s = s + "	ro.name as TablaPadre,\n";
+            s = s + "	rc.name as ColumnaPadre\n";
+            s = s + "from \n";
+            s = s + "	sysforeignkeys r,\n";
+            s = s + "	sysobjects o,\n";
+            s = s + "	sysobjects fo,\n";
+            s = s + "	syscolumns fc,\n";
+            s = s + "	sysobjects ro,\n";
+            s = s + "	syscolumns rc\n";
+            s = s + "where \n";
+            s = s + "	constid =o.id\n";
+            s = s + "	and o.name=\'" + nombre + "\'\n";
+            s = s + "	and fo.id=r.fkeyid\n";
+            s = s + "	and fc.id=fo.id\n";
+            s = s + "	and fc.colid=r.fkey\n";
+            s = s + "	and ro.id=r.rkeyid\n";
+            s = s + "	and rc.id=ro.id\n";
+            s = s + "	and rc.colid=r.rkey\n";
+            //System.Data.SqlClient.SqlDataReader dr;
+            IDataReader dr;
+            dr =EjecutaQuery(s);
+            List<CCampoFK> lista = new List<CCampoFK>();
+            CCampoFK CampoFK;
+            while (dr.Read())
+            {
+                CampoFK = new CCampoFK();
+                CampoFK.columnahija = dr["ColumnaHija"].ToString();
+                CampoFK.columnaMaestra = dr["ColumnaPadre"].ToString();
+                CampoFK.maestra = dr["TablaPadre"].ToString();
+                CampoFK.hija = dr["TablaHija"].ToString();
+                lista.Add(CampoFK);
+            }
+            dr.Close();
+            return lista;
+        }
+        public List<CCampoFK> DameCamposFK(string FKName)
+        {
+            List<CCampoFK> lista = new List<CCampoFK>();
+            string s = "select tm.name as maestra,ti.name as hija,cm.name as columnaMaestra,ci.name as columnahija from sysobjects o,sysforeignkeys fk,sysobjects  tm,sysobjects  ti,syscolumns cm,syscolumns ci where o.xtype='f' and fk.constid=o.id and tm.id=fk.rkeyid and ti.id=fk.fkeyid and cm.id=tm.id and cm.colid=rkey and ci.id=ti.id and ci.colid=fkey and o.name='" + FKName + "'";
+            IDataReader dr;
+            dr = EjecutaQuery(s);
+            lista = new System.Collections.Generic.List<CCampoFK>();
+            CCampoFK CampoFK;
+            while (dr.Read())
+            {
+                CampoFK = new CCampoFK();
+                CampoFK.columnahija = dr["columnahija"].ToString();
+                CampoFK.columnaMaestra = dr["columnaMaestra"].ToString();
+                CampoFK.maestra = dr["maestra"].ToString();
+                CampoFK.hija = dr["hija"].ToString();
+                lista.Add(CampoFK);
+            }
+            dr.Close();
+            return lista;
         }
     }
 }

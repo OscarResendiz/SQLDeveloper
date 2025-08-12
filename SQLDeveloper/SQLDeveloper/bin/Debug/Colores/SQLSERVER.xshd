@@ -74,6 +74,12 @@
 				<Key word = "OPENDATASOURCE" />
 				<Key word = "GO" />
 				<Key word = "USE" />
+				<Key word = "COMMENT" />
+				<Key word = "FOREIGN" />
+				<Key word = "KEY" />
+				<Key word = "primary" />
+				<Key word = "AUTO_INCREMENT" />
+				<Key word = "UNIQUE" />
 			</KeyWords>
 			<KeyWords name ="TransactionKeyWords" bold="true" italic = "false" color="#DA800A">
 				<Key word = "COMMIMT" />
@@ -107,6 +113,7 @@
 				<Key word = "identity" />
 				<Key word = "NOLOCK" />
 				<Key word = "CALL" />
+				<Key word = "RETURNS" />
 			</KeyWords>
 			<KeyWords name ="SqlActionWords" bold="true" italic = "false" color="#0080FF">
 				<Key word = "INSERT" />
@@ -124,6 +131,8 @@
 				<Key word = "NULL" />
 				<Key word = "INTO" />
 				<Key word = "VALUES" />
+				<Key word = "CONSTRAINT" />
+				<Key word = "REFERENCES" />
 			</KeyWords>
 			<KeyWords name ="SqlTypes" bold="true" italic = "false" color="#80FFFF">
 				<Key word = "VARCHAR" />
@@ -145,6 +154,8 @@
 				<Key word = "void" />
 				<Key word = "unsigned" />
 				<Key word = "long" />
+				<Key word = "bigint" />
+				<Key word = "BINARY" />
 			</KeyWords>
 			<KeyWords name ="SqlObjects" bold="true" italic = "true" color="#FF8000">
 				<Key word = "TABLE" />
@@ -170,6 +181,7 @@
 				<Key word = "RETURN" />
 				<Key word = "SWITCH" />
 				<Key word = "BREAK" />
+				<Key word = "leave" />
 			</KeyWords>
 			<KeyWords name ="TSql" bold="true" italic = "false" color="#339900">
 				<Key word = "DECLARE" />
@@ -206,6 +218,12 @@
 				<Key word = "POWER" />
 				<Key word = "ISDATE" />
 				<Key word = "IFNULL" />
+				<Key word = "uuid" />
+				<Key word = "AES_ENCRYPT" />
+				<Key word = "round" />
+				<Key word = "rand" />
+				<Key word = "concat" />
+				<Key word = "now" />
 			</KeyWords>
 			<KeyWords name ="GroupByFunctions" bold="true" italic = "false" color="#AE1737">
 				<Key word = "SUM" />

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61CAE32F-C7FB-463F-80E3-009D66EE9259}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SPGenerator</RootNamespace>
+    <AssemblyName>SPGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Opacador">
+      <HintPath>..\..\LiberiasExternas\Opacador.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextColor">
+      <HintPath>..\..\LiberiasExternas\TextColor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimatedWaitTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnimatedWaitTextBox.Designer.cs">
+      <DependentUpon>AnimatedWaitTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaDelete.Designer.cs">
+      <DependentUpon>AsisBienVenidaDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaInsert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaInsert.Designer.cs">
+      <DependentUpon>AsisBienVenidaInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaSelect.Designer.cs">
+      <DependentUpon>AsisBienVenidaSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisBienVenidaUpdate.Designer.cs">
+      <DependentUpon>AsisBienVenidaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisForeigKeys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisForeigKeys.Designer.cs">
+      <DependentUpon>AsisForeigKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisGenLLave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisGenLLave.Designer.cs">
+      <DependentUpon>AsisGenLLave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisNombreSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisNombreSP.Designer.cs">
+      <DependentUpon>AsisNombreSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisOrdenamiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisOrdenamiento.Designer.cs">
+      <DependentUpon>AsisOrdenamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisResDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisResDelete.Designer.cs">
+      <DependentUpon>AsisResDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisResInsert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisResInsert.Designer.cs">
+      <DependentUpon>AsisResInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisResSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisResSelect.Designer.cs">
+      <DependentUpon>AsisResSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisResUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisResUpdate.Designer.cs">
+      <DependentUpon>AsisResUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelCampos.Designer.cs">
+      <DependentUpon>AsisSelCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelParametros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelParametros.Designer.cs">
+      <DependentUpon>AsisSelParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelTabla.Designer.cs">
+      <DependentUpon>AsisSelTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelValFijos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsisSelValFijos.Designer.cs">
+      <DependentUpon>AsisSelValFijos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\AsistBaseSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Asistentes\AsistBaseSP.Designer.cs">
+      <DependentUpon>AsistBaseSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneradorCodigo\GeneradorCodigoBase.cs" />
+    <Compile Include="GeneradorCodigo\GeneradorCodigoProvider.cs" />
+    <Compile Include="GeneradorCodigo\Mysql\GeneradorMysqlDelete.cs" />
+    <Compile Include="GeneradorCodigo\Mysql\GeneradorMysqlInsert.cs" />
+    <Compile Include="GeneradorCodigo\Mysql\GeneradorMysqlSelect.cs" />
+    <Compile Include="GeneradorCodigo\Mysql\GeneradorMysqlUpdate.cs" />
+    <Compile Include="GeneradorCodigo\SQLServer\GeneradorSqlServerDelete.cs" />
+    <Compile Include="GeneradorCodigo\SQLServer\GeneradorSqlServerInsert.cs" />
+    <Compile Include="GeneradorCodigo\MySqlGeneradorCodigo.cs" />
+    <Compile Include="GeneradorCodigo\SQLServer\GeneradorSqlServerSelect.cs" />
+    <Compile Include="GeneradorCodigo\SQLServer\GeneradorSqlServerUpdate.cs" />
+    <Compile Include="Objetos\CDato.cs" />
+    <Compile Include="Objetos\CDelete.cs" />
+    <Compile Include="Componentes\CCampoRelacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\CCampoRelacion.Designer.cs">
+      <DependentUpon>CCampoRelacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\CCampoTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\CCampoTabla.Designer.cs">
+      <DependentUpon>CCampoTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\CRelacionTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\CRelacionTabla.Designer.cs">
+      <DependentUpon>CRelacionTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\CTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\CTabla.Designer.cs">
+      <DependentUpon>CTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearTablas\FormCrearTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearTablas\FormCrearTabla.Designer.cs">
+      <DependentUpon>FormCrearTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asistentes\FormAsistSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asistentes\FormAsistSP.Designer.cs">
+      <DependentUpon>FormAsistSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscadorTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscadorTablas.Designer.cs">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarTabla.Designer.cs">
+      <DependentUpon>FormBuscarTabla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCasos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCasos.Designer.cs">
+      <DependentUpon>FormCasos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForeigKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForeigKey.Designer.cs">
+      <DependentUpon>FormForeigKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoCampo.Designer.cs">
+      <DependentUpon>FormNuevoCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrimaryKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrimaryKey.Designer.cs">
+      <DependentUpon>FormPrimaryKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropCampo.Designer.cs">
+      <DependentUpon>FormPropCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropCaso.Designer.cs">
+      <DependentUpon>FormPropCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropFiltro.Designer.cs">
+      <DependentUpon>FormPropFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropFkDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropFkDelete.Designer.cs">
+      <DependentUpon>FormPropFkDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropiedadesCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropiedadesCampo.Designer.cs">
+      <DependentUpon>FormPropiedadesCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormpropOrdenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormpropOrdenamiento.Designer.cs">
+      <DependentUpon>FormpropOrdenamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropParametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropParametro.Designer.cs">
+      <DependentUpon>FormPropParametro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropParametro2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropParametro2.Designer.cs">
+      <DependentUpon>FormPropParametro2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropValFijos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropValFijos.Designer.cs">
+      <DependentUpon>FormPropValFijos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelaciones.Designer.cs">
+      <DependentUpon>FormRelaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeleccionarCampos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeleccionarCampos.Designer.cs">
+      <DependentUpon>FormSeleccionarCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneradorCodigo\IGeneradorCodigo.cs" />
+    <Compile Include="GeneradorCodigo\SqlGeneradorCodigo.cs" />
+    <Compile Include="Objetos\CCaso.cs" />
+    <Compile Include="Objetos\CDatosAsistenteSP.cs" />
+    <Compile Include="Objetos\CLLaveForanea.cs" />
+    <Compile Include="Objetos\CParametroSP.cs" />
+    <Compile Include="Objetos\CRelacion.cs" />
+    <Compile Include="Objetos\CSysObject.cs" />
+    <Compile Include="Objetos\CTipoDato.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AnimatedWaitTextBox.resx">
+      <DependentUpon>AnimatedWaitTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisBienVenidaDelete.resx">
+      <DependentUpon>AsisBienVenidaDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisBienVenidaInsert.resx">
+      <DependentUpon>AsisBienVenidaInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisBienVenidaSelect.resx">
+      <DependentUpon>AsisBienVenidaSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisBienVenidaUpdate.resx">
+      <DependentUpon>AsisBienVenidaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisForeigKeys.resx">
+      <DependentUpon>AsisForeigKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisGenLLave.resx">
+      <DependentUpon>AsisGenLLave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisNombreSP.resx">
+      <DependentUpon>AsisNombreSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisOrdenamiento.resx">
+      <DependentUpon>AsisOrdenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisResDelete.resx">
+      <DependentUpon>AsisResDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisResInsert.resx">
+      <DependentUpon>AsisResInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisResSelect.resx">
+      <DependentUpon>AsisResSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisResUpdate.resx">
+      <DependentUpon>AsisResUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisSelCampos.resx">
+      <DependentUpon>AsisSelCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisSelParametros.resx">
+      <DependentUpon>AsisSelParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisSelTabla.resx">
+      <DependentUpon>AsisSelTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsisSelValFijos.resx">
+      <DependentUpon>AsisSelValFijos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\AsistBaseSP.resx">
+      <DependentUpon>AsistBaseSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\CCampoRelacion.resx">
+      <DependentUpon>CCampoRelacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\CCampoTabla.resx">
+      <DependentUpon>CCampoTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\CRelacionTabla.resx">
+      <DependentUpon>CRelacionTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\CTabla.resx">
+      <DependentUpon>CTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearTablas\FormCrearTabla.resx">
+      <DependentUpon>FormCrearTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asistentes\FormAsistSP.resx">
+      <DependentUpon>FormAsistSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscadorTablas.resx">
+      <DependentUpon>FormBuscadorTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarTabla.resx">
+      <DependentUpon>FormBuscarTabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCasos.resx">
+      <DependentUpon>FormCasos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForeigKey.resx">
+      <DependentUpon>FormForeigKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoCampo.resx">
+      <DependentUpon>FormNuevoCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrimaryKey.resx">
+      <DependentUpon>FormPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropCampo.resx">
+      <DependentUpon>FormPropCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropCaso.resx">
+      <DependentUpon>FormPropCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropFiltro.resx">
+      <DependentUpon>FormPropFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropFkDelete.resx">
+      <DependentUpon>FormPropFkDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropiedadesCampo.resx">
+      <DependentUpon>FormPropiedadesCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormpropOrdenamiento.resx">
+      <DependentUpon>FormpropOrdenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropParametro.resx">
+      <DependentUpon>FormPropParametro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropParametro2.resx">
+      <DependentUpon>FormPropParametro2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropValFijos.resx">
+      <DependentUpon>FormPropValFijos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelaciones.resx">
+      <DependentUpon>FormRelaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeleccionarCampos.resx">
+      <DependentUpon>FormSeleccionarCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+    <Content Include="Resources\checkOk.ico" />
+    <Content Include="Resources\CheckX.ico" />
+    <Content Include="Resources\Copia %282%29 de Access_066.ico" />
+    <Content Include="Resources\Copia de Access_0662.ico" />
+    <Content Include="Resources\Pencil_22.png" />
+    <Content Include="Resources\Pencil_221.png" />
+    <None Include="Resources\Tips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MotorDB\MotorDB.csproj">
+      <Project>{ffb7b78c-45e4-40e4-9ab9-60e3a9176986}</Project>
+      <Name>MotorDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

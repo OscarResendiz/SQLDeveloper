@@ -7,10 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SPGenerator;
 
 
 namespace SQLDeveloper.Modulos.Visores.Tabla
 {
+    public delegate void OnCodigoEvent(MotorDB.IMotorDB motor,string Nombre, string Codigo);
+
     public partial class FormTabla : Form
     {
         MotorDB.IMotorDB Motor;
@@ -20,6 +23,7 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
         public event MotorDB.OnVerObjetoEvent OnVerRelaciones;
         public event MotorDB.OnVerObjetoEvent OnVerTrrigers;
         public event OnPropiedadesEvent OnPropiedadesCampo;
+        public event OnCodigoEvent OnCodigo;
         bool IsTypeTable = false;
         private string NombreTabla;
         MotorDB.CTabla Tabla;
@@ -316,6 +320,38 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
                 dt.Rows.Add(dr);
             }
 
+        }
+        private void GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP tipo)
+        {
+            FormAsistSP dlg = new FormAsistSP(Motor.Clone(), tipo);
+            dlg.Tabla = TNombre.Text;
+            dlg.OnCodigoSP += new OnCodigoSPEvent(GenCodigo);
+            dlg.ShowDialog();
+
+        }
+        private void BSPInsert_Click(object sender, EventArgs e)
+        {
+            GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP.INSERT);
+        }
+        private void GenCodigo(string nombre, string codigo)
+        {
+            if (OnCodigo != null)
+                OnCodigo(Motor,nombre, codigo);
+        }
+
+        private void BSPUpdate_Click(object sender, EventArgs e)
+        {
+            GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP.UPDATE);
+        }
+
+        private void BSPDelete_Click(object sender, EventArgs e)
+        {
+            GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP.DELETE);
+        }
+
+        private void BSPSelect_Click(object sender, EventArgs e)
+        {
+            GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP.SELECT);
         }
     }
 }

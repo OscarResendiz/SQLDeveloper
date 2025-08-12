@@ -64,7 +64,7 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\Exportado
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.CopyComplete
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\Exportad.3FFCAF1F.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\bin\Debug\ExportadorExcel.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\bin\Debug\ExportadorExcel.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\bin\Debug\ExportadorExcel.pdb
@@ -93,6 +93,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\bin\Debug\System.Va
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.AssemblyReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.ResolveComReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\Exportad.3FFCAF1F.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ExportadorExcel\obj\Debug\ExportadorExcel.pdb

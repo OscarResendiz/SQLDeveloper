@@ -61,13 +61,13 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\System.Text.J
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\System.Threading.Channels.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\System.ValueTuple.xml
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.CFileManager.resources
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.GenerateResource.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.CopyComplete
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.AssemblyReference.cache
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileMana.0F99248D.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\FileManager.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\FileManager.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\bin\Debug\FileManager.pdb
@@ -97,6 +97,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.c
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.CFileManager.resources
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.GenerateResource.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileMana.0F99248D.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\FileManager\obj\Debug\FileManager.pdb

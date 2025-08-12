@@ -359,9 +359,9 @@ namespace Inteliences
                         ShowIntellisense();
 
                         return true;
-                    case Keys.S | Keys.Control://ctrl + s , mostrar snippets
-                        MessageBox.Show("Ctr + S");
-                        break;
+                    //case Keys.S | Keys.Control://ctrl + s , mostrar snippets
+                      //  MessageBox.Show("Ctr + S");
+                        //break;
                 }
                 #endregion
             }

@@ -13,6 +13,7 @@ using Crownwood.Magic.Docking;
 using Crownwood.Magic.Menus;
 using System.IO;
 using MotorDB;
+using LaraverTools;
 //using Modelador;
 namespace SQLDeveloper
 {
@@ -352,6 +353,7 @@ namespace SQLDeveloper
             dlg.OnVerTrrigers += new MotorDB.OnVerObjetoEvent(VerTrrigers);
             dlg.OnPropiedadesCampo += new OnPropiedadesEvent(MuestraPropuedades);
             dlg.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
+            dlg.OnCodigo += new Modulos.Visores.Tabla.OnCodigoEvent(VerCodigo);
             VentanaAcoplable(dlg, 4, true, State.DockRight);
         }
         private void MuestraTypeTable(MotorDB.IMotorDB motor, string nombre)
@@ -363,6 +365,7 @@ namespace SQLDeveloper
             dlg.OnVerTrrigers += new MotorDB.OnVerObjetoEvent(VerTrrigers);
             dlg.OnPropiedadesCampo += new OnPropiedadesEvent(MuestraPropuedades);
             dlg.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
+            dlg.OnCodigo += new Modulos.Visores.Tabla.OnCodigoEvent(VerCodigo);
             VentanaAcoplable(dlg, 4, true, State.DockRight);
         }
         private void MuestraPropuedades(Modulos.Visores.CPropiedadesBase obj)
@@ -1194,6 +1197,20 @@ namespace SQLDeveloper
         private void VerCodigoModelador(string nombre, string codigo)
         {
             VerCodigo(DBProvider.DB, nombre, codigo);
+        }
+
+        private void laravelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LaraverTools.Formularios.FormLaravel dlg = new LaraverTools.Formularios.FormLaravel();
+                VentanaAcoplable(dlg, 4, true, State.DockLeft);
+
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

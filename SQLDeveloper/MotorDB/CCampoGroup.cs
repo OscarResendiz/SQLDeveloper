@@ -54,5 +54,14 @@ namespace MotorDB
             }
             return false;
         }
+        public bool ContieneCampo(string nombreCampo)
+        {
+            //regresa true si el campo se encuentra en la lista
+            var lista=(from campo in FCampos where campo.Nombre.Equals(nombreCampo) select campo).ToList();
+            if(lista.Count > 0)
+                return true;
+            return false;
+        }
+
     }
 }

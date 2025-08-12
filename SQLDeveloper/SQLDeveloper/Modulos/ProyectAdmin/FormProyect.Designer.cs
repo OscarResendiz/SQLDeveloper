@@ -92,6 +92,7 @@
             this.imageList1.Images.SetKeyName(19, "molde2.png");
             this.imageList1.Images.SetKeyName(20, "script2.png");
             this.imageList1.Images.SetKeyName(21, "document.png");
+            this.imageList1.Images.SetKeyName(22, "satelite.png");
             // 
             // TimerMonitoreo
             // 
@@ -130,6 +131,7 @@
             // 
             // TBuscar
             // 
+            this.TBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TBuscar.Name = "TBuscar";
             this.TBuscar.Size = new System.Drawing.Size(150, 25);
             this.TBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBuscar_KeyUp);

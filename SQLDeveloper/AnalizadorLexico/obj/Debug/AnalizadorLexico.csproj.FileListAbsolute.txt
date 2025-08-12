@@ -57,11 +57,11 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.T
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.Threading.Channels.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.ValueTuple.xml
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.AssemblyReference.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CopyComplete
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.AssemblyReference.cache
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\Analizad.46841CA4.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\AnalizadorLexico.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\AnalizadorLexico.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\AnalizadorLexico.pdb
@@ -89,6 +89,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.T
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\bin\Debug\System.ValueTuple.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.AssemblyReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\Analizad.46841CA4.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\AnalizadorLexico\obj\Debug\AnalizadorLexico.pdb

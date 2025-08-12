@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AnimatedWaitTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisBienVenidaDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisBienVenidaInsert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisBienVenidaSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisBienVenidaUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisForeigKeys.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisGenLLave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisNombreSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisOrdenamiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisResDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisResInsert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisResSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisResUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisSelCampos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisSelParametros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisSelTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsisSelValFijos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="AsistBaseSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Componentes\CCampoRelacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Componentes\CCampoTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Componentes\CRelacionTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Componentes\CTabla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CrearTablas\FormCrearTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormAsistSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormBuscarTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormCasos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormForeigKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormNuevoCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPrimaryKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropFkDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropiedadesCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormpropOrdenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropParametro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropParametro2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPropValFijos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormRelaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSeleccionarCampos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -35,13 +35,14 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
         }
         public override void ModeloAsignado()
         {
-            List<CModelConexion>l=            Modelo.DameConexiones(Nombre);
-            foreach(CModelConexion obj in l)
+            List<CModelConexion> l = Modelo.DameConexiones(Nombre);
+            foreach (CModelConexion obj in l)
             {
                 CNodoConexion Nodo = new CNodoConexion();
                 ManagerConnect.CConexion con = new ManagerConnect.CConexion();
                 con.ConecctionString = obj.ConecctionString;
                 con.Nombre = obj.Nombre;
+                con.MotorDB = obj.MotorDB;
                 Nodo.Conexion = con;
                 Nodo.Servidor = Nombre;
                 Nodo.Modelo = Modelo;

@@ -26,7 +26,8 @@ namespace MotorDB
         DATABSE,
         DEFAULT,
         TABLA_FUNCION,
-        TYPE_TABLE
+        TYPE_TABLE,
+        ENUM
 
     }
     public class CObjeto

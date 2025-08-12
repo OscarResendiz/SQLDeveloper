@@ -61,7 +61,7 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.c
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.csproj.CopyComplete
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxCo.C79F2B3E.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\bin\Debug\SintaxColor.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\bin\Debug\SintaxColor.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\bin\Debug\SintaxColor.pdb
@@ -89,6 +89,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\bin\Debug\System.Thread
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\bin\Debug\System.ValueTuple.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.csproj.AssemblyReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxCo.C79F2B3E.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SintaxColor\obj\Debug\SintaxColor.pdb

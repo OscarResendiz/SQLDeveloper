@@ -67,7 +67,7 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.c
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.csproj.CopyComplete
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitCont.F05F93E6.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\bin\Debug\WaitControl.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\bin\Debug\WaitControl.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\bin\Debug\WaitControl.pdb
@@ -97,6 +97,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.c
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.WaitControl.resources
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.csproj.GenerateResource.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitCont.F05F93E6.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\WaitControl\obj\Debug\WaitControl.pdb

@@ -132,5 +132,22 @@ namespace MotorDB.Motores.MySql
             Close();
 
         }
+
+        private void BtnVer_Click(object sender, EventArgs e)
+        {
+            if (TPassword.PasswordChar == '*')
+                TPassword.PasswordChar = '\0';
+            else
+                TPassword.PasswordChar = '*';
+
+        }
+
+        private void ComboBases_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TNombre.Text.Trim() != "")
+                return;
+            TNombre.Text = ComboBases.Text;
+
+        }
     }
 }

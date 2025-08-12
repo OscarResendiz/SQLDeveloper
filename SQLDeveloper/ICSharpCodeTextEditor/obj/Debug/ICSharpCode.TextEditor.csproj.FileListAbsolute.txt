@@ -61,7 +61,7 @@ D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICS
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.CoreCompileInputs.cache
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.dll
 D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.pdb
-D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.CopyComplete
+D:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpC.EFE50D11.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\bin\ICSharpCode.TextEditor.dll.config
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\bin\ICSharpCode.TextEditor.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\bin\ICSharpCode.TextEditor.pdb
@@ -89,6 +89,6 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\bin\System.Th
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\bin\System.ValueTuple.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.AssemblyReference.cache
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.CoreCompileInputs.cache
-E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.csproj.CopyComplete
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpC.EFE50D11.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\ICSharpCodeTextEditor\obj\Debug\ICSharpCode.TextEditor.pdb
