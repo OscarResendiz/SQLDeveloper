@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\gridcontrol\\grivisor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|solutionrelative:gridcontrol\\grivisor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\gridcontrol\\grivisor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|solutionrelative:gridcontrol\\grivisor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\gridcontrol\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|solutionrelative:gridcontrol\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\gridcontrol\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|solutionrelative:gridcontrol\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\gridcontrol\\controlergrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F5F29C55-8FF0-4C14-AA74-6B9F801A4B18}|GridControl\\GridControl.csproj|solutionrelative:gridcontrol\\controlergrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|e:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\motordb\\ctipodato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|solutionrelative:motordb\\ctipodato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\motordb\\motores\\sqlserver\\cmotorsqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFB7B78C-45E4-40E4-9AB9-60E3A9176986}|MotorDB\\MotorDB.csproj|solutionrelative:motordb\\motores\\sqlserver\\cmotorsqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A94BE1F9-9755-4929-8475-7F6CCB6040E2}|SQLDeveloper\\SQLDeveloper.csproj|solutionrelative:sqldeveloper\\modulos\\visores\\tabla\\formtabla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GriVisor.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\GriVisor.cs",
+              "RelativeDocumentMoniker": "GridControl\\GriVisor.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\GriVisor.cs",
+              "RelativeToolTip": "GridControl\\GriVisor.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwCgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T08:30:18.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GriVisor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\GriVisor.cs",
+              "RelativeDocumentMoniker": "GridControl\\GriVisor.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\GriVisor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GridControl\\GriVisor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T08:27:30.013Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\PageResult.cs",
+              "RelativeDocumentMoniker": "GridControl\\PageResult.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\PageResult.cs",
+              "RelativeToolTip": "GridControl\\PageResult.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAqwDoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T20:32:23.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PageResult.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\PageResult.cs",
+              "RelativeDocumentMoniker": "GridControl\\PageResult.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\PageResult.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GridControl\\PageResult.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T08:26:15.99Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControlerGrid.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\ControlerGrid.cs",
+              "RelativeDocumentMoniker": "GridControl\\ControlerGrid.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GridControl\\ControlerGrid.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GridControl\\ControlerGrid.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T08:25:55.696Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormTabla.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ViewState": "AgIAAHgBAAAAAAAAAAAAAJIBAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T16:50:35.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CMotorSQLServer.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "RelativeDocumentMoniker": "MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "RelativeToolTip": "MotorDB\\Motores\\SQLServer\\CMotorSQLServer.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAASwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T17:07:33.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CTipoDato.cs",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\CTipoDato.cs",
+              "RelativeDocumentMoniker": "MotorDB\\CTipoDato.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\CTipoDato.cs",
+              "RelativeToolTip": "MotorDB\\CTipoDato.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T17:02:05.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormTabla.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "RelativeDocumentMoniker": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs",
+              "ToolTip": "E:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs [Dise\u00F1o]",
+              "RelativeToolTip": "SQLDeveloper\\Modulos\\Visores\\Tabla\\FormTabla.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T16:41:52.905Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

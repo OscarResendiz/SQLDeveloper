@@ -61,28 +61,37 @@ namespace MotorDB
                         throw new Exception("Motor no soportado:" + Motor);
                 }
             }
-            //continuo con la configuracion del comando
-            FCommand.CommandType = System.Data.CommandType.Text;
-            FCommand.Connection = FConnection;
-            FCommand.CommandText = QueryString;
-            FCommand.CommandTimeout = 500000;
-            try
+            int intentos = 3;
+            do
             {
-                if (FCommand.Connection.State == ConnectionState.Closed)
+                //continuo con la configuracion del comando
+                FCommand.CommandType = System.Data.CommandType.Text;
+                FCommand.Connection = FConnection;
+                FCommand.CommandText = QueryString;
+                FCommand.CommandTimeout = 500000;
+                try
                 {
-                    FCommand.Connection.Open();
-                    System.Threading.Thread.Sleep(500);
-                }
+                    if (FCommand.Connection.State == ConnectionState.Closed)
+                    {
+                        FCommand.Connection.Open();
+                        System.Threading.Thread.Sleep(500);
+                    }
                     //FCommand.Connection.Open();
-                //RECUPERANDO DATOS
-                FDataReader = FCommand.ExecuteReader();
-                //FCommand.Connection.Close();
+                    //RECUPERANDO DATOS
+                    FDataReader = FCommand.ExecuteReader();
+                    //FCommand.Connection.Close();
+                }
+                catch (System.Exception ex)
+                {
+                    if (intentos == 0)
+                    {
+                        if (lanzarExcepcion)
+                            throw ex;
+                    }
+                    intentos--;
+                }
             }
-            catch (System.Exception ex)
-            {
-                if (lanzarExcepcion)
-                    throw ex;
-            }
+            while (FCommand.Connection.State == ConnectionState.Closed && intentos > 0);
         }
         //componenete que va a trabajar con la conexion de la base de datos
         #region Implentacion de la interface IDataReader
@@ -93,7 +102,14 @@ namespace MotorDB
             {
                 if (FDataReader == null)
                     return null;
-                return FDataReader[name];
+                try
+                {
+                    return FDataReader[name];
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
 

@@ -93,6 +93,7 @@
             this.dataGridViewImageColumn21 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn22 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BKExtractor = new System.ComponentModel.BackgroundWorker();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Campos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
@@ -441,7 +442,7 @@
             this.BotonChecks.Image = ((System.Drawing.Image)(resources.GetObject("BotonChecks.Image")));
             this.BotonChecks.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BotonChecks.Name = "BotonChecks";
-            this.BotonChecks.Size = new System.Drawing.Size(23, 20);
+            this.BotonChecks.Size = new System.Drawing.Size(23, 22);
             this.BotonChecks.Text = "Administrar Reglas (Checks)";
             this.BotonChecks.Click += new System.EventHandler(this.BotonChecks_Click);
             // 
@@ -532,7 +533,8 @@
             this.BEliminarCampos,
             this.BEditarCampos,
             this.toolStripSeparator3,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(309, 25);
@@ -703,6 +705,16 @@
             this.BKExtractor.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BKExtractor_ProgressChanged);
             this.BKExtractor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BKExtractor_RunWorkerCompleted);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Generar codigo Kotlin";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
             // FormTabla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -795,5 +807,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn22;
         private System.ComponentModel.BackgroundWorker BKExtractor;
         private WaitControl.WaitControl waitControl1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

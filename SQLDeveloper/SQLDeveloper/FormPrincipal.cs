@@ -290,42 +290,6 @@ namespace SQLDeveloper
             }
         }
 
-        private void BBuscador_Click(object sender, EventArgs e)
-        {
-            //muestro la ventana de busqueda
-            if (ExisteVentanaIzquierda(typeof(Modulos.Buscador.FormBuscadorObjetos)) == false)
-            {
-                Modulos.Buscador.FormBuscadorObjetos dlg = new Modulos.Buscador.FormBuscadorObjetos();
-                dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
-                VentanaAcoplable(dlg, 0, true, State.DockLeft);
-            }
-
-        }
-        private void VerObjeto(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
-        {
-            //dependiendo del tipo de objeto se muestra el visor correspondiente
-            switch (tipo)
-            {
-                case MotorDB.EnumTipoObjeto.FUNCION:
-                    VerCodigo(motor, nombre, motor.DameCodigoFuncction(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.PROCEDURE:
-                    VerCodigo(motor, nombre, motor.DameCodigoStoreProcedure(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.TABLE:
-                    MuestraTabla(motor, nombre);
-                    break;
-                case MotorDB.EnumTipoObjeto.TYPE_TABLE:
-                    MuestraTypeTable(motor, nombre);
-                    break;
-                case MotorDB.EnumTipoObjeto.TRIGER:
-                    VerCodigo(motor, nombre, motor.DameCodigoTrigger(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.VIEW:
-                    MuestraVista(motor, nombre);
-                    break;
-            }
-        }
         private void VerDependencias(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
         {
             Modulos.Visores.Dependencias.FormDependencias dlg = new Modulos.Visores.Dependencias.FormDependencias(motor, nombre);
@@ -1211,6 +1175,43 @@ namespace SQLDeveloper
             {
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void VerObjeto(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
+        {
+            //dependiendo del tipo de objeto se muestra el visor correspondiente
+            switch (tipo)
+            {
+                case MotorDB.EnumTipoObjeto.FUNCION:
+                    VerCodigo(motor, nombre, motor.DameCodigoFuncction(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.PROCEDURE:
+                    VerCodigo(motor, nombre, motor.DameCodigoStoreProcedure(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.TABLE:
+                        MuestraTabla(motor, nombre);
+                    break;
+                case MotorDB.EnumTipoObjeto.TYPE_TABLE:
+                    MuestraTypeTable(motor, nombre);
+                    break;
+                case MotorDB.EnumTipoObjeto.TRIGER:
+                    VerCodigo(motor, nombre, motor.DameCodigoTrigger(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.VIEW:
+                    MuestraVista(motor, nombre);
+                    break;
+            }
+        }
+        private void BBuscador_Click(object sender, EventArgs e)
+        {
+            //muestro la ventana de busqueda
+            if (ExisteVentanaIzquierda(typeof(Modulos.Buscador.FormBuscadorObjetos)) == false)
+            {
+                Modulos.Buscador.FormBuscadorObjetos dlg = new Modulos.Buscador.FormBuscadorObjetos();
+                dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+                dlg.OnVerCodigoTabla += new OnVerObjetoEvent(VerCodigoTabla);
+                VentanaAcoplable(dlg, 0, true, State.DockLeft);
+            }
+
         }
     }
 }

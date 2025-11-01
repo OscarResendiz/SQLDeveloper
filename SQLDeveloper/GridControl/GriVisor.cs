@@ -343,5 +343,9 @@ namespace GridControl
             LCopiar.Text = "NO Incluir columnas al compiar";
         }
 
+        private void Grid_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            return;
+        }
     }
 }

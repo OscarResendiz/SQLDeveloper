@@ -42,6 +42,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.verTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -167,9 +168,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verTodosToolStripMenuItem,
-            this.copiarNombreToolStripMenuItem});
+            this.copiarNombreToolStripMenuItem,
+            this.verCodigoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 70);
             // 
             // verTodosToolStripMenuItem
             // 
@@ -184,6 +186,13 @@
             this.copiarNombreToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.copiarNombreToolStripMenuItem.Text = "Copiar Nombre";
             this.copiarNombreToolStripMenuItem.Click += new System.EventHandler(this.copiarNombreToolStripMenuItem_Click);
+            // 
+            // verCodigoToolStripMenuItem
+            // 
+            this.verCodigoToolStripMenuItem.Name = "verCodigoToolStripMenuItem";
+            this.verCodigoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.verCodigoToolStripMenuItem.Text = "Ver codigo";
+            this.verCodigoToolStripMenuItem.Click += new System.EventHandler(this.verCodigoToolStripMenuItem_Click);
             // 
             // imageList1
             // 
@@ -297,5 +306,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripMenuItem copiarNombreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verCodigoToolStripMenuItem;
     }
 }

@@ -13,6 +13,7 @@ namespace SQLDeveloper.Modulos.Buscador
     public partial class FormBuscadorObjetos : Form
     {
         public event MotorDB.OnVerObjetoEvent OnVerObjeto;
+        public event MotorDB.OnVerObjetoEvent OnVerCodigoTabla;
         MotorDB.EnumTipoObjeto tipo;
         List<MotorDB.CObjeto> Objetos;
         string cadena;
@@ -186,6 +187,18 @@ namespace SQLDeveloper.Modulos.Buscador
             if (OnVerObjeto != null)
             {
                 Clipboard.SetText(nodo.Nombre);
+            }
+
+        }
+
+        private void verCodigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ListaObjetos.SelectedNode == null)
+                return;
+            CNodoBusqueda nodo = (CNodoBusqueda)ListaObjetos.SelectedNode;
+            if (OnVerCodigoTabla != null)
+            {
+                OnVerCodigoTabla(MotorDB.DBProvider.DB, nodo.Nombre, nodo.Tipo);
             }
 
         }

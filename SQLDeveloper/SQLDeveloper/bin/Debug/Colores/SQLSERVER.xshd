@@ -156,6 +156,7 @@
 				<Key word = "long" />
 				<Key word = "bigint" />
 				<Key word = "BINARY" />
+				<Key word = "VARBINARY" />
 			</KeyWords>
 			<KeyWords name ="SqlObjects" bold="true" italic = "true" color="#FF8000">
 				<Key word = "TABLE" />
@@ -224,6 +225,7 @@
 				<Key word = "rand" />
 				<Key word = "concat" />
 				<Key word = "now" />
+				<Key word = "AES_DECRYPT" />
 			</KeyWords>
 			<KeyWords name ="GroupByFunctions" bold="true" italic = "false" color="#AE1737">
 				<Key word = "SUM" />

@@ -1637,6 +1637,7 @@ namespace MotorDB
             FTiposDato.Add(new CTipoDato("varbinary", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("varchar", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("ENUM", TIPO_LONGITUD.OPCIONAL));
+            FTiposDato.Add(new CTipoDato("uuid", TIPO_LONGITUD.NOREQUERIDO));
         }
 
         public List<CTrigger> DameTrrigersTabla(string tabla)

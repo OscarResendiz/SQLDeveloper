@@ -81,12 +81,12 @@ namespace Inteliences
             }
             set
             {
-                FDB = value;
-                cBuffer1 = cBufferProvider1.GetBuffer(FDB);
-                if (AnalizadorTexto != null)
-                    AnalizadorTexto.SetBuffer(cBuffer1);
-                if (FDB != null)
+                if (value != null)
                 {
+                    FDB = value.Clone();
+                    cBuffer1 = cBufferProvider1.GetBuffer(FDB);
+                    if (AnalizadorTexto != null)
+                        AnalizadorTexto.SetBuffer(cBuffer1);
                     AnalizadorTexto = cAnaliseManager1.GetAnaliser(FDB.GetMotor().ToString());
                     if (FEditor != null)
                         AnalizadorTexto.SetTextEditor(FEditor);
