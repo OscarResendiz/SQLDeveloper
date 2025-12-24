@@ -16,7 +16,8 @@ namespace SPGenerator
         public event OnCodigoSPEvent OnCodigoSP;
         IMotorDB DB;
         private AsistBaseSP Asistente;
-        public string Tabla;
+        //public string Tabla;
+        public CTabla Tabla;
         TIPO_SP Modo;
         //int Modo;
         public FormAsistSP(IMotorDB db, TIPO_SP modo)
@@ -172,7 +173,7 @@ namespace SPGenerator
                     Asistente.Parent = Contenedor;
                     Asistente.Dock = DockStyle.Fill;
                     AsisBienVenidaSelect tmp = (AsisBienVenidaSelect)Asistente;
-                    tmp.NombreTabla = Tabla;
+                    tmp.Tabla = Tabla;
                     Asistente.Visible = true;
                     break;
                 case  TIPO_SP.INSERT: //INSERCION
@@ -189,7 +190,7 @@ namespace SPGenerator
                     Asistente.Parent = Contenedor;
                     Asistente.Dock = DockStyle.Fill;
                     AsisBienVenidaInsert tmp2 = (AsisBienVenidaInsert)Asistente;
-                    tmp2.NombreTabla = Tabla;
+                    tmp2.Tabla = Tabla;
                     Asistente.Visible = true;
                     break;
                 case  TIPO_SP.UPDATE://actualizacion
@@ -206,7 +207,7 @@ namespace SPGenerator
                     Asistente.Parent = Contenedor;
                     Asistente.Dock = DockStyle.Fill;
                     AsisBienVenidaUpdate tmp3 = (AsisBienVenidaUpdate)Asistente;
-                    tmp3.NombreTabla = Tabla;
+                    tmp3.Tabla = Tabla;
                     Asistente.Visible = true;
                     break;
                 case  TIPO_SP.DELETE://Borrado
@@ -223,7 +224,7 @@ namespace SPGenerator
                     Asistente.Parent = Contenedor;
                     Asistente.Dock = DockStyle.Fill;
                     AsisBienVenidaDelete tmp4 = (AsisBienVenidaDelete)Asistente;
-                    tmp4.NombreTabla = Tabla;
+                    tmp4.Tabla = Tabla;
                     Asistente.Visible = true;
                     break;
             }

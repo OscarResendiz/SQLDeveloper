@@ -61,7 +61,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     {
                         primero = false;
                     }
-                    Add("V_" + parametro.nombre + " " + parametro.TipoSP);
+                    Add("V" + parametro.nombre + " " + parametro.TipoSP);
                 }
                 Add(")");
             }
@@ -101,13 +101,13 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                 AddLine("\t-- Declaración de variables que se requieren ");
                 foreach (Objetos.CParametroSP variable in ValoresFijos)
                 {
-                    AddLine("\tdeclare V_" + variable.nombre + " " + variable.TipoSP+";");
+                    AddLine("\tdeclare V" + variable.nombre + " " + variable.TipoSP+";");
                 }
             }
             if (GenerarLLave == true)
             {
                 //declaro la variable que va a tener el nombre de la llave
-                AddLine("\tdeclare V_" + CampoLLave.nombre + " " + CampoLLave.TipoSP + "; -- variable utilizada para generar la llave");
+                AddLine("\tdeclare V" + CampoLLave.nombre + " " + CampoLLave.TipoSP + "; -- variable utilizada para generar la llave");
             }
             //veo si le asignaron comentarios a los parametros
             if (Parametros.Count > 0)
@@ -134,7 +134,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                             AddLine("\t-- Validando que no sean vacios");
                             primero = false;
                         }
-                        AddLine("\tif(ltrim(V_" + parametro.nombre + ")=\'\') then");
+                        AddLine("\tif(ltrim(V" + parametro.nombre + ")=\'\') then");
                         //AddLine("\tbegin");
                         //Version sim tiene comentarios
                         if (parametro.Descripcion.Trim() != "")
@@ -162,7 +162,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                             AddLine("\t-- Validando que no se pueden repetir");
                             primero = false;
                         }
-                        AddLine("\tif exists(select * from " + Tabla + " where " + parametro.nombre + "=V_" + parametro.nombre + ") then");
+                        AddLine("\tif exists(select * from " + Tabla + " where " + parametro.nombre + "=V" + parametro.nombre + ") then");
                         //AddLine("\tbegin");
                         //Version sim tiene comentarios
                         if (parametro.Descripcion.Trim() != "")
@@ -184,7 +184,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                 {
                     if (variable.SelectedValor == true)
                     {
-                        string setValorFijo = "\tset V_" + variable.nombre + "= " + variable.Valor;
+                        string setValorFijo = "\tset V" + variable.nombre + "= " + variable.Valor;
                         if (setValorFijo.Contains(";") == false)
                             setValorFijo= setValorFijo+";";
                         AddLine(setValorFijo);
@@ -256,7 +256,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                             }
 
                         }
-                        AddLine("\tselect V_" + variable.nombre + "=" + variable.Campo + " from " + variable.Tabla + " where " + s + s2);
+                        AddLine("\tselect " + variable.nombre + " into V" + variable.Campo + " from " + variable.Tabla + " where " + s + s2);
                     }
                 }
             }
@@ -285,7 +285,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                         {
                             s = s + " and ";
                         }
-                        s = s + ofk.CampoPadre + "=V_" + ofk.CampoHijo + " ";
+                        s = s + ofk.CampoPadre + "=V" + ofk.CampoHijo + " ";
                     }
                     AddLine("\tif not exists( select * from " + fk.TablaPadre + " where " + s + ") then");
                     //AddLine("\tbegin");
@@ -322,16 +322,16 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                         {
                             s = s + " and ";
                         }
-                        s = s + pk.Nombre + "=V_" + pk.Nombre;
+                        s = s + pk.Nombre + "=V" + pk.Nombre;
                     }
                 }
                 AddLine("\tif not exists( select * from " + Tabla + s + ")");
                 AddLine("\tbegin");
-                AddLine("\t\tselect V_" + CampoLLave.nombre + "=1");
+                AddLine("\t\tselect V" + CampoLLave.nombre + "=1");
                 AddLine("\tend");
                 AddLine("\telse");
                 AddLine("\tbegin");
-                AddLine("\t\tselect V_" + CampoLLave.nombre + "=max(" + CampoLLave.nombre + ")+1 from " + Tabla + s + " ");
+                AddLine("\t\tselect V" + CampoLLave.nombre + "=max(" + CampoLLave.nombre + ")+1 from " + Tabla + s + " ");
                 AddLine("\tend");
             }
             //ya termine de hacer todas las validaciones, por lo que procedo a hacer el insert
@@ -361,7 +361,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     if (primero == true)
                     {
                         ss = "(";
-                        ss2 = " values(";
+                        ss2 = "values(";
                         primero = false;
                     }
                     else
@@ -370,7 +370,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                         ss2 = ss2 + ",";
                     }
                     ss = ss + obj.nombre;
-                    ss2 = ss2 + "V_" + obj.nombre;
+                    ss2 = ss2 + "V" + obj.nombre;
                 }
             }
             ss = ss + ")";

@@ -48,7 +48,8 @@ namespace SPGenerator
         public override void BSiguiente()
         {
             //agrego elnombre
-            DatosAsistente.Tabla = DB.DameTabla(TTabla.Text);
+            if(DatosAsistente.Tabla.Nombre!= TTabla.Text)
+                DatosAsistente.Tabla = DB.DameTabla(TTabla.Text);
             if (Siguiente == null)
             {
                 Siguiente = new AsisNombreSP(DB);

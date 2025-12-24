@@ -86,3 +86,4 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SPGenerator\bin\Debug\System.Text.E
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SPGenerator\obj\Debug\SPGenera.72A9E435.Up2Date
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SPGenerator\obj\Debug\SPGenerator.dll
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SPGenerator\obj\Debug\SPGenerator.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\SPGenerator\obj\Debug\SPGenerator.AsistenteBienVenidaSps.resources

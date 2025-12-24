@@ -133,6 +133,7 @@
 				<Key word = "VALUES" />
 				<Key word = "CONSTRAINT" />
 				<Key word = "REFERENCES" />
+				<Key word = "IS" />
 			</KeyWords>
 			<KeyWords name ="SqlTypes" bold="true" italic = "false" color="#80FFFF">
 				<Key word = "VARCHAR" />

@@ -49,6 +49,7 @@ namespace SPGenerator
             ComboTipos.Items.Add(new Objetos.CTipoDato("varbinary", true));
             ComboTipos.Items.Add(new Objetos.CTipoDato("varchar", true));
             ComboTipos.Items.Add(new Objetos.CTipoDato("xml", false));
+            ComboTipos.Items.Add(new Objetos.CTipoDato("UUID", false));
         }
 
         private void ComboTipos_SelectedIndexChanged(object sender, EventArgs e)

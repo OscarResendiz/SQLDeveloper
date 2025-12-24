@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeneradorScripts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e6d6c237827c003f44c2dd0885f315b18ad2141")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3711025ed8ad539f32ee48b2d189478c0eb6597")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeneradorScripts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeneradorScripts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

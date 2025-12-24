@@ -48,11 +48,11 @@ namespace SPGenerator
             EnableAnterior(false);
 
         }
-        public string NombreTabla
+        public CTabla Tabla
         {
             set
             {
-                DatosAsistente.Tabla = DB.DameTabla(value);
+                DatosAsistente.Tabla = value;// DB.DameTabla(value);
                 //AsignaValor("Tabla", value);
             }
         }

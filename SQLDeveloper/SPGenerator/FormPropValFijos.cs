@@ -144,11 +144,13 @@ namespace SPGenerator
                 ComboCampo.SelectedIndex = -1;
             }
         }
-         private void MuestraCamposTabla()
+        private void MuestraCamposTabla()
         {
-                    //lleno el combo de los campos de la tabla
+            //lleno el combo de los campos de la tabla
             ComboCampo.Items.Clear();
             List<CCampo> lista;
+            if (Tabla == "")
+                return;
             lista = DB.DameCamposTabla(Tabla);
             foreach (CCampo obj in lista)
             {
@@ -161,6 +163,7 @@ namespace SPGenerator
                 ComboCampo.Items.Add(campoSp);
                 ListaCampos.Items.Add(campoSp);
             }
+
         }
         public List<CParametroSP> Ordenamientos
         {
@@ -191,6 +194,8 @@ namespace SPGenerator
         {
             //se trae la lista de campos de la tabla y solo agrega los que no estan en la lista de filtros
             ListaCampo2.Items.Clear();
+            if (Tabla == "")
+                return;
             List<CCampo> lista = DB.DameCamposTabla(Tabla);
             foreach (CCampo obj in lista)
             {

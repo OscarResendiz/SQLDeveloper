@@ -134,7 +134,7 @@ namespace SPGenerator
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 48);
             // 
             // aToolStripMenuItem
             // 

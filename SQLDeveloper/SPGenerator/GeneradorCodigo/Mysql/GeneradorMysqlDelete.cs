@@ -43,7 +43,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     {
                         primero = false;
                     }
-                    Add("V_" + parametro.nombre + " " + parametro.TipoSP);
+                    Add("V" + parametro.nombre + " " + parametro.TipoSP);
                 }
                 Add(")");
             }
@@ -96,7 +96,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                             AddLine("\t-- Validando que no sean vacios");
                             primero = false;
                         }
-                        AddLine("\tif(ltrim(V_" + parametro.nombre + ")=\'\') then");
+                        AddLine("\tif(ltrim(V" + parametro.nombre + ")=\'\') then");
                         //Version sim tiene comentarios
                         if (parametro.Descripcion.Trim() != "")
                         {
@@ -121,7 +121,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                             AddLine("\t-- Validando que no se pueden repetir");
                             primero = false;
                         }
-                        AddLine("\tif exists(select * from " + Tabla + " where " + parametro.nombre + "=V_" + parametro.nombre + ") then");
+                        AddLine("\tif exists(select * from " + Tabla + " where " + parametro.nombre + "=V" + parametro.nombre + ") then");
                         //Version sim tiene comentarios
                         if (parametro.Descripcion.Trim() != "")
                         {
@@ -145,11 +145,11 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                 if (primeroccpk)
                 {
                     primeroccpk = false;
-                    ccpk = ccpk + $" {c.nombre}=V_{c.nombre}";
+                    ccpk = ccpk + $" {c.nombre}=V{c.nombre}";
                 }
                 else
                 {
-                    ccpk = ccpk + $" and {c.nombre}=V_{c.nombre}";
+                    ccpk = ccpk + $" and {c.nombre}=V{c.nombre}";
                 }
 
             }
@@ -193,47 +193,15 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                 if(primero)
                 {
                     primero = false;
-                    ss = ss + c.nombre + "=V_" + c.nombre;
+                    ss = ss + c.nombre + "=V" + c.nombre;
 
                 }
                 else
                 {
-                    ss = ss +"\n\t\t and "+ c.nombre + "=V_" + c.nombre;
+                    ss = ss +"\n\t\t and "+ c.nombre + "=V" + c.nombre;
 
                 }
             }
-            //foreach (CParametroSP obj in lista)
-            //{
-            //    if (DatosAsistente.Tabla.GetCampo(obj.nombre) != null)
-            //    {
-            //        ss = "";
-            //        if (obj.LLavePrimaria == false)
-            //        {
-            //            if (primero == true)
-            //            {
-            //                primero = false;
-            //            }
-            //            else
-            //            {
-            //                ss = ss + ",";
-            //            }
-            //            ss = ss + obj.nombre + "=V_" + obj.nombre;
-            //        }
-            //        else
-            //        {
-            //            //es llave primaria, por lo que lo agrego en el where
-            //            if (primero2 == true)
-            //            {
-            //                primero2 = false;
-            //            }
-            //            else
-            //            {
-            //                ss2 = ss2 + " and ";
-            //            }
-            //            ss2 = ss2 + obj.nombre + "=V_" + obj.nombre + "\n\r\t\t";
-            //        }
-            //    }
-            //}
             AddLine("\t where ");
             AddLine("\t\t" + ss+";");
             AddLine("end");
@@ -247,34 +215,8 @@ namespace SPGenerator.GeneradorCodigo.Mysql
             ComentarioNombreSP = DatosAsistente.ComentarioNombreSP;
             Tabla = DatosAsistente.Tabla.Nombre;
             LLavesForaneas = DatosAsistente.FreignKeys;
-            PK = DatosAsistente.Tabla.PrimaryKey;// DB.DameLLavePrimaria(Tabla);
+            PK = DatosAsistente.Tabla.PrimaryKey;
         }
-        //private string Agregavalidaciones()
-        //{
-        //    string s = "";
-        //    if (LLavesForaneas.Count > 0)
-        //    {
-        //        AddLine("\t-- validando llaves foraneas");
-        //        foreach (CForeignKey fk in LLavesForaneas)
-        //        {
-        //            List<CDelete> cmds;
-        //        }
-        //    }
-        //    return s;
-        //}
-        //private string AgregaDeletes()
-        //{
-        //    string s = "";
-        //    if (LLavesForaneas.Count > 0)
-        //    {
-        //        AddLine("\t-- eliminacion en cascada");
-        //        foreach (CForeignKey fk in LLavesForaneas)
-        //        {
-        //            List<CDelete> cmds;
-        //        }
-        //    }
-        //    return s;
-        //}
         private void GeneraVariables(CForeignKey fk)
         {
             if (Variables == null)
@@ -313,12 +255,6 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     Variables.Add(obj);
                 }
             }
-            //            if (fk.Hijas == null)
-            //              return;
-            //        foreach (CForeignKey obj in fk.Hijas)
-            //      {
-            //        GeneraVariables(obj);
-            //  }
         }
         private void ValidaLLaveForanea(CLLaveForanea fk, string tabs)
         {
@@ -342,7 +278,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                 {
                     s = s + " and ";
                 }
-                s = s + obj.CampoHijo + "=V_" + obj.CampoPadre;
+                s = s + obj.CampoHijo + "=V" + obj.CampoPadre;
             }
             AddLine(tabs + s + ") then");
             //veo si hay que generar una excepcion
@@ -391,7 +327,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                         {
                             s = s + ",";
                         }
-                        s = s + "V_" + campo.Nombre + "=" + campo.Nombre;
+                        s = s + "V" + campo.Nombre + "=" + campo.Nombre;
                     }
                 }
                 s = s + " from " + fk.TablaHija + " where ";
@@ -406,7 +342,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     {
                         s = s + " and ";
                     }
-                    s = s + obj.CampoHijo.Nombre + "=V_" + obj.CampoPadre.Nombre;
+                    s = s + obj.CampoHijo.Nombre + "=V" + obj.CampoPadre.Nombre;
                 }
                 if (tienecampos == true)
                 {
@@ -434,7 +370,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     {
                         s = s + " and ";
                     }
-                    s = s + campo.Nombre + "=V_" + campo.Nombre;
+                    s = s + campo.Nombre + "=V" + campo.Nombre;
                 }
                 AddLine(tab2 + s+";");
             }

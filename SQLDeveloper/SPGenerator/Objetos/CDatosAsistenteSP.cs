@@ -11,7 +11,8 @@ namespace SPGenerator.Objetos
         INSERT,
         UPDATE,
         DELETE,
-        SELECT
+        SELECT,
+        CRUD
     };
     public class CDatosAsistenteSP
     {

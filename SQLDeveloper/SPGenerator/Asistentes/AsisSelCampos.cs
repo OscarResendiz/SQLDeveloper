@@ -50,7 +50,11 @@ namespace SPGenerator
             ListaCampos.Items.Clear();
             ListaParametros.Items.Clear();
             //me traigo la lista de campos de la tabla
-            List<CCampo> campos = DB.DameCamposTabla(Tabla);
+            List<CCampo> campos = DatosAsistente.Tabla.Campos;
+            if (Tabla != DatosAsistente.Tabla.Nombre)
+            {
+                campos = DB.DameCamposTabla(Tabla);
+            }
             foreach (CCampo obj in campos)
             {
                 CParametroSP obj2 = new CParametroSP()

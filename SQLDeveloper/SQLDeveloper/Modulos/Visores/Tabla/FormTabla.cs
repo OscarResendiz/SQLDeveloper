@@ -220,6 +220,7 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
         {
             LecturaExitosa = true;
             waitControl1.Animar = true;
+            EnableBotones = false;
             BKExtractor.RunWorkerAsync();
         }
 
@@ -250,6 +251,7 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
         private void BKExtractor_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             waitControl1.Animar = false;
+            EnableBotones = true;
             if (LecturaExitosa == false)
                 return;
             TNombre.Text = NombreTabla;
@@ -328,7 +330,7 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
         private void GeneraCodigoSP(SPGenerator.Objetos.TIPO_SP tipo)
         {
             FormAsistSP dlg = new FormAsistSP(Motor.Clone(), tipo);
-            dlg.Tabla = TNombre.Text;
+            dlg.Tabla = this.Tabla;// TNombre.Text;
             dlg.OnCodigoSP += new OnCodigoSPEvent(GenCodigo);
             dlg.ShowDialog();
 
@@ -643,6 +645,22 @@ namespace SQLDeveloper.Modulos.Visores.Tabla
             //sb.AppendLine("");
             //sb.AppendLine("");
             return sb.ToString() ;
+        }
+        private bool EnableBotones
+        {
+            set
+            {
+                toolStrip1.Enabled = value;
+                toolStrip2.Enabled = value;
+/*                BDependencias.Enabled = value;
+                BRelacion.Enabled = value;
+                BCodigo.Enabled = value;
+                BSPInsert.Enabled   = value;
+                BSPUpdate.Enabled = value; 
+                BSPDelete.Enabled = value;
+                BSPSelect.Enabled = value;
+                BAddFk.Enabled = value; 
+  */          }
         }
     }
 }

@@ -59,6 +59,13 @@
     <Compile Include="Formularios\FormLaravel.Designer.cs">
       <DependentUpon>FormLaravel.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneradorCodigo\FormGeneradorDBCOntroller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneradorCodigo\FormGeneradorDBCOntroller.Designer.cs">
+      <DependentUpon>FormGeneradorDBCOntroller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneradorCodigo\GeneradorCodigoDBController.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="Modelo\ModeloDatos.cs">
       <DependentUpon>ModeloDatos.xsd</DependentUpon>
@@ -82,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormLaravel.resx">
       <DependentUpon>FormLaravel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneradorCodigo\FormGeneradorDBCOntroller.resx">
+      <DependentUpon>FormGeneradorDBCOntroller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>

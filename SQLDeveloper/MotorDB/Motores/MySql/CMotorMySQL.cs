@@ -1255,7 +1255,9 @@ namespace MotorDB
                 CParametro obj = new CParametro();
                 obj.Nombre = dr["name"].ToString();
                 obj.TipoDato = GetTipoDato(dr["TipoDato"].ToString());
-                obj.Longitud = int.Parse(dr["length"].ToString());
+                int longitud = 0;
+                int.TryParse(dr["length"].ToString(), out longitud);
+              //  obj.Longitud = int.Parse(dr["length"].ToString());
                 l.Add(obj);
 
             }
@@ -1482,7 +1484,10 @@ namespace MotorDB
                     CCampoBase cb = new CCampoBase();
                     cb.Nombre = dr2["campo"].ToString();
                     cb.TipoDato = GetTipoDato(dr2["TipoDato"].ToString());
-                    cb.Longitud = int.Parse(dr2["Longitud"].ToString());
+                    int lonfitud = 0;
+                    int.TryParse(dr2["Longitud"].ToString(),out lonfitud );
+                    cb.Longitud = lonfitud;
+                    //cb.Longitud = int.Parse(dr2["Longitud"].ToString());
                     un.AddCampo(cb);
                 }
                 dr2.Close();

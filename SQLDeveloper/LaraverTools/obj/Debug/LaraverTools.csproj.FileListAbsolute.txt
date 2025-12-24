@@ -49,3 +49,4 @@ E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\LaraverTools\bin\Debug\K4os.Hash.xx
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\LaraverTools\bin\Debug\System.Numerics.Vectors.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\LaraverTools\bin\Debug\System.Text.Encodings.Web.xml
 E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\LaraverTools\obj\Debug\LaraverT.18E7BEB9.Up2Date
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\LaraverTools\obj\Debug\LaraverTools.GeneradorCodigo.FormGeneradorDBCOntroller.resources

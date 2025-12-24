@@ -14,6 +14,7 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
     {
         MotorDB.IMotorDB Motor;
         public event MotorDB.OnVerObjetoEvent OnVerObjeto;
+        public event MotorDB.OnVerObjetoEvent OnVerCodigoTabla;
         private List<string> Agregados;
         private string Tabla;
         public FormRelaciones(MotorDB.IMotorDB motor,string tabla)
@@ -29,6 +30,7 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
             CNodoRelacion Raiz = new CNodoRelacion(Motor);
             Raiz.Nombre = Tabla;
             Raiz.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+            Raiz.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
             ListaObjetos.Nodes.Add(Raiz);
             Raiz.CargaRelaciones();
         }
@@ -39,7 +41,11 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
                 OnVerObjeto(motor,nombre, tipo);
             }
         }
-
+        private void VerCodigoTabla(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
+        {
+            if (OnVerCodigoTabla != null)
+                OnVerCodigoTabla(Motor, nombre, MotorDB.EnumTipoObjeto.TABLE);
+        }
 
         private void ListaObjetos_MouseUp(object sender, MouseEventArgs e)
         {

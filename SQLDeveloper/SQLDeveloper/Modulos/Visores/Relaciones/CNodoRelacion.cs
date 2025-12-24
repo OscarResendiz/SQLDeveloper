@@ -11,9 +11,12 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
         MotorDB.IMotorDB Motor;
         private System.Windows.Forms.ContextMenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem MenuVer;
+        private System.Windows.Forms.ToolStripMenuItem MenuVerCodigo;
         private System.Windows.Forms.ToolStripMenuItem MenuHijosPadres;
         private System.ComponentModel.IContainer components = null;
         public event MotorDB.OnVerObjetoEvent OnVerObjeto;
+        public event MotorDB.OnVerObjetoEvent OnVerCodigoTabla;
+
         TreeNode Padres;
         TreeNode Hijos;
         private void CreaMenu()
@@ -22,12 +25,14 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRelaciones));
             this.Menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuVer = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuVerCodigo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHijosPadres = new System.Windows.Forms.ToolStripMenuItem();
             // 
             // Menu
             // 
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuVer,
+            this.MenuVerCodigo,
             this.MenuHijosPadres});
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(193, 70);
@@ -39,6 +44,14 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
             this.MenuVer.Size = new System.Drawing.Size(192, 22);
             this.MenuVer.Text = "Ver";
             this.MenuVer.Click += new System.EventHandler(this.MenuVer_Click);
+            // 
+            // MenuVerCodigo
+            // 
+            this.MenuVerCodigo.Image = ((System.Drawing.Image)(resources.GetObject("MenuVer.Image")));
+            this.MenuVerCodigo.Name = "MenuVerCodigo";
+            this.MenuVerCodigo.Size = new System.Drawing.Size(192, 22);
+            this.MenuVerCodigo.Text = "Ver codigo";
+            this.MenuVerCodigo.Click += new System.EventHandler(this.MenuVerCodigo_Click);
             // 
             // MenuHijosPadres
             // 
@@ -146,6 +159,7 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
                 CNodoRelacion hijo = new CNodoRelacion(Motor);
                 hijo.Nombre = fkh.TablaHija;
                 hijo.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+                hijo.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
                 Hijos.Nodes.Add(hijo);
             }
             this.Expand();
@@ -159,6 +173,17 @@ namespace SQLDeveloper.Modulos.Visores.Relaciones
                 OnVerObjeto(Motor, nombre, tipo);
             }
         }
+        private void VerCodigoTabla(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
+        {
+            if (OnVerCodigoTabla != null)
+                OnVerCodigoTabla(Motor, nombre, MotorDB.EnumTipoObjeto.TABLE);
+        }
 
+        private void MenuVerCodigo_Click(object sender, EventArgs e)
+        {
+            if (OnVerCodigoTabla != null)
+                OnVerCodigoTabla(Motor, Nombre, MotorDB.EnumTipoObjeto.TABLE);
+
+        }
     }
 }

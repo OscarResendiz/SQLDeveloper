@@ -54,6 +54,12 @@
     <Compile Include="AnimatedWaitTextBox.Designer.cs">
       <DependentUpon>AnimatedWaitTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsistenteBienVenidaSps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AsistenteBienVenidaSps.Designer.cs">
+      <DependentUpon>AsistenteBienVenidaSps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Asistentes\AsisBienVenidaDelete.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -327,6 +333,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AnimatedWaitTextBox.resx">
       <DependentUpon>AnimatedWaitTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsistenteBienVenidaSps.resx">
+      <DependentUpon>AsistenteBienVenidaSps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Asistentes\AsisBienVenidaDelete.resx">
       <DependentUpon>AsisBienVenidaDelete.cs</DependentUpon>

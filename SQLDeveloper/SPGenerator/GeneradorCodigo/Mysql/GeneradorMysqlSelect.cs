@@ -38,7 +38,7 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     {
                         s = s + ",";
                     }
-                    s = s + "V_" + obj.nombre + " " + obj.TipoSP;
+                    s = s + "V" + obj.nombre + " " + obj.TipoSP;
                 }
             }
             s = s + ") ";
@@ -115,9 +115,9 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                         else
                             s = s + " and ";
                         if (obj.Filtro == Objetos.TIPO_FILTRO.LIKE)
-                            s = s + obj.nombre + obj.SFiltro + "V_" + obj.nombre + "+\'%\'";
+                            s = s + obj.nombre + obj.SFiltro + "V" + obj.nombre + "+\'%\'";
                         else
-                            s = s + obj.nombre + obj.SFiltro + "V_" + obj.nombre;
+                            s = s + obj.nombre + obj.SFiltro + "V" + obj.nombre;
                     }
                 }
                 s = s + ")";
@@ -235,9 +235,9 @@ namespace SPGenerator.GeneradorCodigo.Mysql
                     else
                         s = s + " and ";
                     if (obj.Filtro == Objetos.TIPO_FILTRO.LIKE)
-                        s = s + obj.nombre + obj.SFiltro + "V_" + obj.nombre + "+\'%\'";
+                        s = s + obj.nombre + obj.SFiltro + "V" + obj.nombre + "+\'%\'";
                     else
-                        s = s + obj.nombre + obj.SFiltro + "V_" + obj.nombre;
+                        s = s + obj.nombre + obj.SFiltro + "V" + obj.nombre;
                     AddLine(s);
                 }
             }

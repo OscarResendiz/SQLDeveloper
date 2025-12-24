@@ -300,6 +300,7 @@ namespace SQLDeveloper
         {
             Modulos.Visores.Relaciones.FormRelaciones dlg = new Modulos.Visores.Relaciones.FormRelaciones(motor, nombre);
             dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+            dlg.OnVerCodigoTabla += new OnVerObjetoEvent(VerCodigoTabla);
             VentanaAcoplable(dlg, 5, false, State.DockLeft);
         }
         private void VerTrrigers(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
@@ -1212,6 +1213,15 @@ namespace SQLDeveloper
                 VentanaAcoplable(dlg, 0, true, State.DockLeft);
             }
 
+        }
+
+        private void generarDBControlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LaraverTools.GeneradorCodigo.FormGeneradorDBCOntroller form = new LaraverTools.GeneradorCodigo.FormGeneradorDBCOntroller();
+            form.Motor = DBProvider.DB;
+            if (form.ShowDialog() == DialogResult.Cancel)
+                return;
+            VerCodigo(DBProvider.DB, form.Clase+".php", form.Codigo);
         }
     }
 }
