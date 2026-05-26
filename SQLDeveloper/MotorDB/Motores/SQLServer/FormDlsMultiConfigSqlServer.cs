@@ -51,6 +51,7 @@ namespace MotorDB.Motores.SQLServer
                 if (value != null && value != "")
                     Conexion.ConnectionString = value;
                 CHContraseña.Checked = csb.PersistSecurityInfo;
+                ChBoxtrustServerCertificate.Checked = csb.TrustServerCertificate;
             }
         }
 
@@ -333,6 +334,7 @@ namespace MotorDB.Motores.SQLServer
                     else
                         sb.IntegratedSecurity = false;
                     sb.InitialCatalog = nombre;
+                    sb.TrustServerCertificate = ChBoxtrustServerCertificate.Checked;
                     lista.Add(sb.ConnectionString);
 
                 }

@@ -40,6 +40,7 @@
             this.dataColumn5 = new System.Data.DataColumn();
             this.dataColumn6 = new System.Data.DataColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.waitControl1 = new WaitControl.WaitControl();
             this.TNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -92,7 +93,7 @@
             this.dataGridViewImageColumn21 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn22 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BKExtractor = new System.ComponentModel.BackgroundWorker();
-            this.waitControl1 = new WaitControl.WaitControl();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Campos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
@@ -163,6 +164,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 47);
             this.panel1.TabIndex = 0;
+            // 
+            // waitControl1
+            // 
+            this.waitControl1.AnchoBarraInterior = 25;
+            this.waitControl1.Animar = false;
+            this.waitControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.waitControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.waitControl1.Location = new System.Drawing.Point(0, 37);
+            this.waitControl1.ModoGradiente = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.waitControl1.Name = "waitControl1";
+            this.waitControl1.PrimerColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.waitControl1.SegundoColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.waitControl1.Size = new System.Drawing.Size(309, 10);
+            this.waitControl1.TabIndex = 5;
             // 
             // TNombre
             // 
@@ -344,6 +359,7 @@
             this.BSPInsert.Name = "BSPInsert";
             this.BSPInsert.Size = new System.Drawing.Size(23, 22);
             this.BSPInsert.Text = "Crear SP de inserción";
+            this.BSPInsert.Click += new System.EventHandler(this.BSPInsert_Click);
             // 
             // BSPUpdate
             // 
@@ -353,6 +369,7 @@
             this.BSPUpdate.Name = "BSPUpdate";
             this.BSPUpdate.Size = new System.Drawing.Size(23, 22);
             this.BSPUpdate.Text = "Crear SP de Actualizacion";
+            this.BSPUpdate.Click += new System.EventHandler(this.BSPUpdate_Click);
             // 
             // BSPDelete
             // 
@@ -362,6 +379,7 @@
             this.BSPDelete.Name = "BSPDelete";
             this.BSPDelete.Size = new System.Drawing.Size(23, 22);
             this.BSPDelete.Text = "Crear SP de Borrado";
+            this.BSPDelete.Click += new System.EventHandler(this.BSPDelete_Click);
             // 
             // BSPSelect
             // 
@@ -371,6 +389,7 @@
             this.BSPSelect.Name = "BSPSelect";
             this.BSPSelect.Size = new System.Drawing.Size(23, 22);
             this.BSPSelect.Text = "Crear SP de Seleccion";
+            this.BSPSelect.Click += new System.EventHandler(this.BSPSelect_Click);
             // 
             // toolStripSeparator2
             // 
@@ -514,7 +533,8 @@
             this.BEliminarCampos,
             this.BEditarCampos,
             this.toolStripSeparator3,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip2.Location = new System.Drawing.Point(0, 25);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(309, 25);
@@ -685,19 +705,15 @@
             this.BKExtractor.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BKExtractor_ProgressChanged);
             this.BKExtractor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BKExtractor_RunWorkerCompleted);
             // 
-            // waitControl1
+            // toolStripButton3
             // 
-            this.waitControl1.AnchoBarraInterior = 25;
-            this.waitControl1.Animar = false;
-            this.waitControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.waitControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.waitControl1.Location = new System.Drawing.Point(0, 37);
-            this.waitControl1.ModoGradiente = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.waitControl1.Name = "waitControl1";
-            this.waitControl1.PrimerColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.waitControl1.SegundoColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.waitControl1.Size = new System.Drawing.Size(309, 10);
-            this.waitControl1.TabIndex = 5;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Generar codigo Kotlin";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // FormTabla
             // 
@@ -791,5 +807,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn22;
         private System.ComponentModel.BackgroundWorker BKExtractor;
         private WaitControl.WaitControl waitControl1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

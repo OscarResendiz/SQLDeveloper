@@ -47,6 +47,8 @@ namespace SQLDeveloper
             this.MenuTemas = new System.Windows.Forms.ToolStripMenuItem();
             this.generadorLiberiaCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analizadorDeAplicacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.laravelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +95,7 @@ namespace SQLDeveloper
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cProjectManager1 = new SQLDeveloper.Modulos.ProyectAdmin.CProjectManager(this.components);
             this.configuradorApp1 = new ManagerConnect.ConfiguradorApp(this.components);
+            this.generarDBControlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -110,7 +113,7 @@ namespace SQLDeveloper
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(713, 24);
+            this.menuStrip.Size = new System.Drawing.Size(966, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -204,7 +207,9 @@ namespace SQLDeveloper
             this.gestorDeTabuladoresToolStripMenuItem,
             this.MenuTemas,
             this.generadorLiberiaCToolStripMenuItem,
-            this.analizadorDeAplicacionesToolStripMenuItem});
+            this.analizadorDeAplicacionesToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.laravelToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(90, 20);
             this.toolsMenu.Text = "&Herramientas";
@@ -243,6 +248,20 @@ namespace SQLDeveloper
             this.analizadorDeAplicacionesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.analizadorDeAplicacionesToolStripMenuItem.Text = "Analizador de Aplicaciones";
             this.analizadorDeAplicacionesToolStripMenuItem.Click += new System.EventHandler(this.analizadorDeAplicacionesToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(213, 6);
+            // 
+            // laravelToolStripMenuItem
+            // 
+            this.laravelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarDBControlerToolStripMenuItem});
+            this.laravelToolStripMenuItem.Name = "laravelToolStripMenuItem";
+            this.laravelToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.laravelToolStripMenuItem.Text = "Laravel";
+            this.laravelToolStripMenuItem.Click += new System.EventHandler(this.laravelToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -402,7 +421,7 @@ namespace SQLDeveloper
             this.BModeloador});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(713, 27);
+            this.toolStrip.Size = new System.Drawing.Size(966, 27);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -585,7 +604,7 @@ namespace SQLDeveloper
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(713, 22);
+            this.statusStrip.Size = new System.Drawing.Size(966, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -611,12 +630,19 @@ namespace SQLDeveloper
             // 
             this.cProjectManager1.OnProjectHistoruChange += new SQLDeveloper.Modulos.ProyectAdmin.CProjectManagerEvent(this.LoadHistoryproyects);
             // 
+            // generarDBControlerToolStripMenuItem
+            // 
+            this.generarDBControlerToolStripMenuItem.Name = "generarDBControlerToolStripMenuItem";
+            this.generarDBControlerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generarDBControlerToolStripMenuItem.Text = "GenerarDBControler";
+            this.generarDBControlerToolStripMenuItem.Click += new System.EventHandler(this.generarDBControlerToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(713, 453);
+            this.ClientSize = new System.Drawing.Size(966, 453);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -705,6 +731,9 @@ namespace SQLDeveloper
         private System.Windows.Forms.ToolStripButton BBuscadorTablas;
         private System.Windows.Forms.ToolStripMenuItem analizadorDeAplicacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BModeloador;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem laravelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarDBControlerToolStripMenuItem;
     }
 }
 

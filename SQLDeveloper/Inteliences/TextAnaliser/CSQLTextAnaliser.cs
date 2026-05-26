@@ -55,20 +55,23 @@ namespace Inteliences
             //busca variables y tablas temporales
             foreach (Compiler.Lexer.Lexema lex in lecxer1)
             {
-                switch (lex.Tipo)
+                if (lex != null)
                 {
-                    case Compiler.Lexer.LEXTIPE.SQLVARIABLE:
-                        AddSimbol(new CSimbolo()
-                        {
-                            DeclarationLinea = lex.PosicionInicial.Linea,
-                            Tipo = TIPO_SIMBOLO.VARIABLE,
-                            Name = lex.Texto
-                        }
-                        );
-                        break;
-                    case Compiler.Lexer.LEXTIPE.TABLATEMPORAL:
-                        AgregaTabla(lex);                        
-                        break;
+                    switch (lex.Tipo)
+                    {
+                        case Compiler.Lexer.LEXTIPE.SQLVARIABLE:
+                            AddSimbol(new CSimbolo()
+                            {
+                                DeclarationLinea = lex.PosicionInicial.Linea,
+                                Tipo = TIPO_SIMBOLO.VARIABLE,
+                                Name = lex.Texto
+                            }
+                            );
+                            break;
+                        case Compiler.Lexer.LEXTIPE.TABLATEMPORAL:
+                            AgregaTabla(lex);
+                            break;
+                    }
                 }
             }
         }

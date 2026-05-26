@@ -49,6 +49,7 @@
             this.BKBUscarServidores = new System.ComponentModel.BackgroundWorker();
             this.BKBuscarBases = new System.ComponentModel.BackgroundWorker();
             this.TimerValidador = new System.Windows.Forms.Timer(this.components);
+            this.ChBoxtrustServerCertificate = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,7 +194,7 @@
             this.BAceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BAceptar.Image = ((System.Drawing.Image)(resources.GetObject("BAceptar.Image")));
             this.BAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAceptar.Location = new System.Drawing.Point(327, 359);
+            this.BAceptar.Location = new System.Drawing.Point(365, 384);
             this.BAceptar.Name = "BAceptar";
             this.BAceptar.Size = new System.Drawing.Size(85, 37);
             this.BAceptar.TabIndex = 26;
@@ -209,7 +210,7 @@
             this.BCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
             this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BCancelar.Location = new System.Drawing.Point(52, 359);
+            this.BCancelar.Location = new System.Drawing.Point(16, 384);
             this.BCancelar.Name = "BCancelar";
             this.BCancelar.Size = new System.Drawing.Size(85, 37);
             this.BCancelar.TabIndex = 27;
@@ -236,13 +237,25 @@
             this.TimerValidador.Enabled = true;
             this.TimerValidador.Tick += new System.EventHandler(this.TimerValidador_Tick);
             // 
+            // ChBoxtrustServerCertificate
+            // 
+            this.ChBoxtrustServerCertificate.AutoSize = true;
+            this.ChBoxtrustServerCertificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.ChBoxtrustServerCertificate.Location = new System.Drawing.Point(12, 340);
+            this.ChBoxtrustServerCertificate.Name = "ChBoxtrustServerCertificate";
+            this.ChBoxtrustServerCertificate.Size = new System.Drawing.Size(313, 24);
+            this.ChBoxtrustServerCertificate.TabIndex = 28;
+            this.ChBoxtrustServerCertificate.Text = "certificado de servidor de confianza";
+            this.ChBoxtrustServerCertificate.UseVisualStyleBackColor = true;
+            // 
             // FormDlgConfigSqlServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(500, 409);
+            this.ClientSize = new System.Drawing.Size(500, 444);
             this.ControlBox = false;
+            this.Controls.Add(this.ChBoxtrustServerCertificate);
             this.Controls.Add(this.BAceptar);
             this.Controls.Add(this.BCancelar);
             this.Controls.Add(this.TNombre);
@@ -291,5 +304,6 @@
         private System.ComponentModel.BackgroundWorker BKBUscarServidores;
         private System.ComponentModel.BackgroundWorker BKBuscarBases;
         private System.Windows.Forms.Timer TimerValidador;
+        private System.Windows.Forms.CheckBox ChBoxtrustServerCertificate;
     }
 }

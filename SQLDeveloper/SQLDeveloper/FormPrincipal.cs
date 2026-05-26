@@ -13,6 +13,7 @@ using Crownwood.Magic.Docking;
 using Crownwood.Magic.Menus;
 using System.IO;
 using MotorDB;
+using LaraverTools;
 //using Modelador;
 namespace SQLDeveloper
 {
@@ -289,42 +290,6 @@ namespace SQLDeveloper
             }
         }
 
-        private void BBuscador_Click(object sender, EventArgs e)
-        {
-            //muestro la ventana de busqueda
-            if (ExisteVentanaIzquierda(typeof(Modulos.Buscador.FormBuscadorObjetos)) == false)
-            {
-                Modulos.Buscador.FormBuscadorObjetos dlg = new Modulos.Buscador.FormBuscadorObjetos();
-                dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
-                VentanaAcoplable(dlg, 0, true, State.DockLeft);
-            }
-
-        }
-        private void VerObjeto(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
-        {
-            //dependiendo del tipo de objeto se muestra el visor correspondiente
-            switch (tipo)
-            {
-                case MotorDB.EnumTipoObjeto.FUNCION:
-                    VerCodigo(motor, nombre, motor.DameCodigoFuncction(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.PROCEDURE:
-                    VerCodigo(motor, nombre, motor.DameCodigoStoreProcedure(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.TABLE:
-                    MuestraTabla(motor, nombre);
-                    break;
-                case MotorDB.EnumTipoObjeto.TYPE_TABLE:
-                    MuestraTypeTable(motor, nombre);
-                    break;
-                case MotorDB.EnumTipoObjeto.TRIGER:
-                    VerCodigo(motor, nombre, motor.DameCodigoTrigger(nombre));
-                    break;
-                case MotorDB.EnumTipoObjeto.VIEW:
-                    MuestraVista(motor, nombre);
-                    break;
-            }
-        }
         private void VerDependencias(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
         {
             Modulos.Visores.Dependencias.FormDependencias dlg = new Modulos.Visores.Dependencias.FormDependencias(motor, nombre);
@@ -335,6 +300,7 @@ namespace SQLDeveloper
         {
             Modulos.Visores.Relaciones.FormRelaciones dlg = new Modulos.Visores.Relaciones.FormRelaciones(motor, nombre);
             dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+            dlg.OnVerCodigoTabla += new OnVerObjetoEvent(VerCodigoTabla);
             VentanaAcoplable(dlg, 5, false, State.DockLeft);
         }
         private void VerTrrigers(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
@@ -352,6 +318,7 @@ namespace SQLDeveloper
             dlg.OnVerTrrigers += new MotorDB.OnVerObjetoEvent(VerTrrigers);
             dlg.OnPropiedadesCampo += new OnPropiedadesEvent(MuestraPropuedades);
             dlg.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
+            dlg.OnCodigo += new Modulos.Visores.Tabla.OnCodigoEvent(VerCodigo);
             VentanaAcoplable(dlg, 4, true, State.DockRight);
         }
         private void MuestraTypeTable(MotorDB.IMotorDB motor, string nombre)
@@ -363,6 +330,7 @@ namespace SQLDeveloper
             dlg.OnVerTrrigers += new MotorDB.OnVerObjetoEvent(VerTrrigers);
             dlg.OnPropiedadesCampo += new OnPropiedadesEvent(MuestraPropuedades);
             dlg.OnVerCodigoTabla += new MotorDB.OnVerObjetoEvent(VerCodigoTabla);
+            dlg.OnCodigo += new Modulos.Visores.Tabla.OnCodigoEvent(VerCodigo);
             VentanaAcoplable(dlg, 4, true, State.DockRight);
         }
         private void MuestraPropuedades(Modulos.Visores.CPropiedadesBase obj)
@@ -1194,6 +1162,66 @@ namespace SQLDeveloper
         private void VerCodigoModelador(string nombre, string codigo)
         {
             VerCodigo(DBProvider.DB, nombre, codigo);
+        }
+
+        private void laravelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LaraverTools.Formularios.FormLaravel dlg = new LaraverTools.Formularios.FormLaravel();
+                VentanaAcoplable(dlg, 4, true, State.DockLeft);
+
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void VerObjeto(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
+        {
+            //dependiendo del tipo de objeto se muestra el visor correspondiente
+            switch (tipo)
+            {
+                case MotorDB.EnumTipoObjeto.FUNCION:
+                    VerCodigo(motor, nombre, motor.DameCodigoFuncction(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.PROCEDURE:
+                    VerCodigo(motor, nombre, motor.DameCodigoStoreProcedure(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.TABLE:
+                        MuestraTabla(motor, nombre);
+                    break;
+                case MotorDB.EnumTipoObjeto.TYPE_TABLE:
+                    MuestraTypeTable(motor, nombre);
+                    break;
+                case MotorDB.EnumTipoObjeto.TRIGER:
+                    VerCodigo(motor, nombre, motor.DameCodigoTrigger(nombre));
+                    break;
+                case MotorDB.EnumTipoObjeto.VIEW:
+                    MuestraVista(motor, nombre);
+                    break;
+            }
+        }
+        private void BBuscador_Click(object sender, EventArgs e)
+        {
+            //muestro la ventana de busqueda
+            if (ExisteVentanaIzquierda(typeof(Modulos.Buscador.FormBuscadorObjetos)) == false)
+            {
+                Modulos.Buscador.FormBuscadorObjetos dlg = new Modulos.Buscador.FormBuscadorObjetos();
+                dlg.OnVerObjeto += new MotorDB.OnVerObjetoEvent(VerObjeto);
+                dlg.OnVerCodigoTabla += new OnVerObjetoEvent(VerCodigoTabla);
+                VentanaAcoplable(dlg, 0, true, State.DockLeft);
+            }
+
+        }
+
+        private void generarDBControlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LaraverTools.GeneradorCodigo.FormGeneradorDBCOntroller form = new LaraverTools.GeneradorCodigo.FormGeneradorDBCOntroller();
+            form.Motor = DBProvider.DB;
+            if (form.ShowDialog() == DialogResult.Cancel)
+                return;
+            VerCodigo(DBProvider.DB, form.Clase+".php", form.Codigo);
         }
     }
 }

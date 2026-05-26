@@ -1,0 +1,12 @@
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\bin\Debug\net8.0\Laravel.deps.json
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\bin\Debug\net8.0\Laravel.dll
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\bin\Debug\net8.0\Laravel.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.GeneratedMSBuildEditorConfig.editorconfig
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.AssemblyInfoInputs.cache
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.AssemblyInfo.cs
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.csproj.CoreCompileInputs.cache
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.sourcelink.json
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.dll
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\refint\Laravel.dll
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\Laravel.pdb
+E:\RepositoriosGit\SQLDeveloper\SQLDeveloper\Laravel\obj\Debug\net8.0\ref\Laravel.dll

@@ -168,7 +168,7 @@ namespace SQLDeveloper
                 listBox1.Items.Add(fk);
                 listBox1.Items.Add(fk.TablaPadre);
                 listBox1.Items.Add(fk.TablaHija);
-                foreach(MotorDB.CCampoFereneces obj in fk.Campos)
+                foreach(MotorDB.CCampoReference obj in fk.Campos)
                 {
                     listBox1.Items.Add(obj.CampoPadre+"->"+obj.CampoHijo);
                 }

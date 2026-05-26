@@ -54,6 +54,7 @@
             this.ComboBases.Size = new System.Drawing.Size(263, 21);
             this.ComboBases.TabIndex = 28;
             this.ComboBases.DropDown += new System.EventHandler(this.ComboBases_DropDown);
+            this.ComboBases.SelectedIndexChanged += new System.EventHandler(this.ComboBases_SelectedIndexChanged);
             // 
             // TPassword
             // 

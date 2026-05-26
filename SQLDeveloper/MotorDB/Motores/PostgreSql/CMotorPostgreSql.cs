@@ -10,7 +10,7 @@ using Npgsql;
 
 namespace MotorDB
 {
-    class CMotorPostgreSql : IMotorDB
+    public class CMotorPostgreSql : IMotorDB
     {
         static List<CTipoDato> FTiposDato;
         private event MotorDBMessageEvent MessageErrorEvent;
@@ -20,6 +20,13 @@ namespace MotorDB
         private string FConnectionString="";
         private List<CObjeto> Buffer;
         private System.DateTime BufferTimer;
+        public IMotorDB Clone()
+        {
+            IMotorDB m = new CMotorMySQL();
+            m.SetConnectionName(ConnectionName);
+            m.SetConnectionString(FConnectionString);
+            return m;
+        }
         public CMotorPostgreSql()
         {
             //GeneraListaTiposDato();
@@ -550,7 +557,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -1406,7 +1413,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -1538,7 +1545,7 @@ namespace MotorDB
             {
                 s += "\n\t ,constraint " + fk.Nombre + " foreign key(";
                 //recorro los campos
-                foreach (CCampoFereneces rf in fk.Campos)
+                foreach (CCampoReference rf in fk.Campos)
                 {
                     if (primero)
                     {
@@ -1591,6 +1598,21 @@ namespace MotorDB
                 s += "\n\t, CONSTRAINT " + obj.Nombre + " check (" + obj.Regla + ")";
             }
             return s;
+        }
+
+        public bool ExisteCampoTabla(string tabla, string campo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CCampoFK> DameLLaveForanea(string nombre)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CCampoFK> DameCamposFK(string nombre)
+        {
+            throw new NotImplementedException();
         }
     }
 }

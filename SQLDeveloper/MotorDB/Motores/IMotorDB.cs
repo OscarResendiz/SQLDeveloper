@@ -107,6 +107,10 @@ namespace MotorDB
         string GetConeccionString(int pos);
         string GetConnectionName(int pos);
         int GetConnectionsCount();
+        bool ExisteCampoTabla(string tabla, string campo);
+        List<CCampoFK> DameLLaveForanea(string nombre);
+        List<CCampoFK> DameCamposFK(string nombre);
+        IMotorDB Clone();
     }
 }
    

@@ -61,6 +61,7 @@ namespace MotorDB.Motores.SQLServer
             this.panel2 = new System.Windows.Forms.Panel();
             this.BVerBases = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChBoxtrustServerCertificate = new System.Windows.Forms.CheckBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -193,7 +194,7 @@ namespace MotorDB.Motores.SQLServer
             // 
             this.CHContraseña.AutoSize = true;
             this.CHContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.CHContraseña.Location = new System.Drawing.Point(4, 0);
+            this.CHContraseña.Location = new System.Drawing.Point(4, -3);
             this.CHContraseña.Name = "CHContraseña";
             this.CHContraseña.Size = new System.Drawing.Size(197, 24);
             this.CHContraseña.TabIndex = 34;
@@ -224,9 +225,9 @@ namespace MotorDB.Motores.SQLServer
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 234);
+            this.label3.Location = new System.Drawing.Point(0, 270);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(509, 20);
+            this.label3.Size = new System.Drawing.Size(509, 33);
             this.label3.TabIndex = 31;
             this.label3.Text = "Base de datos";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,21 +375,21 @@ namespace MotorDB.Motores.SQLServer
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 210);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(509, 24);
+            this.panel16.Size = new System.Drawing.Size(509, 60);
             this.panel16.TabIndex = 49;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.BVerBases);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(207, 0);
+            this.panel2.Location = new System.Drawing.Point(365, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(302, 24);
+            this.panel2.Size = new System.Drawing.Size(144, 60);
             this.panel2.TabIndex = 36;
             // 
             // BVerBases
             // 
-            this.BVerBases.Location = new System.Drawing.Point(3, 0);
+            this.BVerBases.Location = new System.Drawing.Point(5, 6);
             this.BVerBases.Name = "BVerBases";
             this.BVerBases.Size = new System.Drawing.Size(133, 23);
             this.BVerBases.TabIndex = 0;
@@ -398,12 +399,24 @@ namespace MotorDB.Motores.SQLServer
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ChBoxtrustServerCertificate);
             this.panel1.Controls.Add(this.CHContraseña);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 24);
+            this.panel1.Size = new System.Drawing.Size(365, 60);
             this.panel1.TabIndex = 35;
+            // 
+            // ChBoxtrustServerCertificate
+            // 
+            this.ChBoxtrustServerCertificate.AutoSize = true;
+            this.ChBoxtrustServerCertificate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.ChBoxtrustServerCertificate.Location = new System.Drawing.Point(3, 32);
+            this.ChBoxtrustServerCertificate.Name = "ChBoxtrustServerCertificate";
+            this.ChBoxtrustServerCertificate.Size = new System.Drawing.Size(316, 24);
+            this.ChBoxtrustServerCertificate.TabIndex = 35;
+            this.ChBoxtrustServerCertificate.Text = "Certificado de servidor de confianza";
+            this.ChBoxtrustServerCertificate.UseVisualStyleBackColor = true;
             // 
             // panel17
             // 
@@ -412,7 +425,7 @@ namespace MotorDB.Motores.SQLServer
             this.panel17.Controls.Add(this.panel19);
             this.panel17.Controls.Add(this.panel18);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(0, 527);
+            this.panel17.Location = new System.Drawing.Point(0, 610);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(509, 44);
             this.panel17.TabIndex = 50;
@@ -480,7 +493,7 @@ namespace MotorDB.Motores.SQLServer
             this.ListaBases.FormattingEnabled = true;
             this.ListaBases.Location = new System.Drawing.Point(0, 0);
             this.ListaBases.Name = "ListaBases";
-            this.ListaBases.Size = new System.Drawing.Size(509, 136);
+            this.ListaBases.Size = new System.Drawing.Size(509, 152);
             this.ListaBases.TabIndex = 51;
             this.ListaBases.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListaBases_ItemCheck);
             // 
@@ -494,7 +507,7 @@ namespace MotorDB.Motores.SQLServer
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 254);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 303);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -505,8 +518,8 @@ namespace MotorDB.Motores.SQLServer
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.TxtMensaje);
-            this.splitContainer1.Size = new System.Drawing.Size(509, 273);
-            this.splitContainer1.SplitterDistance = 136;
+            this.splitContainer1.Size = new System.Drawing.Size(509, 307);
+            this.splitContainer1.SplitterDistance = 152;
             this.splitContainer1.TabIndex = 52;
             // 
             // TxtMensaje
@@ -518,7 +531,7 @@ namespace MotorDB.Motores.SQLServer
             this.TxtMensaje.Multiline = true;
             this.TxtMensaje.Name = "TxtMensaje";
             this.TxtMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtMensaje.Size = new System.Drawing.Size(509, 133);
+            this.TxtMensaje.Size = new System.Drawing.Size(509, 151);
             this.TxtMensaje.TabIndex = 0;
             // 
             // pictureBox1
@@ -535,7 +548,7 @@ namespace MotorDB.Motores.SQLServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 571);
+            this.ClientSize = new System.Drawing.Size(509, 654);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel17);
@@ -630,5 +643,6 @@ namespace MotorDB.Motores.SQLServer
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox TxtMensaje;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox ChBoxtrustServerCertificate;
     }
 }   

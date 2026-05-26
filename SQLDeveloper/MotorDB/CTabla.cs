@@ -168,6 +168,13 @@ namespace MotorDB
                 return false;
             return PrimaryKey.ContieneCampo(campo);
         }
+        public bool EsPrimaryKey(string nombreCampo)
+        {
+            if (PrimaryKey == null)
+                return false;
+            return PrimaryKey.ContieneCampo(nombreCampo);
+
+        }
         public bool EsForeignKey(CCampo campo)
         {
             if (FForeignKeys == null)

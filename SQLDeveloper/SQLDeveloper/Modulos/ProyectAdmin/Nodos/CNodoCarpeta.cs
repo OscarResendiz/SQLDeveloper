@@ -377,7 +377,7 @@ namespace SQLDeveloper.Modulos.ProyectAdmin
         }
         private void MultiSeleccion(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)
         {
-            Modelo.AgregaObjeto(Servidor, Nombre, nombre, tipo, false, ID_Carpeta);
+            Modelo.AgregaObjeto(Servidor, Conexion.Nombre, nombre, tipo, false, ID_Carpeta);
             RecargaTodo();
         }
         private void ObjetoSeleccionado(MotorDB.IMotorDB motor, string nombre, MotorDB.EnumTipoObjeto tipo)

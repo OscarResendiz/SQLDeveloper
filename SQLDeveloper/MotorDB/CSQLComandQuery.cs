@@ -35,46 +35,63 @@ namespace MotorDB
         public void Open(bool lanzarExcepcion=false)
         {
             //crea la conexion
-            switch (Motor)
+            if (FConnection == null)
             {
-                case EnumMotoresDB.SQLSERVER:
-                    //creo la conexion
-                    FConnection = new SqlConnection(ConnectionString);
-                    //creo el comando
-                    FCommand = new System.Data.SqlClient.SqlCommand();
-                    break;
-                case EnumMotoresDB.MYSQL:
-                    //creo la conexion
-                    FConnection = new MySqlConnection(ConnectionString);
-                    //creo el comando
-                    FCommand = new MySqlCommand();
-                    break;
-                case EnumMotoresDB.POSTGRES:
-                    //creo la conexion
-                    FConnection = new NpgsqlConnection(ConnectionString);
-                    //creo el comando
-                    FCommand = new NpgsqlCommand();
-                    break;
-                default:
-                    throw new Exception("Motor no soportado:" + Motor);
+                switch (Motor)
+                {
+                    case EnumMotoresDB.SQLSERVER:
+                        //creo la conexion
+                        FConnection = new SqlConnection(ConnectionString);
+                        //creo el comando
+                        FCommand = new System.Data.SqlClient.SqlCommand();
+                        break;
+                    case EnumMotoresDB.MYSQL:
+                        //creo la conexion
+                        FConnection = new MySqlConnection(ConnectionString);
+                        //creo el comando
+                        FCommand = new MySqlCommand();
+                        break;
+                    case EnumMotoresDB.POSTGRES:
+                        //creo la conexion
+                        FConnection = new NpgsqlConnection(ConnectionString);
+                        //creo el comando
+                        FCommand = new NpgsqlCommand();
+                        break;
+                    default:
+                        throw new Exception("Motor no soportado:" + Motor);
+                }
             }
-            //continuo con la configuracion del comando
-            FCommand.CommandType = System.Data.CommandType.Text;
-            FCommand.Connection = FConnection;
-            FCommand.CommandText = QueryString;
-            FCommand.CommandTimeout = 500000;
-            try
+            int intentos = 3;
+            do
             {
-                FCommand.Connection.Open();
-                //RECUPERANDO DATOS
-                FDataReader = FCommand.ExecuteReader();
-                //FCommand.Connection.Close();
+                //continuo con la configuracion del comando
+                FCommand.CommandType = System.Data.CommandType.Text;
+                FCommand.Connection = FConnection;
+                FCommand.CommandText = QueryString;
+                FCommand.CommandTimeout = 500000;
+                try
+                {
+                    if (FCommand.Connection.State == ConnectionState.Closed)
+                    {
+                        FCommand.Connection.Open();
+                        System.Threading.Thread.Sleep(500);
+                    }
+                    //FCommand.Connection.Open();
+                    //RECUPERANDO DATOS
+                    FDataReader = FCommand.ExecuteReader();
+                    //FCommand.Connection.Close();
+                }
+                catch (System.Exception ex)
+                {
+                    if (intentos == 0)
+                    {
+                        if (lanzarExcepcion)
+                            throw ex;
+                    }
+                    intentos--;
+                }
             }
-            catch (System.Exception ex)
-            {
-                if (lanzarExcepcion)
-                    throw ex;
-            }
+            while (FCommand.Connection.State == ConnectionState.Closed && intentos > 0);
         }
         //componenete que va a trabajar con la conexion de la base de datos
         #region Implentacion de la interface IDataReader
@@ -85,7 +102,14 @@ namespace MotorDB
             {
                 if (FDataReader == null)
                     return null;
-                return FDataReader[name];
+                try
+                {
+                    return FDataReader[name];
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
 
@@ -134,7 +158,7 @@ namespace MotorDB
         public void Close()
         {
             //cierra todo
-            if (FCommand != null && FCommand.Connection.State != ConnectionState.Closed)
+            if (FCommand != null && FCommand.Connection!=null && FCommand.Connection.State != ConnectionState.Closed)
             {
                 FCommand.Connection.Close();
             }

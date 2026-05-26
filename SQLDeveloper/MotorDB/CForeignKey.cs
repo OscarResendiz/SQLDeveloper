@@ -16,7 +16,7 @@ namespace MotorDB
     }
     public class CForeignKey: CConstraint
     {
-        public List<CCampoFereneces> Campos
+        public List<CCampoReference> Campos
         {
             get;
             set;
@@ -37,10 +37,10 @@ namespace MotorDB
             get;
             set;
         }
-        public void Add(CCampoFereneces obj)
+        public void Add(CCampoReference obj)
         {
             if (Campos == null)
-                Campos = new List<CCampoFereneces>();
+                Campos = new List<CCampoReference>();
             Campos.Add(obj);
         }
         public bool ContieneCampo(CCampoBase campo)
@@ -48,7 +48,7 @@ namespace MotorDB
             if (Campos == null)
                 return false;
             //regresa true si el campo se encuentra en la lista
-            foreach (CCampoFereneces obj in Campos)
+            foreach (CCampoReference obj in Campos)
             {
                 if (obj.CampoHijo.Nombre == campo.Nombre)
                     return true;
@@ -65,5 +65,8 @@ namespace MotorDB
             get;
             set;
         }
+        public bool GenerarExcepcion { get;set; }
+        public string Comentarios { get; set; }
+        public string Mensage { get; set; } 
     }
 }

@@ -109,7 +109,8 @@
   <ItemGroup>
     <Compile Include="CCampo.cs" />
     <Compile Include="CCampoBase.cs" />
-    <Compile Include="CCampoFereneces.cs" />
+    <Compile Include="CCampoFK.cs" />
+    <Compile Include="CCampoReference.cs" />
     <Compile Include="CCampoGroup.cs" />
     <Compile Include="CCampoIndex.cs" />
     <Compile Include="CCheck.cs" />

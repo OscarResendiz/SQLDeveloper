@@ -382,6 +382,9 @@ namespace TextEditor
                     case Keys.G:
                         BGuardar_Click(null, null);
                         break;
+                    case Keys.S:
+                        BGuardar_Click(null, null);
+                        break;
                     case Keys.O:
                         Babrir_Click(null, null);
                         break;

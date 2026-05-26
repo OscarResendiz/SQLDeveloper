@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>SQLDeveloper.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>database.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MagicLibrary">
       <HintPath>..\..\LiberiasExternas\MagicLibrary.dll</HintPath>
@@ -1590,6 +1593,10 @@
       <Project>{6931bcc1-f51d-4fc6-90bf-29fd713695e7}</Project>
       <Name>Inteliences</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LaraverTools\LaraverTools.csproj">
+      <Project>{c2afa277-e4e2-4a5f-b6c7-8e3f2ec2ad10}</Project>
+      <Name>LaraverTools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelador\Modelador.csproj">
       <Project>{35c1a7ac-665d-4c15-8ce6-0b9c02b63f5d}</Project>
       <Name>Modelador</Name>
@@ -1601,6 +1608,10 @@
     <ProjectReference Include="..\SintaxColor\SintaxColor.csproj">
       <Project>{48CBCC42-DFDE-4598-9992-1C082BBA1052}</Project>
       <Name>SintaxColor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPGenerator\SPGenerator.csproj">
+      <Project>{61cae32f-c7fb-463f-80e3-009d66ee9259}</Project>
+      <Name>SPGenerator</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextEditor\TextEditor.csproj">
       <Project>{55c75890-76b6-42df-9bae-f2c6920829fd}</Project>
@@ -1740,6 +1751,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

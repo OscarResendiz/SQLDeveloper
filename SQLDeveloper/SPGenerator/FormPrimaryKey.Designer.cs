@@ -1,0 +1,117 @@
+﻿namespace SPGenerator
+{
+    partial class FormPrimaryKey
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrimaryKey));
+            this.label1 = new System.Windows.Forms.Label();
+            this.Campos = new System.Windows.Forms.CheckedListBox();
+            this.BCancelar = new System.Windows.Forms.Button();
+            this.BAceptar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(2, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Campos";
+            // 
+            // Campos
+            // 
+            this.Campos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Campos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Campos.FormattingEnabled = true;
+            this.Campos.Location = new System.Drawing.Point(5, 25);
+            this.Campos.Name = "Campos";
+            this.Campos.Size = new System.Drawing.Size(153, 229);
+            this.Campos.TabIndex = 1;
+            // 
+            // BCancelar
+            // 
+            this.BCancelar.BackColor = System.Drawing.Color.Black;
+            this.BCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BCancelar.ForeColor = System.Drawing.Color.White;
+            this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
+            this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BCancelar.Location = new System.Drawing.Point(175, 90);
+            this.BCancelar.Name = "BCancelar";
+            this.BCancelar.Size = new System.Drawing.Size(92, 38);
+            this.BCancelar.TabIndex = 17;
+            this.BCancelar.Text = "Cancelar";
+            this.BCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BCancelar.UseVisualStyleBackColor = false;
+            // 
+            // BAceptar
+            // 
+            this.BAceptar.BackColor = System.Drawing.Color.Black;
+            this.BAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BAceptar.ForeColor = System.Drawing.Color.White;
+            this.BAceptar.Image = ((System.Drawing.Image)(resources.GetObject("BAceptar.Image")));
+            this.BAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAceptar.Location = new System.Drawing.Point(175, 34);
+            this.BAceptar.Name = "BAceptar";
+            this.BAceptar.Size = new System.Drawing.Size(92, 38);
+            this.BAceptar.TabIndex = 16;
+            this.BAceptar.Text = "Aceptar";
+            this.BAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BAceptar.UseVisualStyleBackColor = false;
+            // 
+            // FormPrimaryKey
+            // 
+            this.AcceptButton = this.BAceptar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BCancelar;
+            this.ClientSize = new System.Drawing.Size(277, 266);
+            this.ControlBox = false;
+            this.Controls.Add(this.BCancelar);
+            this.Controls.Add(this.BAceptar);
+            this.Controls.Add(this.Campos);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "FormPrimaryKey";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Llave primaria";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox Campos;
+        private System.Windows.Forms.Button BCancelar;
+        private System.Windows.Forms.Button BAceptar;
+    }
+}

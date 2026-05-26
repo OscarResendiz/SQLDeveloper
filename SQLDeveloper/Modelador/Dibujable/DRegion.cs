@@ -716,7 +716,7 @@ namespace Modelador.Dibujable
                         {
                             bool ok = true;
                             //verifico si existen los campos
-                            foreach (CCampoFereneces campo in fk.Campos)
+                            foreach (CCampoReference campo in fk.Campos)
                             {
                                 Modelo.CCampo campoPadre = padre.Get_Campo(campo.CampoPadre.Nombre);
                                 Modelo.CCampo campoHijo = tbl.Get_Campo(campo.CampoHijo.Nombre);
@@ -731,7 +731,7 @@ namespace Modelador.Dibujable
                                 int id_Fk = Modelo.Insert_LlaveForanea(padre.ID_Tabla, tbl.ID_Tabla, fk.Nombre, fk.AccionBorrar, fk.AccionActualizar, Color.Black);
                                 CLlaveForanea Fk3 = Modelo.Get_LlaveForanea(id_Fk);
                                 //agrego los campos
-                                foreach (CCampoFereneces campo in fk.Campos)
+                                foreach (CCampoReference campo in fk.Campos)
                                 {
                                     Fk3.Insert_CampoReferencia(padre.Get_Campo(campo.CampoPadre.Nombre).ID_Campo, tbl.Get_Campo(campo.CampoHijo.Nombre).ID_Campo);
                                 }
@@ -759,7 +759,7 @@ namespace Modelador.Dibujable
                         {
                             bool ok = true;
                             //verifico si existen los campos
-                            foreach (CCampoFereneces campo in fk.Campos)
+                            foreach (CCampoReference campo in fk.Campos)
                             {
                                 Modelo.CCampo campoHijo = hija.Get_Campo(campo.CampoPadre.Nombre);
                                 Modelo.CCampo campoPadre = tbl.Get_Campo(campo.CampoHijo.Nombre);
@@ -774,7 +774,7 @@ namespace Modelador.Dibujable
                                 int id_Fk = Modelo.Insert_LlaveForanea(tbl.ID_Tabla, hija.ID_Tabla, fk.Nombre, fk.AccionBorrar, fk.AccionActualizar, Color.Black);
                                 CLlaveForanea Fk3 = Modelo.Get_LlaveForanea(id_Fk);
                                 //agrego los campos
-                                foreach (CCampoFereneces campo in fk.Campos)
+                                foreach (CCampoReference campo in fk.Campos)
                                 {
                                     Fk3.Insert_CampoReferencia(tbl.Get_Campo(campo.CampoHijo.Nombre).ID_Campo, hija.Get_Campo(campo.CampoPadre.Nombre).ID_Campo);
                                 }

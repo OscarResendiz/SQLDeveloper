@@ -14,8 +14,9 @@ using System.Globalization;
 
 namespace MotorDB 
 {
-    class CMotorMySQL : IMotorDB
+    public class CMotorMySQL : IMotorDB
     {
+        private CSQLComandQuery MyDataReader = null;
         private event MotorDBMessageEvent MessageErrorEvent;
         private string FConnectionString;
         private string ConnectionName;
@@ -25,6 +26,13 @@ namespace MotorDB
         private List<string> Nombres;
         private List<CObjeto> Buffer;
         private System.DateTime BufferTimer;
+        public IMotorDB Clone()
+        {
+            IMotorDB m=new CMotorMySQL();
+            m.SetConnectionName(ConnectionName);
+            m.SetConnectionString(FConnectionString);
+            return m;
+        }
         public void AlterTable_AddCheck(string tabla, CCheck check)
         {
             string s = "ALTER TABLE " + tabla + " ADD CONSTRAINT " + check.Nombre + " CHECK(" + check.Regla + ");";
@@ -355,6 +363,9 @@ namespace MotorDB
                 case "TT":
                     Tipo = EnumTipoObjeto.TYPE_TABLE;
                     break;
+                case "ENUM":
+                    Tipo = EnumTipoObjeto.ENUM;
+                    break;
             }
             return Tipo;
         }
@@ -389,7 +400,7 @@ namespace MotorDB
             s += fk.Nombre + " foreign key( \n ";
             //recorro todos los campos
             bool primero = true;
-            foreach (CCampoFereneces obj in fk.Campos)
+            foreach (CCampoReference obj in fk.Campos)
             {
                 if (primero)
                 {
@@ -735,6 +746,8 @@ namespace MotorDB
             string campo = "Create table";
             System.Data.IDataReader dr;
             dr = EjecutaQuery(s);
+            if (dr == null)
+                return "";
             s = "";
             while (dr.Read())
             {
@@ -829,7 +842,7 @@ namespace MotorDB
 
         public DateTime DameFechaModificacion(string nombreObjeto)
         {
-            string s = "select createtime as crdate from INFORMATION_SCHEMA.TABLES where table_schema='" + GetDataBseName() + "'  and table_name='" + nombreObjeto + "'";
+            string s = "select create_time as crdate from INFORMATION_SCHEMA.TABLES where table_schema='" + GetDataBseName() + "'  and table_name='" + nombreObjeto + "'";
             DateTime fecha = DateTime.Now;
             IDataReader dr = EjecutaQuery(s);
             if(dr==null)
@@ -953,7 +966,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -968,9 +981,9 @@ namespace MotorDB
             s += "	m.COLUMN_NAME as columnaMaestra,  \n";
             s += "	m.DATA_TYPE as TipoDatoMaestro,  \n";
             s += "	case isnull(m.CHARACTER_MAXIMUM_LENGTH) when 1 then '0' else m.CHARACTER_MAXIMUM_LENGTH end as LongitudPadre,  \n";
-            s += "	m.COLUMN_NAME as columnahija,  \n";
-            s += "	m.DATA_TYPE as TipoDatoHijo,  \n";
-            s += "	case isnull(m.CHARACTER_MAXIMUM_LENGTH) when 1 then '0' else m.CHARACTER_MAXIMUM_LENGTH end as LongitudHijo  \n";
+            s += "	h.COLUMN_NAME as columnahija,  \n";
+            s += "	h.DATA_TYPE as TipoDatoHijo,  \n";
+            s += "	case isnull(h.CHARACTER_MAXIMUM_LENGTH) when 1 then '0' else h.CHARACTER_MAXIMUM_LENGTH end as LongitudHijo  \n";
             s += "from   \n";
             s += "	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS f,  \n";
             s += "	INFORMATION_SCHEMA.KEY_COLUMN_USAGE c,  \n";
@@ -1051,7 +1064,7 @@ namespace MotorDB
                 dr = EjecutaQuery(GeneraQueryCamposFk(fk.Nombre));
                 while (dr.Read())
                 {
-                    CCampoFereneces rf = new CCampoFereneces(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
+                    CCampoReference rf = new CCampoReference(dr["columnaMaestra"].ToString(), GetTipoDato(dr["TipoDatoMaestro"].ToString()), int.Parse(dr["LongitudPadre"].ToString()), dr["columnahija"].ToString(), GetTipoDato(dr["TipoDatoHijo"].ToString()), int.Parse(dr["LongitudHijo"].ToString()));
                     fk.Add(rf);
                 }
                 dr.Close();
@@ -1211,6 +1224,7 @@ namespace MotorDB
             l.Add("YEAR");
             l.Add("DAY");
             l.Add("CURRENT_TIMESTAMP");
+            l.Add("ENUM");
             return l;
         }
 
@@ -1241,7 +1255,9 @@ namespace MotorDB
                 CParametro obj = new CParametro();
                 obj.Nombre = dr["name"].ToString();
                 obj.TipoDato = GetTipoDato(dr["TipoDato"].ToString());
-                obj.Longitud = int.Parse(dr["length"].ToString());
+                int longitud = 0;
+                int.TryParse(dr["length"].ToString(), out longitud);
+              //  obj.Longitud = int.Parse(dr["length"].ToString());
                 l.Add(obj);
 
             }
@@ -1468,7 +1484,10 @@ namespace MotorDB
                     CCampoBase cb = new CCampoBase();
                     cb.Nombre = dr2["campo"].ToString();
                     cb.TipoDato = GetTipoDato(dr2["TipoDato"].ToString());
-                    cb.Longitud = int.Parse(dr2["Longitud"].ToString());
+                    int lonfitud = 0;
+                    int.TryParse(dr2["Longitud"].ToString(),out lonfitud );
+                    cb.Longitud = lonfitud;
+                    //cb.Longitud = int.Parse(dr2["Longitud"].ToString());
                     un.AddCampo(cb);
                 }
                 dr2.Close();
@@ -1622,6 +1641,8 @@ namespace MotorDB
             FTiposDato.Add(new CTipoDato("nvarchar", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("varbinary", TIPO_LONGITUD.OBLIGATORIO));
             FTiposDato.Add(new CTipoDato("varchar", TIPO_LONGITUD.OBLIGATORIO));
+            FTiposDato.Add(new CTipoDato("ENUM", TIPO_LONGITUD.OPCIONAL));
+            FTiposDato.Add(new CTipoDato("uuid", TIPO_LONGITUD.NOREQUERIDO));
         }
 
         public List<CTrigger> DameTrrigersTabla(string tabla)
@@ -1716,7 +1737,7 @@ namespace MotorDB
         {
             if (cadena == "")
                 return null;
-            CSQLComandQuery MyDataReader=null;
+            //CSQLComandQuery MyDataReader=null;
             if (MyDataReader == null)
             {
                 MyDataReader = new CSQLComandQuery();
@@ -1726,24 +1747,31 @@ namespace MotorDB
                 MyDataReader.ConnectionString = FConnectionString;
             }
             if (MyDataReader.IsClosed == false)
+            {
                 MyDataReader.Close();
+                System.Threading.Thread.Sleep(100);
+            }
             //le paso el query
             MyDataReader.QueryString = cadena;
-            MyDataReader.QueryString = cadena;
-            MyDataReader.QueryString = cadena;
-            MyDataReader.QueryString = cadena;
             //y lo abro
-            try
+            int intentos = 3;
+            do
             {
-                MyDataReader.Open(true);
-            }
-            catch (System.Exception ex)
-            {
-                //regresa un dr null
-                if (MessageErrorEvent != null)
-                    MessageErrorEvent(this, ex.Message);
-                return null;
-            }
+                try
+                {
+                    MyDataReader.Open(true);
+                }
+                catch (System.Exception ex)
+                {
+                    //regresa un dr null
+                    if (MessageErrorEvent != null)
+                        MessageErrorEvent(this, ex.Message);
+                    return null;
+                }
+                intentos--;
+                System.Threading.Thread.Sleep(100);
+
+            } while (MyDataReader == null && intentos>0);
             return MyDataReader;
         }
 
@@ -2171,7 +2199,7 @@ namespace MotorDB
             {
                 s += "\n\t ,constraint " + fk.Nombre + " foreign key(";
                 //recorro los campos
-                foreach (CCampoFereneces rf in fk.Campos)
+                foreach (CCampoReference rf in fk.Campos)
                 {
                     if (primero)
                     {
@@ -2224,6 +2252,81 @@ namespace MotorDB
                 s += "\n\t, CONSTRAINT " + obj.Nombre + " check (" + obj.Regla + ")";
             }
             return s;
+        }
+        public bool ExisteCampoTabla(string tabla, string campo)
+        {
+            string s = "select COLUMN_NAME from information_schema.columns where TABLE_SCHEMA='" + GetDataBseName() + "' and TABLE_NAME='" + tabla + "' and COLUMN_NAME='" + campo + "'";
+            IDataReader dr;
+            int x = 0;
+            try
+            {
+                dr =EjecutaQuery(s);
+                if (dr.Read())
+                {
+                    if (dr["COLUMN_NAME"].ToString() != "")
+                        x = 1;
+                    else
+                        x = 0;
+                }
+            }
+            catch (System.Exception)
+            {
+                //CierraConexion();
+                return false;
+            }
+            dr.Close();
+            if (x == 1)
+                return true;
+            return false;
+        }
+        public List<CCampoFK> DameLLaveForanea(string nombre)
+        {
+            string s = "";
+            s = s + "select distinct \n";
+            s = s + "	table_name as TablaHija ,\n";
+            s = s + "	column_name as ColumnaHija,\n";
+            s = s + "	referenced_table_name as TablaPadre,\n";
+            s = s + "	referenced_column_name as ColumnaPadre\n";
+            s = s + "from \n";
+            s = s + "	information_schema.KEY_COLUMN_USAGE \n";
+            s = s + "where \n";
+            s = s + "	table_schema='" + GetDataBseName() + "' \n";
+            s = s + "	and constraint_name='" + nombre + "'\n";
+            IDataReader dr;
+            dr =EjecutaQuery(s);
+            List<CCampoFK> lista = new List<CCampoFK>();
+            CCampoFK CampoFK;
+            while (dr.Read())
+            {
+                CampoFK = new CCampoFK();
+                CampoFK.columnahija = dr["ColumnaHija"].ToString();
+                CampoFK.columnaMaestra = dr["ColumnaPadre"].ToString();
+                CampoFK.maestra = dr["TablaPadre"].ToString();
+                CampoFK.hija = dr["TablaHija"].ToString();
+                lista.Add(CampoFK);
+            }
+            dr.Close();
+            return lista;
+        }
+        public List<CCampoFK> DameCamposFK(string nombre)
+        {
+            List<CCampoFK> lista = new List<CCampoFK>();
+            string s = "select table_name as hija ,column_name as columnahija,referenced_table_name as maestra,referenced_column_name as columnaMaestra from information_schema.KEY_COLUMN_USAGE where table_schema='" + GetDataBseName ()+ "' and constraint_name='" + nombre + "'";
+            IDataReader dr;
+            dr = EjecutaQuery(s);
+            lista = new System.Collections.Generic.List<CCampoFK>();
+            CCampoFK CampoFK;
+            while (dr.Read())
+            {
+                CampoFK = new CCampoFK();
+                CampoFK.columnahija = dr["columnahija"].ToString();
+                CampoFK.columnaMaestra = dr["columnaMaestra"].ToString();
+                CampoFK.maestra = dr["maestra"].ToString();
+                CampoFK.hija = dr["hija"].ToString();
+                lista.Add(CampoFK);
+            }
+            dr.Close();
+            return lista;
         }
 
     }

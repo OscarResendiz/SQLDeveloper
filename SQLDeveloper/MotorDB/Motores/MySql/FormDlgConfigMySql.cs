@@ -141,5 +141,13 @@ namespace MotorDB.Motores.MySql
                 TPassword.PasswordChar = '*';
 
         }
+
+        private void ComboBases_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TNombre.Text.Trim() != "")
+                return;
+            TNombre.Text = ComboBases.Text;
+
+        }
     }
 }

@@ -1,8 +1,18 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <ProjetFiles>
+    <FileName>tiendaEnLinea</FileName>
+    <Path>E:\RepositoriosGit\TiendaEnLinea\Documentacion\tiendaEnLinea.dbp</Path>
+    <Fecha>2025-08-19T15:32:32.8805546-06:00</Fecha>
+  </ProjetFiles>
+  <ProjetFiles>
+    <FileName>BaseDatos</FileName>
+    <Path>E:\RepositoriosGit\HEG\CodigoFuente\DataBase\BaseDatos.dbp</Path>
+    <Fecha>2025-08-19T15:28:39.569364-06:00</Fecha>
+  </ProjetFiles>
+  <ProjetFiles>
     <FileName>Reparacel</FileName>
-    <Path>D:\RepositoriosGit\Reparacel\DataBase\Reparacel.dbp</Path>
-    <Fecha>2023-03-14T01:00:43.1421492+01:00</Fecha>
+    <Path>E:\RepositoriosGit\Reparacel\DataBase\Reparacel.dbp</Path>
+    <Fecha>2025-12-24T11:44:07.1169312-06:00</Fecha>
   </ProjetFiles>
 </NewDataSet>

@@ -15,6 +15,7 @@ namespace ManagerConnect
         #region Menu Contextual
         private System.Windows.Forms.ContextMenuStrip MenuConexion;
         private System.Windows.Forms.ToolStripMenuItem MenuEditarConexion;
+        private System.Windows.Forms.ToolStripMenuItem MenuConexioString;
         private System.Windows.Forms.ToolStripMenuItem MenuClonarConexion;
         private System.Windows.Forms.ToolStripMenuItem MenuEliminarConexion;
         #endregion
@@ -22,6 +23,7 @@ namespace ManagerConnect
         {
             this.MenuConexion = new System.Windows.Forms.ContextMenuStrip(this.Components);
             this.MenuEditarConexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuConexioString = new System.Windows.Forms.ToolStripMenuItem();
             MenuClonarConexion = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuEliminarConexion = new System.Windows.Forms.ToolStripMenuItem();
             // 
@@ -29,6 +31,7 @@ namespace ManagerConnect
             // 
             this.MenuConexion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuEditarConexion,
+            MenuConexioString,
             MenuClonarConexion,
             this.MenuEliminarConexion});
             this.MenuConexion.Name = "MenuConexion";
@@ -41,6 +44,14 @@ namespace ManagerConnect
             this.MenuEditarConexion.Size = new System.Drawing.Size(152, 22);
             this.MenuEditarConexion.Text = "Editar";
             this.MenuEditarConexion.Click += new System.EventHandler(this.MenuEditarConexion_Click);
+            // 
+            // MenuConexioString
+            // 
+            this.MenuConexioString.Image = ((System.Drawing.Image)(resources.GetObject("MenuEditarConexion.Image")));
+            this.MenuConexioString.Name = "MenuEditarConexion";
+            this.MenuConexioString.Size = new System.Drawing.Size(152, 22);
+            this.MenuConexioString.Text = "Copiar Cadena de conexion";
+            this.MenuConexioString.Click += new System.EventHandler(this.CopiarCadenaDeConexion_Click);
             // 
             // MenuClonarConexion
             // 
@@ -156,6 +167,12 @@ namespace ManagerConnect
         {
             string grupo = Parent.Text;
             return ControladorConexiones.GetConexion(grupo, Text);
+        }
+        private void CopiarCadenaDeConexion_Click(object sender, EventArgs e)
+        {
+            CConexion conexion = DameConexion();
+            Clipboard.SetText(conexion.ConecctionString);
+            MessageBox.Show("Cadena de conexion copiada en el porta papeles");
         }
     }
 }
