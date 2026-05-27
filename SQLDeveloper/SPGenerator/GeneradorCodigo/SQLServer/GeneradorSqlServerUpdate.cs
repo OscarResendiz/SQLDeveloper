@@ -138,7 +138,37 @@ namespace SPGenerator.GeneradorCodigo.SQLServer
                             AddLine("\t-- Validando que no se pueden repetir");
                             primero = false;
                         }
-                        AddLine("\tif exists(select * from " + Tabla + " where " + parametro.nombre + "=@" + parametro.nombre + ")");
+                        //----------------------------------
+                        string s = "\tif exists(select 1 from " + Tabla + " where " + parametro.nombre + "=@" + parametro.nombre;// + ")";
+                        if(PK.Campos.Count>1)
+                        {
+                            s = s + " and (";
+                        }
+                        else if(PK.Campos.Count == 1)
+                        {
+                            s = s + " and ";
+                        }
+                        bool primero3=true;
+                        foreach (CCampoBase campo in PK.Campos)
+                        {
+                            if(primero3 == true)
+                            {
+                                primero3 = false;
+                            }
+                            else
+                            {
+                                s = s + " or ";
+                            }
+                                s = s + campo.Nombre + "<>@" + campo.Nombre;
+                        }
+                        if (PK.Campos.Count > 1)
+                        {
+                            s = s + " )";
+                        }
+                        s = s + ")";
+                        //-------------------------------------
+                        //AddLine("\tif exists(select 1 from " + Tabla + " where " + parametro.nombre + "=@" + parametro.nombre + ")");
+                        AddLine(s);
                         AddLine("\tbegin");
                         //Version sim tiene comentarios
                         if (parametro.Descripcion.Trim() != "")

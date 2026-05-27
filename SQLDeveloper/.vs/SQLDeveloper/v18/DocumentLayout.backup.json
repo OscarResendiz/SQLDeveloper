@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61CAE32F-C7FB-463F-80E3-009D66EE9259}|SPGenerator\\SPGenerator.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\spgenerator\\objetos\\cparametrosp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61CAE32F-C7FB-463F-80E3-009D66EE9259}|SPGenerator\\SPGenerator.csproj|solutionrelative:spgenerator\\objetos\\cparametrosp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\modelador\\dibujable\\dcampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|solutionrelative:modelador\\dibujable\\dcampo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61CAE32F-C7FB-463F-80E3-009D66EE9259}|SPGenerator\\SPGenerator.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\spgenerator\\generadorcodigo\\sqlserver\\generadorsqlserverinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61CAE32F-C7FB-463F-80E3-009D66EE9259}|SPGenerator\\SPGenerator.csproj|solutionrelative:spgenerator\\generadorcodigo\\sqlserver\\generadorsqlserverinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\modelador\\dibujable\\dbarratitulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|solutionrelative:modelador\\dibujable\\dbarratitulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\modelador\\dibujable\\cobjetodibujable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|solutionrelative:modelador\\dibujable\\cobjetodibujable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\modelador\\dibujable\\cdibujable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|solutionrelative:modelador\\dibujable\\cdibujable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|d:\\repositoriosgit\\sqldeveloper\\sqldeveloper\\modelador\\dibujable\\ccuadricula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35C1A7AC-665D-4C15-8CE6-0B9C02B63F5D}|Modelador\\Modelador.csproj|solutionrelative:modelador\\dibujable\\ccuadricula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CParametroSP.cs",
-              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SPGenerator\\Objetos\\CParametroSP.cs",
-              "RelativeDocumentMoniker": "SPGenerator\\Objetos\\CParametroSP.cs",
-              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SPGenerator\\Objetos\\CParametroSP.cs*",
-              "RelativeToolTip": "SPGenerator\\Objetos\\CParametroSP.cs*",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAgwHcAAAANAAAAAAAAAA==",
+              "Title": "DCampo.cs",
+              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\DCampo.cs",
+              "RelativeDocumentMoniker": "Modelador\\Dibujable\\DCampo.cs",
+              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\DCampo.cs*",
+              "RelativeToolTip": "Modelador\\Dibujable\\DCampo.cs*",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwD4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T07:00:36.637Z",
+              "WhenOpened": "2026-05-27T04:35:09.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GeneradorSqlServerInsert.cs",
-              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SPGenerator\\GeneradorCodigo\\SQLServer\\GeneradorSqlServerInsert.cs",
-              "RelativeDocumentMoniker": "SPGenerator\\GeneradorCodigo\\SQLServer\\GeneradorSqlServerInsert.cs",
-              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\SPGenerator\\GeneradorCodigo\\SQLServer\\GeneradorSqlServerInsert.cs",
-              "RelativeToolTip": "SPGenerator\\GeneradorCodigo\\SQLServer\\GeneradorSqlServerInsert.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowD8AAABHAAAAAAAAAA==",
+              "Title": "DBarraTitulo.cs",
+              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\DBarraTitulo.cs",
+              "RelativeDocumentMoniker": "Modelador\\Dibujable\\DBarraTitulo.cs",
+              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\DBarraTitulo.cs",
+              "RelativeToolTip": "Modelador\\Dibujable\\DBarraTitulo.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T07:00:00.23Z",
+              "WhenOpened": "2026-05-27T04:34:55.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CObjetoDibujable.cs",
+              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CObjetoDibujable.cs",
+              "RelativeDocumentMoniker": "Modelador\\Dibujable\\CObjetoDibujable.cs",
+              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CObjetoDibujable.cs",
+              "RelativeToolTip": "Modelador\\Dibujable\\CObjetoDibujable.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T04:34:25.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CDibujable.cs",
+              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CDibujable.cs",
+              "RelativeDocumentMoniker": "Modelador\\Dibujable\\CDibujable.cs",
+              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CDibujable.cs",
+              "RelativeToolTip": "Modelador\\Dibujable\\CDibujable.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T04:34:16.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CCuadricula.cs",
+              "DocumentMoniker": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CCuadricula.cs",
+              "RelativeDocumentMoniker": "Modelador\\Dibujable\\CCuadricula.cs",
+              "ToolTip": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\Modelador\\Dibujable\\CCuadricula.cs",
+              "RelativeToolTip": "Modelador\\Dibujable\\CCuadricula.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T04:34:04.822Z",
               "EditorCaption": ""
             }
           ]

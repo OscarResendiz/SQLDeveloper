@@ -59,8 +59,8 @@ namespace Modelador.Dibujable
             if (PinBrus == null)
                 PinBrus = new System.Drawing.SolidBrush(System.Drawing.Color.LightGray);
 
-            graphics.FillRectangle(PinBrus, Posicion.X - 5, Posicion.Y + Dimencion.Height / 4, 5, Dimencion.Height / 4);
-            graphics.FillRectangle(PinBrus, Posicion.X + Dimencion.Width, Posicion.Y + Dimencion.Height / 4, 5, Dimencion.Height / 4);
+         //   graphics.FillRectangle(PinBrus, Posicion.X - 5, Posicion.Y + Dimencion.Height / 4, 5, Dimencion.Height / 4);
+         //   graphics.FillRectangle(PinBrus, Posicion.X + Dimencion.Width, Posicion.Y + Dimencion.Height / 4, 5, Dimencion.Height / 4);
         }
         protected override void InicializaMenu(int x, int y)
         {
