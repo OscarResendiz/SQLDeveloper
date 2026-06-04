@@ -26,23 +26,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Users\\Oscar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\GeneradorScripts.csproj",
+      "projectUniqueName": "C:\\Oscar\\Repositorios\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\GeneradorScripts.csproj",
       "projectName": "GeneradorScripts",
-      "projectPath": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\GeneradorScripts.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\obj\\",
+      "projectPath": "C:\\Oscar\\Repositorios\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\GeneradorScripts.csproj",
+      "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
+      "outputPath": "C:\\Oscar\\Repositorios\\SQLDeveloper\\SQLDeveloper\\GeneradorScripts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -59,8 +59,8 @@
           "framework": "net8.0-windows7.0",
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\MotorDB.csproj": {
-              "projectPath": "D:\\RepositoriosGit\\SQLDeveloper\\SQLDeveloper\\MotorDB\\MotorDB.csproj"
+            "C:\\Oscar\\Repositorios\\SQLDeveloper\\SQLDeveloper\\MotorDB\\MotorDB.csproj": {
+              "projectPath": "C:\\Oscar\\Repositorios\\SQLDeveloper\\SQLDeveloper\\MotorDB\\MotorDB.csproj"
             }
           }
         }
